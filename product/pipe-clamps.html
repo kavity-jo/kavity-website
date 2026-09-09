@@ -786,6 +786,14 @@ html{scroll-behavior:smooth}
 .map-card{box-shadow:var(--sh-1)}
 .prod-img,.cat-cover,.sub-thumb{transition:box-shadow .3s}
 .prod-img:hover,.cat-cover:hover,.sub-thumb:hover{box-shadow:var(--sh-1)}
+
+/* ── v4 · hero still image + stable text sizing ── */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%;
+  transform:scale(1.04);animation:heroDrift 26s ease-in-out infinite alternate}
+@keyframes heroDrift{from{transform:scale(1.04)}to{transform:scale(1.11)}}
+@media(prefers-reduced-motion:reduce){.hero-media img{animation:none;transform:none}}
+.rot span:not(.on){transition-duration:.35s}
 </style>
 </head>
 <style>
