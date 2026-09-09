@@ -703,6 +703,95 @@ html[lang="ar"] .sres .stag{letter-spacing:0}
 @media(max-width:640px){.sov{padding:0}.sbox{max-height:100vh;height:100vh}.sbtn{width:36px;height:36px}}
 
 </style>
+
+<style id="kv-polish-v1">
+/* ═══════════ KAVITY · refinement layer v1 ═══════════ */
+:root{
+  --r-lg:20px; --r-md:14px; --r-sm:10px;
+  --sh-1:0 2px 10px rgba(11,18,32,.05);
+  --sh-2:0 16px 38px rgba(11,18,32,.11);
+}
+
+/* ── typography ── */
+h1,h2,h3,h4{letter-spacing:-.028em}
+.display{letter-spacing:-.032em}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4,
+html[lang="ar"] .display{letter-spacing:0}
+.lead{font-size:1.02rem;line-height:1.75;color:#525A61}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
+html[lang="ar"] .eyebrow{letter-spacing:0;text-transform:none;font-size:.9rem}
+
+/* ── product-family cards: separated, rounded, lifting ── */
+.lines{gap:1.1rem;background:transparent}
+.line{border-radius:var(--r-lg);box-shadow:var(--sh-1)}
+.line:hover{transform:translateY(-6px);box-shadow:var(--sh-2)}
+
+/* ── sector cards ── */
+.use{border-radius:var(--r-lg);box-shadow:var(--sh-1);
+  transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s}
+.use:hover{transform:translateY(-6px);box-shadow:var(--sh-2)}
+.use img{border-radius:inherit}
+
+/* ── media blocks ── */
+.st-media,.use-art{border-radius:var(--r-lg);overflow:hidden}
+.st-media img,.use-art img{border-radius:inherit}
+.rng-frame{border-radius:var(--r-md)}
+
+/* ── compliance row: cards, not a table ── */
+.cert-row{border:0;background:transparent;gap:.9rem}
+.cert-row>li{background:var(--white);border:1px solid var(--line);
+  border-radius:var(--r-md);transition:border-color .3s,box-shadow .3s}
+.cert-row>li:hover{border-color:rgba(200,16,46,.32);box-shadow:var(--sh-1)}
+
+/* ── decorative pills in the statement headline ── */
+.pill{background:var(--deep);border-color:transparent}
+.pill img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ── stats band ── */
+.stat{padding-block:2.9rem}
+
+/* ── buttons ── */
+.btn{padding:.95rem 2.05rem;font-weight:600;
+  transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,background .25s,color .25s,border-color .25s}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(200,16,46,.3)}
+.btn-line:hover,.btn-ink:hover,.btn-white:hover{transform:translateY(-2px)}
+
+/* ── projects rail cards ── */
+.grid-proj>.proj{box-shadow:var(--sh-1)}
+.grid-proj>.proj:hover{box-shadow:var(--sh-2)}
+
+/* ── keyboard focus ── */
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:8px}
+
+/* ── motion ── */
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){
+  html,.grid-proj{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* ── v2 fixes ── */
+.pill{background:var(--mist);border:0}
+@media(min-width:1000px){.lines{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:640px) and (max-width:999px){.lines{grid-template-columns:repeat(2,1fr)}}
+.use-art{position:absolute;inset:0;aspect-ratio:auto;border-radius:inherit}
+.use-art img{width:100%;height:100%;object-fit:cover}
+.use-art::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(11,18,32,0) 32%,rgba(11,18,32,.34) 60%,rgba(11,18,32,.85) 100%)}
+.use-cap{z-index:3}
+.svc-item:hover{border-top-color:var(--red)}
+
+/* ── v3 · consistent corner language on the inner pages ── */
+.prod-img,.cat-cover,.phero-img,.sub-thumb,.media,.map-wrap{
+  border-radius:var(--r-md);overflow:hidden}
+.prod-img img,.cat-cover img,.phero-img img,.sub-thumb img,.media img{border-radius:inherit}
+.fam,.ccell,.map-card,.cc,.pspec,.dl,.compare{border-radius:var(--r-md)}
+.compare{overflow:hidden}
+.map-card{box-shadow:var(--sh-1)}
+.prod-img,.cat-cover,.sub-thumb{transition:box-shadow .3s}
+.prod-img:hover,.cat-cover:hover,.sub-thumb:hover{box-shadow:var(--sh-1)}
+</style>
 </head>
 <style>
 .phero{background:var(--mist);padding-block:clamp(2rem,5vw,3.5rem);border-bottom:1px solid var(--line)}
