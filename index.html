@@ -556,11 +556,27 @@ html[lang="ar"] .pn{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing
   color:var(--slate);font-size:.9rem;max-width:60ch}
 
 
-/* توسيط الصف الأخير من المشاريع */
-.grid-proj{display:flex!important;flex-wrap:wrap;justify-content:center;gap:1.5rem}
-.grid-proj>.proj{flex:1 1 300px;max-width:calc(33.333% - 1rem);min-width:280px}
-@media(max-width:980px){.grid-proj>.proj{max-width:calc(50% - .75rem)}}
-@media(max-width:640px){.grid-proj>.proj{max-width:100%}}
+/* ══ شريط المشاريع الأفقي (تمرير) ══ */
+.proj-rail{position:relative}
+.grid-proj{display:flex!important;flex-wrap:nowrap;justify-content:flex-start;gap:1.5rem;
+  overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;padding-bottom:.4rem;
+  scrollbar-width:none;-ms-overflow-style:none}
+.grid-proj::-webkit-scrollbar{display:none}
+.grid-proj>.proj{flex:0 0 calc(33.333% - 1rem);max-width:none;min-width:0;scroll-snap-align:start}
+@media(max-width:980px){.grid-proj>.proj{flex-basis:calc(50% - .75rem)}}
+@media(max-width:640px){.grid-proj>.proj{flex-basis:85%}}
+.rail-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:46px;height:46px;border-radius:50%;border:0;padding:0;cursor:pointer;
+  background:var(--white);color:var(--deep);box-shadow:0 8px 24px rgba(0,0,0,.16);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .25s,transform .25s,background .25s,color .25s}
+.rail-nav:hover{background:var(--red);color:var(--white);transform:translateY(-50%) scale(1.07)}
+.rail-nav[disabled]{opacity:0;pointer-events:none}
+.rail-prev{inset-inline-start:-16px}
+.rail-next{inset-inline-end:-16px}
+html[dir="rtl"] .rail-nav svg{transform:scaleX(-1)}
+@media(max-width:900px){.rail-nav{display:none}}
 .more{margin-top:2.4rem;padding-top:0;border-top:0;color:var(--slate);font-size:.92rem;max-width:62ch}
 .more::before{content:'';display:block;width:44px;height:2px;background:var(--red);margin-bottom:1rem}
 
@@ -1041,12 +1057,16 @@ html[lang="ar"] .cert-row b{font-family:'IBM Plex Sans Arabic',sans-serif}
       <span class="eyebrow" data-en="References" data-ar="مراجع">References</span>
       <h2 class="display" data-en="Completed projects" data-ar="مشاريع منجزة">Completed projects</h2>
     </div>
+    <div class="proj-rail">
+      <button class="rail-nav rail-prev" type="button" aria-label="Previous projects" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="rail-nav rail-next" type="button" aria-label="Next projects"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
     <div class="grid-proj">
       <article class="proj"><img loading="lazy" decoding="async" src="img/4fc9ba04db2b1d.jpg" alt=""><div class="proj-cap"><b data-en="Abdali Boulevard" data-ar="بوليفارد العبدلي">Abdali Boulevard</b><span data-en="Amman · Mixed-use" data-ar="عمّان · متعدد الاستخدامات">Amman · Mixed-use</span></div></article>
       <article class="proj"><img loading="lazy" decoding="async" src="img/4f63a460745f5b.jpg" alt=""><div class="proj-cap"><b data-en="Via Amman" data-ar="فيا عمّان">Via Amman</b><span data-en="Amman · Retail &amp; leisure" data-ar="عمّان · تجاري وترفيهي">Amman · Retail &amp; leisure</span></div></article>
       <article class="proj"><img loading="lazy" decoding="async" src="img/a0d6c670a126c7.jpg" alt=""><div class="proj-cap"><b data-en="Taj Mall" data-ar="تاج مول">Taj Mall</b><span data-en="Amman · Retail" data-ar="عمّان · تجاري">Amman · Retail</span></div></article>
       <article class="proj"><img loading="lazy" decoding="async" src="img/22967d1d8f8ff7.jpg" alt=""><div class="proj-cap"><b data-en="King Hussein Cancer Center" data-ar="مركز الحسين للسرطان">King Hussein Cancer Center</b><span data-en="Amman · Healthcare" data-ar="عمّان · رعاية صحية">Amman · Healthcare</span></div></article>
       <article class="proj"><img loading="lazy" decoding="async" src="img/8c68f9ce16d27a.jpg" alt=""><div class="proj-cap"><b data-en="The Hashemite University" data-ar="الجامعة الهاشمية">The Hashemite University</b><span data-en="Zarqa · Education" data-ar="الزرقاء · تعليمي">Zarqa · Education</span></div></article>
+    </div>
     </div>
     <p class="more" data-en="And a growing list of further projects across Jordan and the region."
        data-ar="وقائمة متنامية من المشاريع الأخرى في الأردن والمنطقة.">And a growing list of further projects.</p>
@@ -1469,6 +1489,28 @@ document.querySelectorAll('.filters button').forEach(function(b){
   var L=document.getElementById('langBtn'); if(L) L.addEventListener('click',function(){if(!ov.hidden)render(q.value)});
 })();
 
+</script>
+
+<script>
+(function(){
+  var rail=document.querySelector('.proj-rail'); if(!rail) return;
+  var track=rail.querySelector('.grid-proj'),
+      prev=rail.querySelector('.rail-prev'),
+      next=rail.querySelector('.rail-next');
+  if(!track||!prev||!next) return;
+  function step(){var c=track.querySelector('.proj');
+    return c ? c.getBoundingClientRect().width + 24 : 320;}
+  function rtl(){return getComputedStyle(track).direction==='rtl' ? -1 : 1;}
+  function update(){
+    var max=track.scrollWidth-track.clientWidth-2, x=Math.abs(track.scrollLeft);
+    prev.disabled = x<=2; next.disabled = x>=max;}
+  prev.addEventListener('click',function(){track.scrollBy({left:-step()*rtl(),behavior:'smooth'});});
+  next.addEventListener('click',function(){track.scrollBy({left: step()*rtl(),behavior:'smooth'});});
+  track.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  window.addEventListener('load',update);
+  setTimeout(update,150);
+})();
 </script>
 </body>
 </html>
