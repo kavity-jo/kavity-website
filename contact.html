@@ -786,6 +786,57 @@ html[dir="rtl"] .hero-red::after{
   opacity:.05;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");background-size:240px 240px}
 html[dir="rtl"] .hero-red .hero-media::before{transform:scaleX(-1)}
+
+/* ── v8 · inner-page banners use the same CSS gradient as the hero ── */
+.banner-img img{display:none}
+.banner-img{
+  background:linear-gradient(180deg,
+    #FFF7F6 0%, #FDBDB6 12%, #F76F69 24%, #EF3A36 36%,
+    #DE1414 50%, #C90304 68%, #B30000 86%, #A8090A 100%)}
+.banner-img::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,
+    #FFFFFF 0%, rgba(255,255,255,.985) 10%, rgba(255,255,255,.88) 22%,
+    rgba(255,255,255,.52) 38%, rgba(255,255,255,.16) 52%, rgba(255,255,255,0) 64%);
+  -webkit-mask-image:linear-gradient(90deg,
+    rgba(0,0,0,.90) 0%,   rgba(0,0,0,.90) 4.4%,
+    rgba(0,0,0,.74) 6.0%, rgba(0,0,0,.74) 13.2%,
+    rgba(0,0,0,.63) 14.8%,rgba(0,0,0,.63) 22.1%,
+    rgba(0,0,0,.45) 23.7%,rgba(0,0,0,.45) 30.9%,
+    rgba(0,0,0,.20) 32.5%,rgba(0,0,0,.20) 39.9%,
+    rgba(0,0,0,.155) 41.5%,rgba(0,0,0,.155) 48.9%,
+    rgba(0,0,0,.14) 50.5%,rgba(0,0,0,.14) 66.5%,
+    rgba(0,0,0,.175) 68.1%,rgba(0,0,0,.175) 75.5%,
+    rgba(0,0,0,.28) 77.1%,rgba(0,0,0,.28) 84.5%,
+    rgba(0,0,0,.54) 86.1%,rgba(0,0,0,.54) 93.3%,
+    rgba(0,0,0,.70) 94.9%,rgba(0,0,0,.70) 100%);
+          mask-image:linear-gradient(90deg,
+    rgba(0,0,0,.90) 0%,   rgba(0,0,0,.90) 4.4%,
+    rgba(0,0,0,.74) 6.0%, rgba(0,0,0,.74) 13.2%,
+    rgba(0,0,0,.63) 14.8%,rgba(0,0,0,.63) 22.1%,
+    rgba(0,0,0,.45) 23.7%,rgba(0,0,0,.45) 30.9%,
+    rgba(0,0,0,.20) 32.5%,rgba(0,0,0,.20) 39.9%,
+    rgba(0,0,0,.155) 41.5%,rgba(0,0,0,.155) 48.9%,
+    rgba(0,0,0,.14) 50.5%,rgba(0,0,0,.14) 66.5%,
+    rgba(0,0,0,.175) 68.1%,rgba(0,0,0,.175) 75.5%,
+    rgba(0,0,0,.28) 77.1%,rgba(0,0,0,.28) 84.5%,
+    rgba(0,0,0,.54) 86.1%,rgba(0,0,0,.54) 93.3%,
+    rgba(0,0,0,.70) 94.9%,rgba(0,0,0,.70) 100%)}
+.banner-img::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");background-size:240px 240px}
+html[dir="rtl"] .banner-img::before{transform:scaleX(-1)}
+.banner::after{
+  background:linear-gradient(105deg,
+    rgba(58,4,14,.92) 0%, rgba(96,7,22,.70) 40%,
+    rgba(160,12,36,.32) 70%, rgba(200,16,46,.06) 100%)}
+html[dir="rtl"] .banner::after{
+  background:linear-gradient(255deg,
+    rgba(58,4,14,.92) 0%, rgba(96,7,22,.70) 40%,
+    rgba(160,12,36,.32) 70%, rgba(200,16,46,.06) 100%)}
+.banner h1{text-shadow:0 2px 18px rgba(40,2,10,.38)}
+.banner .crumb span{color:rgba(255,255,255,.6)}
 </style>
 </head>
 <body data-title-en="Contact — KAVITY" data-title-ar="تواصل معنا — كافيتي">
