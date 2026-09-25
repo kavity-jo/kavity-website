@@ -114,4 +114,21 @@
       img.addEventListener('error', done, { once: true });
     });
   }
+
+  /* ── mega-menu pictures load only when the menu is first wanted ─────── */
+  (function () {
+    var done = false;
+    function hydrate () {
+      if (done) return; done = true;
+      [].forEach.call(d.querySelectorAll('.mm-tile[data-bg]'), function (el) {
+        el.style.backgroundImage = el.getAttribute('data-bg'); el.removeAttribute('data-bg');
+      });
+      [].forEach.call(d.querySelectorAll('.mm img[data-src]'), function (img) {
+        img.src = img.getAttribute('data-src'); img.removeAttribute('data-src');
+      });
+    }
+    var mm = d.getElementById('navMM'), bg = d.getElementById('burger');
+    if (mm) ['pointerenter', 'focusin', 'touchstart'].forEach(function (ev) { mm.addEventListener(ev, hydrate, { once: true, passive: true }); });
+    if (bg) bg.addEventListener('click', hydrate, { once: true });
+  })();
 })();
