@@ -1,0 +1,159 @@
+/* ═══════════════════════════════════════════════════════════════════
+   KAVITY · UI layer (all pages)
+   typography finish · focus · motion · page transitions · spotlight
+   cards · magnetic CTAs · theme toggle · dark theme
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── typography finish ─────────────────────────────────────────────── */
+h1,h2,h3,.display{text-wrap:balance}
+p,.lead,li{text-wrap:pretty}
+body{text-rendering:optimizeLegibility;font-feature-settings:"kern","liga","calt"}
+::selection{background:rgba(200,16,46,.9);color:#fff}
+
+/* ── focus: a clean double ring that reads on light, dark and red ──── */
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:6px}
+.btn:focus-visible,.phone:focus-visible,.lang:focus-visible,.sbtn:focus-visible,.kv-theme:focus-visible{
+  outline:none;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--red)}
+
+/* ── thin branded scrollbar ────────────────────────────────────────── */
+@supports (scrollbar-color:red blue){
+  html{scrollbar-color:rgba(106,114,120,.55) transparent;scrollbar-width:thin}
+}
+
+/* ── page-to-page transitions (cross-document View Transitions) ───── */
+@view-transition{navigation:auto}
+header{view-transition-name:kv-header}
+::view-transition-old(root){animation:kvVtOut .28s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(root){animation:kvVtIn .46s cubic-bezier(.2,.7,.2,1) both}
+::view-transition-group(kv-header){animation-duration:0s}
+html.kv-vt-theme::view-transition-old(root),html.kv-vt-theme::view-transition-new(root){animation:none;mix-blend-mode:normal}
+html.kv-vt-theme::view-transition-new(root){animation:kvThemeIn .6s cubic-bezier(.4,0,.2,1) both}
+html.kv-vt-theme::view-transition-group(kv-header){animation-duration:.6s}
+@keyframes kvThemeIn{from{clip-path:circle(0 at var(--kv-ox,90%) var(--kv-oy,40px))}to{clip-path:circle(150vmax at var(--kv-ox,90%) var(--kv-oy,40px))}}
+@keyframes kvVtOut{to{opacity:0;transform:translateY(-10px)}}
+@keyframes kvVtIn{from{opacity:0;transform:translateY(14px)}}
+
+/* ── spotlight: a soft light follows the pointer across cards ─────── */
+.kv-spot{position:relative;isolation:isolate}
+.kv-spot::after{
+  content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(200,16,46,.10),transparent 42%);
+  opacity:0;transition:opacity .35s ease}
+.kv-spot:hover::after{opacity:1}
+.kv-spot.kv-spot--img::after{
+  background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.16),transparent 45%)}
+
+/* ── magnetic CTAs ─────────────────────────────────────────────────── */
+.kv-mag{translate:var(--tx,0px) var(--ty,0px)}
+.kv-mag:not(.kv-mag--live){transition-property:translate,transform,background,color,border-color,box-shadow;
+  transition-duration:.55s,.25s,.25s,.25s,.25s,.25s;transition-timing-function:cubic-bezier(.2,.8,.2,1)}
+
+/* ── images settle in as they decode ───────────────────────────────── */
+img.kv-fade{opacity:0;transition:opacity .6s ease}
+img.kv-fade.kv-in{opacity:1}
+
+/* ── header: frosted glass ─────────────────────────────────────────── */
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  header{background:rgba(255,255,255,.82)!important;
+    backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px)}
+}
+
+/* ── theme toggle button (sits beside search) ──────────────────────── */
+.kv-theme{
+  width:40px;height:40px;border-radius:50%;flex:none;display:inline-grid;place-items:center;cursor:pointer;
+  border:1px solid var(--line);background:transparent;color:var(--ink);
+  transition:transform .2s,background .25s,color .25s,border-color .25s}
+.kv-theme:hover{border-color:var(--ink);transform:translateY(-1px)}
+.kv-theme svg{width:18px;height:18px;grid-area:1/1;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .35s}
+.kv-theme .kv-moon{opacity:1;transform:rotate(0) scale(1)}
+.kv-theme .kv-sun{opacity:0;transform:rotate(-90deg) scale(.5)}
+html[data-theme="dark"] .kv-theme .kv-moon{opacity:0;transform:rotate(90deg) scale(.5)}
+html[data-theme="dark"] .kv-theme .kv-sun{opacity:1;transform:rotate(0) scale(1)}
+@media (max-width:640px){.kv-theme{width:36px;height:36px}}
+@media (max-width:380px){.tools{gap:.45rem!important}}
+
+/* theme switch: cross-fade the whole page instead of a hard flip */
+html.kv-theming,html.kv-theming *,html.kv-theming *::before,html.kv-theming *::after{
+  transition:background-color .45s ease,border-color .45s ease,color .3s ease,fill .3s ease!important}
+
+/* ═══════════════════════════════════════════════════════════════════
+   DARK THEME
+   Tokens are remapped; --white stays white because the site uses it as
+   foreground on red and on photography. Surfaces are overridden per
+   component; product photography keeps a light "well" so white-ground
+   product shots never show a box.
+   ═══════════════════════════════════════════════════════════════════ */
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#ECEEF0; --slate:#A4ACB3; --mist:#15171A; --line:#2A2E33;
+  --red:#E0243F; --deep:#9E0E26;
+  --kv-bg:#0B0C0E; --kv-surface:#131518; --kv-surface-2:#1B1E22; --kv-well:#F1F2F4;
+}
+html[data-theme="dark"] body{background:var(--kv-bg)}
+
+/* header */
+html[data-theme="dark"] header{background:rgba(11,12,14,.72)!important;border-bottom-color:rgba(255,255,255,.06)}
+html[data-theme="dark"] header.small{box-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 30px rgba(0,0,0,.35)}
+html[data-theme="dark"] .logo img{content:url("../../img/kavity-logo-dark.png")}
+@media (max-width:920px){html[data-theme="dark"] header nav{background:var(--kv-bg)}}
+
+/* surfaces that were white */
+html[data-theme="dark"] :where(.card,.cat,.cc,.certs,.cert-row li,.cert-row>li,.fam-nav a,.feats-card,.filters button,
+  .map-card,.mm,.mm-fly,.prod,.rel,.rng-frame,.sbox,.statement,.sub-card,.sub-nav a,.svc,.totop,.sbtn){
+  background:var(--kv-surface)}
+html[data-theme="dark"] .mm{background:var(--kv-surface)!important}
+html[data-theme="dark"] :where(.sub-card,.prod,.rel,.cat,.card,.svc,.cc,.map-card){border-color:var(--line)}
+html[data-theme="dark"] :is(.sub-card,.prod,.rel,.cat,.card):hover{border-color:#3a3f45;
+  box-shadow:0 18px 50px rgba(0,0,0,.45)}
+
+/* product photography: keep a soft light well */
+html[data-theme="dark"] :is(.sub-thumb,.prod-img,.phero-img,.mm-fly-img,.cat-cover,.media-fit,.rel-img){
+  background:var(--kv-well)!important}
+html[data-theme="dark"] :is(.sub-thumb,.prod-img,.phero-img,.mm-fly-img,.cat-cover,.rel-img) img{filter:brightness(.97)}
+
+/* surfaces that were ink (dark) keep a dark tone instead of the remapped light ink */
+html[data-theme="dark"] :is(.banner,.use,.mm-tile){background-color:#1D2024}
+html[data-theme="dark"] .dl{background:var(--kv-surface-2);color:#fff}
+html[data-theme="dark"] .ptable th{background:#23272C;color:#fff}
+html[data-theme="dark"] .btn-ink{background:#ECEEF0;color:#0B0C0E}
+html[data-theme="dark"] .btn-ink:hover{background:var(--red);color:#fff}
+html[data-theme="dark"] .btn-white:hover,html[data-theme="dark"] .phero .btn-line:hover{background:#0B0C0E;color:#fff}
+html[data-theme="dark"] .phero .btn-line{border-color:rgba(255,255,255,.35)}
+
+/* mist sections sit one step above the page */
+html[data-theme="dark"] .ptable tr:nth-child(even) td{background:#121417}
+html[data-theme="dark"] .ptable td{border-color:var(--line)}
+
+/* hero buttons (white pill) */
+
+/* inputs */
+html[data-theme="dark"] :is(input,textarea,select){background:var(--kv-surface);color:var(--ink);border-color:var(--line)}
+html[data-theme="dark"] ::placeholder{color:#7C858C}
+
+/* search overlay scrim */
+html[data-theme="dark"] .sov{background:rgba(0,0,0,.6)}
+
+/* the CTA band and footer are already brand-red: deepen slightly for a night palette */
+html[data-theme="dark"] .cta{background:linear-gradient(135deg,#B00E28,#7E0A1E)}
+html[data-theme="dark"] footer{background:#12060A}
+
+/* statement pills (empty shapes) */
+html[data-theme="dark"] .pill{background:var(--kv-surface-2);border-color:var(--line)}
+
+/* focus ring on dark */
+html[data-theme="dark"] :is(.btn,.phone,.lang,.sbtn,.kv-theme):focus-visible{box-shadow:0 0 0 2px #0B0C0E,0 0 0 4px var(--red)}
+html[data-theme="dark"] ::selection{background:#E0243F;color:#fff}
+
+/* ── reduced motion ─────────────────────────────────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
+  .kv-mag{transform:none!important;transition:none}
+  .kv-spot::after{display:none}
+  img.kv-fade{opacity:1;transition:none}
+  html.kv-theming *{transition:none!important}
+}
+html[data-theme="dark"] .lead{color:var(--slate)}
+html[data-theme="dark"] :is(.sub-nav a,.fam-nav a):not(.on):not(:hover){background:var(--kv-surface)!important}
+
+/* phone numbers always read left-to-right, also inside Arabic text */
+a[href^="tel:"]{direction:ltr;unicode-bidi:isolate}
