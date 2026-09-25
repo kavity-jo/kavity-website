@@ -157,3 +157,36 @@ html[data-theme="dark"] :is(.sub-nav a,.fam-nav a):not(.on):not(:hover){backgrou
 
 /* phone numbers always read left-to-right, also inside Arabic text */
 a[href^="tel:"]{direction:ltr;unicode-bidi:isolate}
+
+/* ═══════════════════════════════════════════════════════════════════
+   GRAPHITE STUDIO BACKDROP — homepage hero and inner-page banners
+   A neutral stage so stainless steel and stone read true; brand red is
+   kept as light (a low glow and a hairline), not as a flood.
+   ═══════════════════════════════════════════════════════════════════ */
+.hero-red .hero-media,.banner-img{
+  background:
+    linear-gradient(90deg,rgba(200,16,46,0) 0%,rgba(200,16,46,.95) 50%,rgba(200,16,46,0) 100%) left bottom/100% 2px no-repeat,
+    radial-gradient(55% 75% at 74% 112%,rgba(200,16,46,.55) 0%,rgba(200,16,46,.2) 38%,rgba(200,16,46,0) 72%),
+    radial-gradient(75% 95% at 70% 38%,#2c2f35 0%,#1a1c20 46%,#0c0d10 100%)!important}
+html[dir="rtl"] .hero-red .hero-media,html[dir="rtl"] .banner-img{
+  background:
+    linear-gradient(90deg,rgba(200,16,46,0) 0%,rgba(200,16,46,.95) 50%,rgba(200,16,46,0) 100%) left bottom/100% 2px no-repeat,
+    radial-gradient(55% 75% at 26% 112%,rgba(200,16,46,.55) 0%,rgba(200,16,46,.2) 38%,rgba(200,16,46,0) 72%),
+    radial-gradient(75% 95% at 30% 38%,#2c2f35 0%,#1a1c20 46%,#0c0d10 100%)!important}
+/* the original stripe rhythm survives as a faint light fall from above */
+.hero-red .hero-media::before,.banner-img::before{
+  background:linear-gradient(180deg,rgba(255,255,255,.11) 0%,rgba(255,255,255,.05) 30%,rgba(255,255,255,0) 58%)!important}
+.hero-red::after{
+  background:linear-gradient(100deg,rgba(8,9,11,.9) 0%,rgba(8,9,11,.62) 32%,rgba(8,9,11,.14) 58%,rgba(8,9,11,0) 72%)!important}
+html[dir="rtl"] .hero-red::after{
+  background:linear-gradient(260deg,rgba(8,9,11,.9) 0%,rgba(8,9,11,.62) 32%,rgba(8,9,11,.14) 58%,rgba(8,9,11,0) 72%)!important}
+@media (max-width:899px){
+  .hero-red::after,html[dir="rtl"] .hero-red::after{
+    background:linear-gradient(180deg,rgba(8,9,11,.86) 0%,rgba(8,9,11,.66) 48%,rgba(8,9,11,.1) 78%,rgba(8,9,11,0) 100%)!important}
+}
+.banner::after{background:linear-gradient(105deg,rgba(8,9,11,.72) 0%,rgba(8,9,11,.34) 50%,rgba(8,9,11,0) 100%)!important}
+html[dir="rtl"] .banner::after{background:linear-gradient(255deg,rgba(8,9,11,.72) 0%,rgba(8,9,11,.34) 50%,rgba(8,9,11,0) 100%)!important}
+.hero-red h1,.banner h1{text-shadow:0 2px 24px rgba(0,0,0,.35)!important}
+.hero-red .hero-tag{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.22)!important}
+.hero-red .hero-tag::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--red);box-shadow:0 0 10px rgba(224,36,63,.9);margin-inline-end:.55rem;vertical-align:middle;transform:translateY(-1px)}
