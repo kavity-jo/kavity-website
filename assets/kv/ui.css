@@ -190,3 +190,6 @@ html[dir="rtl"] .banner::after{background:linear-gradient(255deg,rgba(8,9,11,.72
 .hero-red .hero-tag{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.22)!important}
 .hero-red .hero-tag::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;
   background:var(--red);box-shadow:0 0 10px rgba(224,36,63,.9);margin-inline-end:.55rem;vertical-align:middle;transform:translateY(-1px)}
+
+/* images carry intrinsic width/height (no layout shift); keep them proportional */
+:where(img[width][height]){height:auto}
