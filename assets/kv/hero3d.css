@@ -96,3 +96,10 @@ html[lang="ar"] .kv3d-hint{text-transform:none;letter-spacing:0;font-family:'IBM
   .kv3d-tag,.kv3d-dot,.kv3d-line::before,.kv3d-chip{transition:none}
   .rot span,.rot span:not(.on){transition:none;filter:none;transform:none}
 }
+
+/* chapter 03: the copy steps back so the bracket and its callouts read cleanly */
+.hero.has-3d > .wrap{transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.hero.kv3d-detail > .wrap{opacity:0;transform:translateY(-12px);pointer-events:none}
+.hero-red.has-3d::after{transition:opacity .6s ease}
+.hero-red.kv3d-detail::after{opacity:.25}
+@media (prefers-reduced-motion:reduce){.hero.has-3d > .wrap,.hero-red.has-3d::after{transition:none}}
