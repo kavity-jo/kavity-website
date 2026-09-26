@@ -1032,13 +1032,17 @@ document.querySelectorAll('.filters button').forEach(function(b){
 
 (function(){
   var bar=document.createElement('div'); bar.className='progress'; document.body.appendChild(bar);
-  var hdr=document.querySelector('header');
-  function onScroll(){
-    var h=document.documentElement.scrollHeight-window.innerHeight;
-    bar.style.width=(h>0?(window.scrollY/h)*100:0)+'%';
-    if(hdr) hdr.classList.toggle('small', window.scrollY>60);
-  }
-  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var hdr=document.querySelector('header'), max=1, small=null, ticking=false;
+  function measure(){ max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight); }
+  function paint(){ ticking=false; var y=window.scrollY;
+    bar.style.setProperty('--kv-p',Math.min(1,y/max).toFixed(4));
+    var s=y>60; if(hdr&&s!==small){ small=s; hdr.classList.toggle('small',s); } }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(paint); } }
+  measure(); paint();
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',function(){ measure(); onScroll(); });
+  window.addEventListener('load',measure);
+  if('ResizeObserver' in window) new ResizeObserver(measure).observe(document.body);
 })();
 
 (function(){

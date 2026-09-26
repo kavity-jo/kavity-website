@@ -10,7 +10,7 @@
 /* ── desktop scroll scene: the hero holds while the façade opens and the camera
       moves in on one Z-bracket ── */
 @media (min-width:900px){
-  .kv3d-pin.on{position:relative;height:calc(100vh - 62px + 170vh);height:calc(100svh - 62px + 170svh)}
+  .kv3d-pin.on{position:relative;height:calc(100vh - 62px + 130vh);height:calc(100svh - 62px + 130svh)}
   .kv3d-pin.on > .hero.has-3d{position:sticky;top:62px;height:calc(100vh - 62px);height:calc(100svh - 62px);min-height:560px}
 }
 

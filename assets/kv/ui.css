@@ -342,3 +342,21 @@ footer::before{content:'';display:block;height:2px;width:72px;background:var(--r
 .kv-figures dt::after{content:'';display:block;width:1.6rem;height:2px;background:var(--red);margin:.8rem 0 .7rem}
 .kv-figures dd{margin:0;color:var(--slate);font-size:.9rem}
 @media (max-width:860px){.kv-intro-grid{grid-template-columns:1fr}.kv-figures{grid-template-columns:1fr 1fr}.kv-figures>div:nth-child(3){border-left:0;padding-left:0}}
+
+/* ═══ v5 · speed: nothing expensive runs while the page scrolls ═══ */
+/* solid header instead of a live backdrop blur (the blur re-rendered over the 3D canvas every frame) */
+header{background:rgba(255,255,255,.97)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+html[data-theme="dark"] header{background:rgba(14,15,17,.97)!important}
+/* instant page-to-page navigation */
+@view-transition{navigation:none}
+/* no endless background zoom behind heroes and banners */
+.hero-media,.banner-img,.hero-media *,.banner-img *{animation:none!important}
+/* reading bar: transform only, no layout per scroll */
+.progress{width:100%!important;transform-origin:0 50%;transform:scaleX(var(--kv-p,0));transition:none!important;will-change:transform}
+html[dir="rtl"] .progress{transform-origin:100% 50%}
+/* no permanent compositor layers on every button */
+.btn{will-change:auto!important}
+/* cheaper glass on small UI chips */
+.kv3d-chip,.kv3d-steps,.kv3v-seg,.kv3v-reset,.lines .line.kv-photo .no{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.kv3d-chip{background:rgba(16,17,20,.86)!important}
+.kv3d-steps{background:rgba(16,17,20,.8)!important}
