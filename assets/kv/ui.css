@@ -321,3 +321,24 @@ footer::before{content:'';display:block;height:2px;width:72px;background:var(--r
 .kv-3dband-tag{position:absolute;left:1rem;top:1rem;display:flex;align-items:center;gap:.55rem;font:500 .76rem/1 Inter,sans-serif;color:#2E3134;background:rgba(246,247,248,.92);border:1px solid #E3E6E9;border-radius:999px;padding:.35rem .75rem .35rem .35rem}
 .kv-3dband-tag b{font:700 .64rem/1 Inter,sans-serif;letter-spacing:.08em;color:#fff;background:#C8102E;border-radius:999px;padding:.32rem .48rem}
 @media (max-width:860px){.kv-3dband-in{grid-template-columns:1fr}.kv-3dband-img{order:-1}}
+
+/* home · who we are (replaces the pill statement and the red stats band) */
+.kv-intro{padding-block:clamp(4.5rem,9vw,7.5rem) clamp(3.5rem,7vw,5.5rem);background:var(--white)}
+.kv-intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2.5rem,6vw,5.5rem);align-items:center}
+.kv-intro-txt .display{max-width:16ch}
+.kv-intro-txt .lead{max-width:56ch;margin-bottom:1.8rem}
+.kv-intro-pts{list-style:none;margin:0 0 2rem;padding:0;display:grid;gap:1rem;border-top:1px solid var(--line);padding-top:1.4rem}
+.kv-intro-pts li{display:grid;grid-template-columns:1.1rem 1fr;gap:.15rem .8rem;align-items:start}
+.kv-intro-pts li::before{content:'';grid-row:span 2;width:.55rem;height:.55rem;margin-top:.45rem;border-radius:2px;background:var(--red)}
+.kv-intro-pts b{font-family:'Outfit',sans-serif;font-weight:600;font-size:1.02rem;color:var(--ink)}
+.kv-intro-pts span{color:var(--slate);font-size:.92rem}
+.kv-intro-media{margin:0;position:relative}
+.kv-intro-media img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-lg,18px);display:block;box-shadow:0 40px 80px -40px rgba(20,22,25,.45)}
+.kv-intro-media figcaption{margin-top:.9rem;font-size:.84rem;color:var(--slate);max-width:52ch}
+.kv-figures{margin:clamp(3rem,6vw,4.5rem) 0 0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.kv-figures>div{padding:1.6rem 1.2rem 0 0}
+.kv-figures>div+div{padding-left:1.4rem;border-left:1px solid var(--line)}
+.kv-figures dt{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(2.1rem,4vw,3rem);line-height:1;letter-spacing:-.03em;color:var(--ink)}
+.kv-figures dt::after{content:'';display:block;width:1.6rem;height:2px;background:var(--red);margin:.8rem 0 .7rem}
+.kv-figures dd{margin:0;color:var(--slate);font-size:.9rem}
+@media (max-width:860px){.kv-intro-grid{grid-template-columns:1fr}.kv-figures{grid-template-columns:1fr 1fr}.kv-figures>div:nth-child(3){border-left:0;padding-left:0}}
