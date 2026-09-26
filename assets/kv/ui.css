@@ -307,3 +307,17 @@ html[data-theme="dark"] .kv-chips input:checked+span{background:var(--red);borde
 /* footer: graphite, one red hairline — the CTA band above carries the colour */
 footer{background:#0f1012!important;border-top:1px solid rgba(255,255,255,.06)}
 footer::before{content:'';display:block;height:2px;width:72px;background:var(--red);margin:-4rem auto 3.6rem max(var(--pad),calc((100% - 1280px)/2 + var(--pad)))}
+
+/* home · interactive 3D band (replaces the old product list) */
+.kv-3dband{padding-block:clamp(4rem,8vw,6.5rem);background:var(--mist);border-block:1px solid var(--line)}
+.kv-3dband-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.kv-3dband-txt .lead{max-width:44ch;margin-bottom:1.8rem}
+.kv-3dlinks{list-style:none;margin:2rem 0 0;padding:1.4rem 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.45rem}
+.kv-3dlinks a{display:inline-block;font:500 .82rem/1 Inter,sans-serif;color:var(--ink);border:1px solid var(--line);background:var(--white);border-radius:999px;padding:.55rem .85rem;transition:border-color .2s,color .2s,transform .2s}
+.kv-3dlinks a:hover{border-color:var(--red);color:var(--red);transform:translateY(-1px)}
+.kv-3dband-img{position:relative;display:block;border-radius:var(--r-lg,18px);overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 40px 80px -40px rgba(20,22,25,.35);aspect-ratio:4/3}
+.kv-3dband-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .8s cubic-bezier(.2,.7,.3,1)}
+.kv-3dband-img:hover img{transform:scale(1.04)}
+.kv-3dband-tag{position:absolute;left:1rem;top:1rem;display:flex;align-items:center;gap:.55rem;font:500 .76rem/1 Inter,sans-serif;color:#2E3134;background:rgba(246,247,248,.92);border:1px solid #E3E6E9;border-radius:999px;padding:.35rem .75rem .35rem .35rem}
+.kv-3dband-tag b{font:700 .64rem/1 Inter,sans-serif;letter-spacing:.08em;color:#fff;background:#C8102E;border-radius:999px;padding:.32rem .48rem}
+@media (max-width:860px){.kv-3dband-in{grid-template-columns:1fr}.kv-3dband-img{order:-1}}
