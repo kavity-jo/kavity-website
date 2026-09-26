@@ -131,4 +131,73 @@
     if (mm) ['pointerenter', 'focusin', 'touchstart'].forEach(function (ev) { mm.addEventListener(ev, hydrate, { once: true, passive: true }); });
     if (bg) bg.addEventListener('click', hydrate, { once: true });
   })();
+
+  /* ── technical proposal form: composes an email or a WhatsApp message ── */
+  [].forEach.call(d.querySelectorAll('form.kv-form'), function (f) {
+    function val (n) { var el = f.elements[n]; return el ? (el.value || '').trim() : ''; }
+    function stage () { var c = f.querySelector('input[name="stage"]:checked'); return c ? c.value : ''; }
+    function lines () {
+      return [
+        ['Name', val('name')], ['Company', val('company')], ['Email', val('email')], ['Phone', val('phone')],
+        ['Project', val('project')], ['System', val('system')], ['Stage', stage()]
+      ].filter(function (r) { return r[1]; }).map(function (r) { return r[0] + ': ' + r[1]; })
+        .concat(['', val('message')]).join('\n');
+    }
+    function check () {
+      var ok = true;
+      ['name', 'email', 'message'].forEach(function (n) {
+        var el = f.elements[n];
+        if (!el.checkValidity() || !el.value.trim()) { ok && el.focus(); ok = false; el.setAttribute('aria-invalid', 'true'); }
+        else el.removeAttribute('aria-invalid');
+      });
+      if (!ok && f.reportValidity) f.reportValidity();
+      return ok;
+    }
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!check()) return;
+      var subj = 'Technical proposal request' + (val('project') ? ' — ' + val('project') : '');
+      location.href = 'mailto:info.jordan@kabrillc.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(lines());
+      f.classList.add('sent');
+    });
+    var wa = f.querySelector('[data-wa]');
+    if (wa) wa.addEventListener('click', function () {
+      if (!check()) return;
+      window.open('https://wa.me/' + wa.getAttribute('data-wa') + '?text=' + encodeURIComponent('Technical proposal request\n' + lines()), '_blank', 'noopener');
+    });
+  });
+
+  /* ── project lightbox ──────────────────────────────────────────────── */
+  (function () {
+    var cards = [].slice.call(d.querySelectorAll('.proj')).filter(function (c) { return !c.closest('.proj-rail'); });
+    if (!cards.length) return;
+    var lb = d.createElement('div'); lb.className = 'kv-lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Project gallery');
+    lb.innerHTML = '<figure><img alt=""><figcaption></figcaption></figure>' +
+      '<button class="x" type="button" aria-label="Close">✕</button><button class="pv" type="button" aria-label="Previous">‹</button><button class="nx" type="button" aria-label="Next">›</button>';
+    d.body.appendChild(lb);
+    var img = lb.querySelector('img'), cap = lb.querySelector('figcaption'), cur = 0, last = null;
+    function vis () { return cards.filter(function (c) { return c.offsetParent !== null; }); }
+    function show (i) {
+      var list = vis(); if (!list.length) return;
+      cur = (i + list.length) % list.length;
+      var c = list[cur], im = c.querySelector('img'), b = c.querySelector('.proj-cap b'), s = c.querySelector('.proj-cap span');
+      img.src = im.currentSrc || im.src; img.alt = im.alt;
+      cap.innerHTML = (b ? b.innerHTML : '') + (s ? '<span>' + s.innerHTML + '</span>' : '');
+    }
+    function open (c) { last = d.activeElement; show(vis().indexOf(c)); lb.classList.add('on'); d.documentElement.style.overflow = 'hidden'; lb.querySelector('.x').focus(); }
+    function close () { lb.classList.remove('on'); d.documentElement.style.overflow = ''; if (last) last.focus(); }
+    cards.forEach(function (c) {
+      c.classList.add('kv-zoomable'); c.tabIndex = 0; c.setAttribute('role', 'button');
+      c.addEventListener('click', function () { open(c); });
+      c.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(c); } });
+    });
+    lb.querySelector('.x').addEventListener('click', close);
+    lb.querySelector('.pv').addEventListener('click', function (e) { e.stopPropagation(); show(cur - 1); });
+    lb.querySelector('.nx').addEventListener('click', function (e) { e.stopPropagation(); show(cur + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    d.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('on')) return;
+      if (e.key === 'Escape') close(); else if (e.key === 'ArrowRight') show(cur + 1); else if (e.key === 'ArrowLeft') show(cur - 1);
+    });
+  })();
 })();
