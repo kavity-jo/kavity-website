@@ -110,3 +110,11 @@ html[lang="ar"] .kv3d-hint{text-transform:none;letter-spacing:0;font-family:'IBM
 .hero-red.has-3d::after{transition:opacity .6s ease}
 .hero-red.kv3d-detail::after{opacity:.25}
 @media (prefers-reduced-motion:reduce){.hero.has-3d > .wrap,.hero-red.has-3d::after{transition:none}}
+
+/* ── photoreal hero: stacked renders, cross-faded by scroll ── */
+.kvh-stack{position:absolute;inset:0;overflow:hidden;background:#1d2127}
+.kvh-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--ox,50%) 50%;
+  opacity:0;transform-origin:var(--ox,50%) 50%;will-change:opacity,transform;display:block}
+.kvh-img:first-child{opacity:1}
+picture.kvh-img img{width:100%;height:100%;object-fit:cover;object-position:var(--ox,50%) 50%;display:block}
+@media (max-width:899px){picture.kvh-img img{object-position:50% 100%}}
