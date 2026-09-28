@@ -11,6 +11,7 @@
       moves in on one Z-bracket ── */
 @media (min-width:900px){
   .kv3d-pin.on{position:relative;height:calc(100vh - 62px + 130vh);height:calc(100svh - 62px + 130svh)}
+  .kv3d-pin.kv3d-pin-long.on{height:calc(100vh - 62px + 420vh);height:calc(100svh - 62px + 420svh)}
   .kv3d-pin.on > .hero.has-3d{position:sticky;top:62px;height:calc(100vh - 62px);height:calc(100svh - 62px);min-height:560px}
 }
 
@@ -83,6 +84,12 @@ html[lang="ar"] .kv3d-hint{text-transform:none;letter-spacing:0;font-family:'IBM
   animation:kvWheel 1.8s cubic-bezier(.6,0,.4,1) infinite}
 @keyframes kvWheel{0%{transform:translateY(0);opacity:1}70%{transform:translateY(12px);opacity:0}100%{transform:translateY(0);opacity:0}}
 .kv3d-hint.gone{opacity:0;transform:translateY(8px)}
+/* nine-chapter tour: numbers only, the active (or hovered) chapter shows its name */
+.kv3d-steps-many{gap:.15rem;background:rgba(16,17,20,.72);backdrop-filter:none;-webkit-backdrop-filter:none}
+.kv3d-steps-many .kv3d-step{padding:.5rem .6rem}
+.kv3d-steps-many:hover .kv3d-step span{max-width:0}
+.kv3d-steps-many .kv3d-step.on span,.kv3d-steps-many .kv3d-step:hover span{max-width:14rem}
+@media (max-width:899px){.hero .kv3d-canvas{-webkit-mask-image:linear-gradient(to bottom,transparent 52%,#000 74%);mask-image:linear-gradient(to bottom,transparent 52%,#000 74%)}}
 @media (max-width:899px){.kv3d-hint,.kv3d-steps,.kv3d-labels{display:none}}
 
 /* headline rotator: outgoing line lifts and blurs away before the next rises in */
