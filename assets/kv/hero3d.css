@@ -118,3 +118,14 @@ html[lang="ar"] .kv3d-hint{text-transform:none;letter-spacing:0;font-family:'IBM
 .kvh-img:first-child{opacity:1}
 picture.kvh-img img{width:100%;height:100%;object-fit:cover;object-position:var(--ox,50%) 50%;display:block}
 @media (max-width:899px){picture.kvh-img img{object-position:50% 100%}}
+.kvh-stack{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.kv3d-labels{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.kvh-seq{position:absolute;inset:0;width:100%;height:100%;z-index:20;opacity:0;pointer-events:none;display:block}
+@media (max-width:899px){.kvh-seq{display:none}}
+/* callouts are links to the product pages: show it */
+a.kv3d-chip{cursor:pointer;transition:opacity .4s ease calc(var(--d,0ms) + 260ms),margin .5s cubic-bezier(.2,.8,.2,1) calc(var(--d,0ms) + 260ms),background .2s,border-color .2s,transform .2s}
+a.kv3d-chip::after{content:'';width:.8rem;height:.8rem;flex:none;margin-left:.1rem;opacity:.85;
+  background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E") center/contain no-repeat}
+a.kv3d-chip:hover,a.kv3d-chip:focus-visible{background:var(--red,#C8102E);border-color:var(--red,#C8102E)}
+a.kv3d-chip:hover b{background:#fff;color:var(--red,#C8102E)}
