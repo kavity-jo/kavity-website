@@ -201,3 +201,29 @@
     });
   })();
 })();
+
+/* product range: filter chips */
+(function(){
+  document.querySelectorAll('.kvp').forEach(function(sec){
+    var chips=sec.querySelectorAll('.kvp-chips button'), cards=sec.querySelectorAll('.kvp-card');
+    chips.forEach(function(b){ b.addEventListener('click',function(){
+      var g=b.getAttribute('data-g');
+      chips.forEach(function(x){ x.classList.toggle('on',x===b); x.setAttribute('aria-pressed',x===b); });
+      cards.forEach(function(c){ c.hidden = !(g==='*' || c.getAttribute('data-g')===g); });
+    }); });
+  });
+})();
+
+/* 3D viewer on demand: the photo stays until the visitor asks for 3D (keeps pages light) */
+(function(){
+  var host=document.querySelector('[data-kv3d]'); if(!host) return;
+  var me=document.getElementById('kv-ui-js'), base=me?new URL(me.getAttribute('src'),location.href).href.replace(/ui\.js.*$/,''):'';
+  var url=base+'product3d.js';
+  var b=document.createElement('button'); b.type='button'; b.className='kv3d-open';
+  b.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 2.8 20.5 7.5v9L12 21.2 3.5 16.5v-9z"/><path d="M3.5 7.5 12 12.2l8.5-4.7M12 12.2v9"/></svg><span><b>Explore in 3D</b><small>Rotate · exploded view · key data</small></span>';
+  host.appendChild(b);
+  var pre=false; function prefetch(){ if(pre) return; pre=true; var l=document.createElement('link'); l.rel='modulepreload'; l.href=url; document.head.appendChild(l); }
+  b.addEventListener('pointerenter',prefetch); b.addEventListener('focus',prefetch);
+  b.addEventListener('click',function(){ host.classList.add('kv3v-loading'); b.disabled=true;
+    import(url).then(function(){ b.remove(); }).catch(function(){ host.classList.remove('kv3v-loading'); b.disabled=false; }); });
+})();

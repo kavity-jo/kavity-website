@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNITECH portfolio | KAVITY</title>
+<link rel="canonical" href="https://kavity-jo.github.io/kavity-website/portfolio.html">
+<meta property="og:url" content="https://kavity-jo.github.io/kavity-website/portfolio.html">
+<meta property="og:image" content="https://kavity-jo.github.io/kavity-website/img/og-kavity.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Beyond the systems on this site, the UNITECH group portfolio covers the lines below. KAVITY sources them on request through UNITECH — ask our team for availability and technical data.">
+<meta property="og:title" content="UNITECH portfolio | KAVITY">
+<meta property="og:description" content="Beyond the systems on this site, the UNITECH group portfolio covers the lines below. KAVITY sources them on request through UNITECH — ask our team for availability and technical data.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KAVITY">
+<meta name="theme-color" content="#C8102E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23C8102E'/%3E%3Ctext x='32' y='46' font-family='Arial' font-weight='700' font-size='40' fill='white' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:    #C8102E;   --deep:   #8E0B21;   --ink:    #2E3134;   --slate:  #6A7278;   --mist:   #F6F7F8;   --line:   #E3E6E9;
+  --white:  #FFFFFF;
+  --pad: clamp(1.25rem,5vw,4.5rem);
+  --gap: clamp(4.5rem,8vw,7.5rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-size:15px;
+  font-family:'Inter','IBM Plex Sans Arabic',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+html[lang="ar"] body{font-family:'IBM Plex Sans Arabic',sans-serif}
+h1,h2,h3,h4{font-family:'Outfit','IBM Plex Sans Arabic',sans-serif;font-weight:700;line-height:1.1;letter-spacing:-.02em}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4{
+  font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:0;line-height:1.3}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:1280px;margin-inline:auto;padding-inline:var(--pad)}
+
+.eyebrow{display:block;font-family:'Outfit',sans-serif;font-size:clamp(.9rem,1.6vw,1.25rem);
+  font-weight:400;color:var(--slate);letter-spacing:.01em;margin-bottom:.35rem}
+html[lang="ar"] .eyebrow{font-family:'IBM Plex Sans Arabic',sans-serif}
+.display{font-size:clamp(1.65rem,3.9vw,3rem);text-transform:uppercase;line-height:1.02;margin-bottom:1.5rem}
+html[lang="ar"] .display{text-transform:none;line-height:1.25}
+.lead{color:var(--slate);font-size:.95rem;max-width:62ch}
+
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.9rem;
+  font-size:.92rem;font-weight:500;border:1px solid transparent;border-radius:100px;transition:.2s}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-red:hover{background:var(--deep)}
+.btn-line{border-color:rgba(255,255,255,.5);color:var(--white)}
+.btn-line:hover{background:var(--white);color:var(--red)}
+.btn-ink{background:var(--ink);color:var(--white)}
+.btn-ink:hover{background:var(--red)}
+
+header{overflow:visible;position:sticky;top:0;z-index:80;background:rgba(255,255,255,.97);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:1.4rem;height:78px}
+.logo{flex:none}
+.logo img{height:46px;width:auto;object-fit:contain}
+header nav{display:flex;gap:1.5rem;margin-inline-start:auto;font-size:.85rem}
+header nav a{color:var(--ink);padding-block:.5rem;border-bottom:2px solid transparent;transition:.2s}
+header nav a:hover{color:var(--red);border-bottom-color:var(--red)}
+header nav a.on{color:var(--red);border-bottom-color:var(--red)}
+.tools{display:flex;align-items:center;gap:.7rem}
+.lang{font-size:.8rem;font-weight:500;color:var(--ink);background:none;border:1px solid var(--line);
+  padding:.5rem .9rem;border-radius:100px;cursor:pointer;transition:.2s;font-family:inherit}
+.lang:hover{background:var(--red);color:var(--white);border-color:var(--red)}
+.phone{display:inline-flex;align-items:center;gap:.5rem;background:var(--red);color:var(--white);
+  font-weight:600;padding:.62rem 1.2rem;border-radius:100px;font-size:.8rem;white-space:nowrap;transition:.2s}
+.phone:hover{background:var(--deep)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:.5rem}
+.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:4.5px 0}
+
+.hero{position:relative;min-height:min(72vh,620px);display:flex;align-items:center;
+  background:var(--ink);overflow:hidden}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(100deg,rgba(20,22,25,.9) 0%,rgba(20,22,25,.6) 50%,rgba(20,22,25,.2) 100%)}
+html[dir="rtl"] .hero::after{
+  background:linear-gradient(260deg,rgba(20,22,25,.9) 0%,rgba(20,22,25,.6) 50%,rgba(20,22,25,.2) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:clamp(3rem,6vw,5rem)}
+.hero h1{color:var(--white);font-size:clamp(1.7rem,3.5vw,2.7rem);max-width:16ch;margin-bottom:1.2rem}
+.hero p{color:rgba(255,255,255,.85);font-size:clamp(.92rem,1.2vw,1rem);max-width:50ch;margin-bottom:1.9rem}
+.hero-tag{display:inline-block;background:var(--red);color:var(--white);font-size:.72rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;padding:.4rem .9rem;border-radius:100px;margin-bottom:1.3rem}
+html[lang="ar"] .hero-tag{letter-spacing:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.85rem}
+
+.banner{position:relative;background:var(--ink);overflow:hidden;
+  padding-block:clamp(3.5rem,7vw,5.5rem)}
+.banner-img{position:absolute;inset:0;z-index:0}
+.banner-img img{width:100%;height:100%;object-fit:cover;opacity:.8}
+.banner::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(20,22,25,.86) 0%,rgba(20,22,25,.55) 55%,rgba(20,22,25,.3) 100%)}
+.banner .wrap{position:relative;z-index:2}
+.banner h1{color:var(--white);font-size:clamp(1.5rem,3vw,2.2rem);text-transform:uppercase;margin-bottom:.6rem}
+html[lang="ar"] .banner h1{text-transform:none}
+.crumb{font-size:.85rem;color:rgba(255,255,255,.72)}
+.crumb a:hover{color:var(--white)}
+.crumb span{color:var(--red);margin-inline:.4rem}
+
+.feats{background:var(--mist);padding-block:var(--gap)}
+.feats-card{background:var(--white);border:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.feat{padding:2.6rem 1.75rem;text-align:center;border-inline-end:1px solid var(--line)}
+.feat:last-child{border-inline-end:0}
+.feat .ic{color:var(--red);display:flex;justify-content:center;margin-bottom:1rem}
+.feat h4{font-size:1.05rem;text-transform:uppercase;margin-bottom:.7rem}
+html[lang="ar"] .feat h4{text-transform:none}
+.feat h4::after{content:'';display:block;width:34px;height:3px;background:var(--ink);margin:.7rem auto 0}
+.feat p{color:var(--slate);font-size:.9rem}
+
+.lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line)}
+.line{position:relative;background:var(--red);color:var(--white);
+  padding:clamp(2.5rem,4vw,3.5rem);min-height:290px;display:flex;flex-direction:column;
+  justify-content:flex-end;overflow:hidden;transition:.25s}
+.line:nth-child(2){background:#B00D28}
+.line:nth-child(3){background:var(--deep)}
+.line:hover{filter:brightness(1.12)}
+.line .no{position:absolute;top:.2rem;inset-inline-end:1rem;font-family:'Outfit',sans-serif;
+  font-size:clamp(5rem,11vw,8.5rem);font-weight:700;color:rgba(255,255,255,.16);line-height:1}
+.line h3{position:relative;font-size:clamp(1.3rem,2.4vw,1.7rem);text-transform:uppercase;margin-bottom:.8rem}
+html[lang="ar"] .line h3{text-transform:none}
+.line p{position:relative;color:rgba(255,255,255,.85);font-size:.92rem;margin-bottom:1.2rem}
+.line .go{position:relative;font-size:1.5rem;line-height:1}
+
+.sec{padding-block:var(--gap)}
+.sec-mist{background:var(--mist)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.media{aspect-ratio:4/3;background:var(--deep);overflow:hidden}
+.media img{width:100%;height:100%;object-fit:cover}
+.checks{list-style:none;margin-top:1.6rem;display:grid;gap:.8rem}
+.checks li{display:flex;gap:.7rem;align-items:flex-start;font-size:.97rem}
+.checks svg{flex:none;margin-top:.35rem;color:var(--red)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.75rem}
+.card{background:var(--white);border:1px solid var(--line);overflow:hidden;
+  display:flex;flex-direction:column;transition:.25s}
+.card:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.1)}
+.card-media{aspect-ratio:16/10;background:var(--deep);overflow:hidden}
+.card-media img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:1.85rem;flex:1;display:flex;flex-direction:column}
+.card h3{font-size:1.08rem;margin-bottom:.7rem}
+.card p{color:var(--slate);font-size:.87rem;flex:1;margin-bottom:1.3rem}
+.card-link{color:var(--red);font-size:.85rem;font-weight:600}
+
+.stats{background:var(--red)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.stat{padding:2.4rem 1.5rem;border-inline-end:1px solid rgba(255,255,255,.25)}
+.stat:last-child{border-inline-end:0}
+.stat b{display:block;font-family:'Outfit',sans-serif;font-size:1.7rem;color:var(--white);line-height:1;margin-bottom:.45rem}
+html[lang="ar"] .stat b{font-family:'IBM Plex Sans Arabic',sans-serif}
+.stat span{font-size:.86rem;color:rgba(255,255,255,.85)}
+
+.cta{background:var(--red);color:var(--white);padding-block:clamp(3rem,6vw,4.5rem)}
+.cta-in{display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:space-between}
+.cta h3{font-size:clamp(1.2rem,2.2vw,1.65rem);max-width:24ch;color:var(--white)}
+.btn-white{background:var(--white);color:var(--red)}
+.btn-white:hover{background:var(--ink);color:var(--white)}
+
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.filters button{font-family:inherit;font-size:.86rem;background:var(--white);color:var(--slate);
+  border:1px solid var(--line);padding:.65rem 1.4rem;cursor:pointer;transition:.2s}
+.filters button:hover{border-color:var(--red);color:var(--red)}
+.filters button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:var(--white)}
+.grid-proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem}
+.proj{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--deep)}
+.proj img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.proj:hover img{transform:scale(1.05)}
+.proj-cap{position:absolute;inset-inline:0;bottom:0;z-index:2;padding:1.5rem;color:var(--white);
+  background:linear-gradient(transparent,rgba(20,22,25,.92))}
+.proj-cap b{display:block;font-family:'Outfit',sans-serif;font-size:.96rem}
+html[lang="ar"] .proj-cap b{font-family:'IBM Plex Sans Arabic',sans-serif}
+.proj-cap span{font-size:.78rem;color:rgba(255,255,255,.75)}
+
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.4rem}
+.cat{border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;
+  background:var(--white);color:inherit;
+  transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,border-color .3s}
+.cat:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.10)}
+.cat-cover{aspect-ratio:1/1.414;background:var(--white);overflow:hidden;
+  border-bottom:1px solid var(--line);display:block;padding:0}
+.cat-cover img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;
+  transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.cat:hover .cat-cover img{transform:scale(1.04)}
+.cat-body{padding:1.1rem 1.15rem .5rem}
+.cat-body h4{font-size:.95rem;color:var(--ink);margin-bottom:.35rem;line-height:1.35}
+.cat-body p{font-size:.78rem;color:var(--slate);line-height:1.55}
+.cat-foot{padding:.9rem 1.15rem 1.15rem;margin-top:auto;display:flex;
+  justify-content:space-between;align-items:center;gap:.6rem;font-size:.76rem;color:var(--slate)}
+.cat-foot b{color:var(--red);font-size:.79rem;white-space:nowrap}
+@media(max-width:560px){
+  .cat-grid{grid-template-columns:repeat(2,1fr)!important;gap:.85rem}
+  .cat-body{padding:.85rem .85rem .4rem}
+  .cat-body h4{font-size:.85rem}
+  .cat-body p{display:none}
+  .cat-foot{padding:.7rem .85rem .9rem;font-size:.7rem;flex-direction:column;align-items:flex-start;gap:.3rem}
+}
+.cat{border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.cat:hover{border-color:var(--red);box-shadow:0 14px 36px rgba(0,0,0,.1)}
+
+.cat:nth-child(2) .cat-cover{background:#B00D28}
+.cat:nth-child(3) .cat-cover{background:var(--deep)}
+.cat-cover .kick{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+html[lang="ar"] .cat-cover .kick{letter-spacing:0}
+.cat-cover h4{font-size:1.2rem;line-height:1.25}
+
+.cat-foot span{font-size:.82rem;color:var(--slate)}
+.cat-foot b{font-size:.85rem;color:var(--red)}
+
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.ccell{border:1px solid var(--line);padding:2.1rem}
+.ccell .ic{color:var(--red);margin-bottom:1.1rem}
+.ccell dt{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--slate);margin-bottom:.6rem}
+html[lang="ar"] .ccell dt{letter-spacing:0}
+.ccell dd{font-size:.95rem}
+.pending{color:var(--red);font-weight:600}
+
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2.5rem}
+.why-item .num{font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.1em;
+  color:var(--red);padding-bottom:.9rem;margin-bottom:.9rem;border-bottom:2px solid var(--line);display:block}
+html[lang="ar"] .why-item .num{font-family:'IBM Plex Sans Arabic',sans-serif}
+.why-item h4{font-size:1.06rem;margin-bottom:.55rem}
+.why-item p{color:var(--slate);font-size:.93rem}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.cc{background:var(--white);padding:clamp(1.75rem,3.5vw,2.75rem)}
+.cc.on{background:var(--red);color:var(--white)}
+.cc h4{font-size:1.15rem;margin-bottom:1rem}
+.cc.on h4{color:var(--white)}
+.cc p{color:var(--slate);font-size:.95rem}
+.cc.on p{color:rgba(255,255,255,.9)}
+.tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:.3rem .7rem;margin-bottom:1rem;background:var(--line);color:var(--slate)}
+.cc.on .tag{background:rgba(255,255,255,.22);color:var(--white)}
+html[lang="ar"] .tag{letter-spacing:0}
+
+footer{background:var(--deep);color:rgba(255,255,255,.78);padding-top:4rem}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:clamp(2rem,5vw,4rem);padding-bottom:3rem}
+.fgrid h5{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--white);margin-bottom:1.2rem}
+html[lang="ar"] .fgrid h5{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:0}
+.fgrid p{font-size:.9rem;max-width:42ch}
+.fgrid ul{list-style:none;display:grid;gap:.65rem;font-size:.9rem}
+.fgrid a:hover{color:var(--white)}
+.flogo img{height:52px;width:auto;margin-bottom:1.3rem;image-rendering:auto}
+.fbot{border-top:1px solid rgba(255,255,255,.18);padding-block:1.6rem;
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.8rem}
+
+.wa{position:fixed;inset-inline-end:20px;bottom:20px;z-index:90;width:56px;height:56px;
+  border-radius:50%;background:#25D366;display:grid;place-items:center;
+  box-shadow:0 6px 22px rgba(0,0,0,.24);transition:transform .2s}
+.wa:hover{transform:scale(1.08)}
+
+@media(max-width:920px){
+  .split,.compare{grid-template-columns:1fr}
+  .split .media{order:-1}
+  .fgrid{grid-template-columns:1fr}
+  .feat,.stat{border-inline-end:0;border-bottom:1px solid var(--line)}
+  .stat{border-bottom-color:rgba(255,255,255,.25)}
+  .logo img{height:38px}
+  header nav{display:none;position:absolute;top:78px;inset-inline:0;flex-direction:column;gap:0;
+    background:var(--white);border-bottom:1px solid var(--line);padding:.5rem 0}
+  header nav.open{display:flex}
+  header nav a{padding:.9rem var(--pad);border-bottom:0}
+  .burger{display:block;margin-inline-start:auto}
+  .tools .phone{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+
+.tools{margin-inline-start:auto}
+header nav{margin-inline-start:auto}
+
+.progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;
+  background:var(--red);z-index:100;transition:width .1s linear}
+
+header{transition:height .3s cubic-bezier(.4,0,.2,1),box-shadow .3s}
+.bar{transition:height .3s cubic-bezier(.4,0,.2,1)}
+.logo img{transition:height .3s cubic-bezier(.4,0,.2,1)}
+header.small{box-shadow:0 2px 18px rgba(0,0,0,.07)}
+header.small .bar{height:62px}
+header.small .logo img{height:38px}
+
+.btn{
+  position:relative;overflow:hidden;
+  transition:transform .28s cubic-bezier(.34,1.4,.5,1),
+             background .25s ease, color .25s ease, box-shadow .3s ease;
+  will-change:transform;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.97);transition-duration:.08s}
+.btn-red:hover{box-shadow:0 10px 26px rgba(200,16,46,.36)}
+.btn-red:active{box-shadow:0 0 0 6px rgba(200,16,46,.22)}
+.btn-ink:hover{box-shadow:0 10px 26px rgba(46,49,52,.3)}
+.btn-ink:active{box-shadow:0 0 0 6px rgba(46,49,52,.18)}
+.btn-white:hover{box-shadow:0 10px 26px rgba(0,0,0,.22)}
+.btn-line:hover{box-shadow:0 10px 26px rgba(255,255,255,.22)}
+.btn::after{
+  content:'';position:absolute;top:0;inset-inline-start:-120%;
+  width:60%;height:100%;transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
+  transition:inset-inline-start .6s ease;pointer-events:none;
+}
+.btn:hover::after{inset-inline-start:130%}
+
+.phone{transition:transform .28s cubic-bezier(.34,1.4,.5,1),background .25s,box-shadow .3s}
+.phone:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(200,16,46,.34)}
+.phone:active{transform:scale(.96)}
+.lang{transition:transform .2s,background .25s,color .25s,border-color .25s}
+.lang:active{transform:scale(.94)}
+
+.card{transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,border-color .3s}
+.card-media img{transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.card:hover .card-media img{transform:scale(1.06)}
+.card-link{transition:letter-spacing .3s,color .25s}
+.card:hover .card-link{letter-spacing:.03em}
+
+.line .go{display:inline-block;transition:transform .35s cubic-bezier(.34,1.3,.5,1)}
+.line:hover .go{transform:translateX(10px)}
+html[dir="rtl"] .line:hover .go{transform:translateX(-10px)}
+.line{transition:filter .3s,transform .4s cubic-bezier(.2,.7,.3,1)}
+.line:hover{transform:translateY(-5px);z-index:2}
+
+.cat{transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,border-color .3s}
+.cat:hover{transform:translateY(-6px)}
+.feat{transition:background .3s,transform .35s}
+.feat:hover{background:var(--mist)}
+.filters button{transition:transform .25s,background .25s,color .25s,border-color .25s}
+.filters button:active{transform:scale(.95)}
+.proj{transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s}
+.proj:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.18)}
+header nav a{transition:color .25s,border-color .25s}
+
+.reveal{opacity:0;transform:translateY(26px);
+  transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+.uses{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.use{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--deep)}
+.use img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.3,1)}
+.use:hover img{transform:scale(1.07)}
+.use::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(transparent 35%,rgba(20,22,25,.88));transition:background .4s}
+.use:hover::after{background:linear-gradient(transparent 15%,rgba(142,11,33,.9))}
+.use-cap{position:absolute;inset-inline:0;bottom:0;z-index:2;padding:1.9rem;color:var(--white)}
+.use-cap b{display:block;font-family:'Outfit',sans-serif;font-size:1.08rem;margin-bottom:.35rem}
+html[lang="ar"] .use-cap b{font-family:'IBM Plex Sans Arabic',sans-serif}
+.use-cap span{font-size:.88rem;color:rgba(255,255,255,.82)}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none}
+  .btn::after{display:none}
+}
+
+
+.trust{background:var(--mist);padding-block:clamp(3.5rem,7vw,5.5rem);text-align:center;
+  border-top:1px solid var(--line)}
+.trust h3{font-size:clamp(1.25rem,2.4vw,1.85rem);margin-bottom:.9rem}
+.trust p{color:var(--slate);max-width:56ch;margin-inline:auto}
+
+
+.fam-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:3.5rem}
+.fam-nav a{font-size:.86rem;border:1px solid var(--line);padding:.6rem 1.3rem;
+  border-radius:100px;color:var(--slate);transition:.22s}
+.fam-nav a:hover{background:var(--red);border-color:var(--red);color:var(--white)}
+.fam{padding-block:clamp(2.5rem,5vw,3.5rem);border-top:1px solid var(--line);scroll-margin-top:110px}
+.fam-head{display:flex;gap:clamp(1rem,3vw,2.5rem);margin-bottom:2rem}
+.fam-no{font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;
+  color:var(--line);line-height:1;flex:none}
+html[lang="ar"] .fam-no{font-family:'IBM Plex Sans Arabic',sans-serif}
+.fam-head h2{font-size:clamp(1.15rem,2vw,1.6rem);margin-bottom:.6rem}
+.fam-brand{font-family:'Outfit',sans-serif;font-size:.74rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--red);margin-top:.8rem}
+html[lang="ar"] .fam-brand{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:0}
+.fam-body{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.5rem,4vw,3.5rem)}
+.fam-list{list-style:none;columns:2;column-gap:2rem;font-size:.88rem}
+.fam-list li{padding:.42rem 0 .42rem 1.1rem;position:relative;break-inside:avoid;color:var(--ink)}
+.fam-list li::before{content:'';position:absolute;inset-inline-start:0;top:.95rem;
+  width:5px;height:5px;background:var(--red)}
+html[dir="rtl"] .fam-list li{padding:.42rem 1.1rem .42rem 0}
+.fam-spec{background:var(--mist);padding:1.6rem;align-self:start}
+.sp{padding-block:.7rem;border-bottom:1px solid var(--line)}
+.sp:last-child{border-bottom:0}
+.sp dt{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--slate);margin-bottom:.3rem}
+html[lang="ar"] .sp dt{letter-spacing:0}
+.sp dd{font-size:.9rem;color:var(--ink)}
+.note{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
+  color:var(--slate);font-size:.9rem}
+@media(max-width:900px){.fam-body{grid-template-columns:1fr}.fam-list{columns:1}}
+
+
+
+
+
+
+
+
+
+.stat{position:relative;overflow:hidden}
+.stat::after{content:'';position:absolute;bottom:0;inset-inline-start:0;height:3px;width:0;
+  background:rgba(255,255,255,.5);transition:width .9s cubic-bezier(.25,.8,.3,1)}
+.stat.in::after{width:100%}
+.stat:nth-child(2).in::after{transition-delay:.14s}
+.stat:nth-child(3).in::after{transition-delay:.28s}
+.stat:nth-child(4).in::after{transition-delay:.42s}
+.line::before{content:'';position:absolute;inset-inline-start:0;top:0;height:100%;width:0;
+  background:rgba(255,255,255,.1);transition:width .5s cubic-bezier(.25,.8,.3,1)}
+.line:hover::before{width:100%}
+.fam-spec .sp{position:relative}
+.svc-item::after{content:'';display:block;height:2px;width:0;background:var(--red);
+  margin-top:1rem;transition:width .55s cubic-bezier(.25,.8,.3,1)}
+.svc-item:hover::after{width:38px}
+
+
+.has-mm{position:relative;display:inline-flex;align-items:center;gap:.32rem}
+.has-mm>svg{transition:transform .3s}
+.nav-mm.open .has-mm>svg{transform:rotate(180deg)}
+.mm{position:absolute;top:100%;inset-inline:0;background:var(--white);
+  border-top:1px solid var(--line);box-shadow:0 26px 50px rgba(0,0,0,.13);
+  opacity:0;visibility:hidden;transform:translateY(-10px);
+  transition:opacity .3s ease,transform .34s cubic-bezier(.2,.7,.3,1),visibility .3s;z-index:60}
+.nav-mm.open .mm{opacity:1;visibility:visible;transform:translateY(0)}
+.mm-in{display:grid;grid-template-columns:320px 1fr;gap:2.5rem;padding-block:2rem}
+.mm-tiles{display:grid;gap:.6rem;align-content:start}
+.mm-tile{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  width:100%;text-align:start;padding:1.15rem 1.2rem;border:0;cursor:pointer;
+  background-size:cover;background-position:center;color:var(--white);
+  font-family:'Outfit',sans-serif;font-size:.94rem;font-weight:600;
+  position:relative;overflow:hidden;transition:.35s}
+html[lang="ar"] .mm-tile{font-family:'IBM Plex Sans Arabic',sans-serif}
+.mm-tile svg{flex:none;opacity:.6;transition:.35s}
+html[dir="rtl"] .mm-tile svg{transform:scaleX(-1)}
+.mm-tile::after{content:'';position:absolute;inset-inline-start:0;top:0;height:100%;width:0;
+  background:var(--red);transition:width .35s cubic-bezier(.25,.8,.3,1);z-index:-1}
+.mm-tile:hover,.mm-tile.on{filter:saturate(1.15)}
+.mm-tile.on svg{opacity:1;transform:translateX(4px)}
+html[dir="rtl"] .mm-tile.on svg{transform:scaleX(-1) translateX(4px)}
+.mm-tile.on{box-shadow:inset 0 0 0 2px var(--red)}
+.mm-panel{display:none}
+.mm-panel.on{display:block;animation:mmIn .35s cubic-bezier(.2,.7,.3,1)}
+@keyframes mmIn{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
+html[dir="rtl"] .mm-panel.on{animation-name:mmInR}
+@keyframes mmInR{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.mm-links{display:grid;grid-template-columns:repeat(2,1fr);gap:.2rem 2rem}
+.mm-links a{display:block;padding:.7rem .9rem;border-radius:2px;transition:background .25s}
+.mm-links a:hover{background:var(--mist)}
+.mm-links b{display:block;font-family:'Outfit',sans-serif;font-size:.9rem;color:var(--ink);
+  font-weight:600;margin-bottom:.18rem}
+html[lang="ar"] .mm-links b{font-family:'IBM Plex Sans Arabic',sans-serif}
+.mm-links a:hover b{color:var(--red)}
+.mm-links i{font-style:normal;font-size:.76rem;color:var(--slate);line-height:1.5;display:block}
+.mm-all{display:inline-block;margin-top:1.4rem;margin-inline-start:.9rem;
+  color:var(--red);font-size:.83rem;font-weight:600}
+
+.mm-tile{min-height:74px}
+.mm-tile.on{box-shadow:inset 0 0 0 2px var(--red),0 8px 22px rgba(200,16,46,.22)}
+.mm-panels{min-height:264px}
+.mm-links i{overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+@media(max-width:1080px){
+  .mm{position:static;box-shadow:none;border-top:0;opacity:1;visibility:visible;
+    transform:none;display:none;background:var(--mist)}
+  .nav-mm.open .mm{display:block}
+  .mm-in{grid-template-columns:1fr;gap:1rem;padding-block:1rem}
+  .mm-tile{background-image:none!important;background:var(--ink)}
+  .mm-links{grid-template-columns:1fr}
+  .mm-links i{display:none}
+}
+
+
+.mm-item{position:relative}
+.mm-car{position:absolute;inset-inline-end:.6rem;top:1rem;color:var(--line);
+  opacity:0;transition:.28s;pointer-events:none}
+html[dir="rtl"] .mm-car{transform:scaleX(-1)}
+.mm-item:hover .mm-car{opacity:1;color:var(--red)}
+.mm-fly{position:absolute;top:-.5rem;inset-inline-start:100%;min-width:250px;
+  background:var(--white);border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.14);
+  padding:.6rem;opacity:0;visibility:hidden;transform:translateX(-8px);
+  transition:.28s cubic-bezier(.2,.7,.3,1);z-index:70}
+html[dir="rtl"] .mm-fly{transform:translateX(8px)}
+.mm-item:hover .mm-fly{opacity:1;visibility:visible;transform:none}
+.mm-fly a{display:flex;align-items:center;gap:.6rem;padding:.4rem .6rem;font-size:.83rem;color:var(--ink);
+  border-radius:2px;transition:.2s}
+.mm-fly a:hover{background:var(--mist);color:var(--red)}
+@media(max-width:1080px){
+  .mm-fly{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;
+    border:0;border-inline-start:2px solid var(--line);margin-inline-start:.9rem;padding-block:0}
+  .mm-fly a{padding:.4rem .8rem;font-size:.8rem;color:var(--slate)}
+  .mm-car{display:none}
+}
+
+
+.mm-fly-img{flex:none;width:38px;height:30px;background:var(--white);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;padding:2px;overflow:hidden}
+.mm-fly-img img{width:100%;height:100%;object-fit:contain}
+@media(max-width:1080px){.mm-fly-img{display:none}}
+
+@media(max-width:640px){
+  body{font-size:14.5px}
+  .wrap{padding-inline:1.1rem}
+  .sec{padding-block:2.6rem}
+  .display{font-size:clamp(1.45rem,7vw,1.95rem);line-height:1.18}
+  .banner h1{font-size:clamp(1.4rem,7vw,1.8rem)}
+  .hero h1{font-size:clamp(1.5rem,7.5vw,2rem)}
+  .hero p{font-size:.92rem}
+  .lead{font-size:.92rem}
+  .btn{padding:.75rem 1.35rem;font-size:.82rem}
+  .phero-cta{gap:.55rem}
+  .phero-cta .btn{flex:1 1 100%;justify-content:center}
+  .ptable{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;font-size:.78rem}
+  .ptable th,.ptable td{padding:.6rem .75rem}
+  .prods,.rel-grid,.sub-list,.grid-proj,.uses{grid-template-columns:1fr!important}
+  .grid-proj>.proj{max-width:100%!important}
+  .fam-list{columns:1}
+  .fam-body{grid-template-columns:1fr}
+  .lines{grid-template-columns:1fr}
+  .rng{grid-template-columns:1fr}
+  .rng-view{position:static}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .svc-grid{grid-template-columns:1fr}
+  .proc-steps{grid-template-columns:1fr;gap:1.6rem}
+  .proc-line{display:none}
+  .proc-steps li{padding-top:0;padding-inline-start:1.6rem;border-inline-start:2px solid var(--line)}
+  .proc-steps li::before{top:.2rem;inset-inline-start:-7.5px}
+  .dl{flex-direction:column;align-items:flex-start;gap:1rem;padding:1.25rem}
+  .dl .btn{width:100%;justify-content:center}
+  .sub-nav,.fam-nav,.filters{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;
+    padding-bottom:.4rem;scrollbar-width:none}
+  .sub-nav::-webkit-scrollbar,.fam-nav::-webkit-scrollbar,.filters::-webkit-scrollbar{display:none}
+  .sub-nav a,.fam-nav a,.filters button{white-space:nowrap;flex:none}
+  .crumb{font-size:.72rem}
+  .banner{padding-block:2.6rem}
+  .banner-img img{opacity:.62}
+  .mm-fly a,.mm-links a,header nav>a,.nav-mm>a{min-height:44px;display:flex;align-items:center}
+  .whatsapp{width:52px;height:52px}
+}
+@media(max-width:400px){
+  .stats{grid-template-columns:1fr}
+}
+
+
+@media(max-width:640px){
+  .pbody{min-width:0}
+  .pbody>div{min-width:0;max-width:100%;overflow:hidden}
+  .ptable{display:block;width:100%;max-width:100%;overflow-x:auto;white-space:nowrap}
+  .ptable thead,.ptable tbody,.ptable tr{width:max-content;min-width:100%}
+  .pbody>div>p{max-width:100%}
+}
+
+
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+::selection{background:var(--red);color:var(--white)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
+img{max-width:100%;height:auto}
+.crumb,.sub-nav,.fam-nav{position:static!important;display:flex!important;top:auto!important;
+  background:none!important;border:0!important;padding:0!important;flex-direction:row!important}
+.crumb a,.sub-nav a,.fam-nav a{border-bottom:0!important;padding-block:0!important;min-height:0!important;display:inline-flex!important}
+.crumb{gap:.55rem;flex-wrap:wrap;align-items:center}
+.crumb a{padding:0!important}
+.sub-nav{gap:.45rem;flex-wrap:wrap;margin-top:1.6rem}
+.sub-nav a{font-size:.8rem;border:1px solid var(--line)!important;padding:.5rem 1rem!important;border-radius:100px;
+  color:var(--slate);transition:.25s;background:var(--white)!important;align-items:center;white-space:nowrap}
+.sub-nav a:hover{border-color:var(--red)!important;color:var(--red)}
+.sub-nav a.on{background:var(--red)!important;border-color:var(--red)!important;color:var(--white)}
+.fam-nav{gap:.5rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.fam-nav a{font-size:.86rem;border:1px solid var(--line)!important;padding:.6rem 1.3rem!important;border-radius:100px;
+  color:var(--slate);transition:.22s;background:var(--white)!important;align-items:center}
+.fam-nav a:hover{background:var(--red)!important;border-color:var(--red)!important;color:var(--white)}
+.banner h1{letter-spacing:-.01em}
+.banner .crumb{margin-top:.6rem;font-size:.78rem}
+.banner .crumb a{color:rgba(255,255,255,.75)}
+.banner .crumb a:hover{color:var(--white)}
+.phero{border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--mist),var(--white))}
+.phero-img{box-shadow:0 20px 50px rgba(0,0,0,.06)}
+.phero .lead{max-width:52ch}
+.pspec{border-inline-start:3px solid var(--red)}
+.prod,.sub-card,.rel,.cat,.use,.proj{border-radius:2px}
+.btn:active{transform:translateY(0) scale(.98)}
+@media(max-width:640px){
+  .sub-nav,.fam-nav{flex-wrap:nowrap!important;overflow-x:auto;padding-bottom:.4rem!important;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;max-width:100%}
+  .sub-nav::-webkit-scrollbar,.fam-nav::-webkit-scrollbar{display:none}
+  .sub-nav a,.fam-nav a{flex:none}
+  .phero-grid{gap:1.4rem;min-width:0}
+  .phero-txt{min-width:0}
+  body{overflow-x:hidden}
+  .phero-img{order:-1;padding:1.2rem}
+  .phero h1{font-size:1.5rem}
+  .phero-cta{margin-top:1.3rem}
+  .pspec{position:static;padding:1.3rem}
+  .crumb{font-size:.7rem;gap:.4rem}
+  .dl{margin-top:1.8rem}
+  .rel-grid,.sub-list{gap:.9rem}
+  .rel-t,.sub-card>b,.sub-card>p,.sub-card>span{padding-inline:1rem}
+}
+
+
+.fgrid{grid-template-columns:1.6fr 1fr 1fr 1.2fr}
+.fcontact li{color:rgba(255,255,255,.75);font-size:.86rem;line-height:1.6}
+.fcontact a{color:rgba(255,255,255,.75)}
+.fcontact a:hover{color:var(--white)}
+@media(max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fgrid{grid-template-columns:1fr;gap:1.8rem}}
+.totop{position:fixed;bottom:5.6rem;inset-inline-end:1.5rem;width:44px;height:44px;border-radius:50%;
+  background:var(--white);color:var(--ink);border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.14);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:40;
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:.35s}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop:hover{background:var(--red);color:var(--white);border-color:var(--red)}
+
+
+
+.sbtn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--white);
+  color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.25s;flex:none}
+.sbtn:hover{border-color:var(--red);color:var(--red)}
+.sov{position:fixed;inset:0;background:rgba(46,49,52,.55);backdrop-filter:blur(6px);z-index:200;
+  display:flex;align-items:flex-start;justify-content:center;padding:6vh 1rem}
+.sov[hidden]{display:none}
+.sbox{width:min(720px,100%);background:var(--white);box-shadow:0 30px 80px rgba(0,0,0,.3);
+  animation:sIn .3s cubic-bezier(.2,.7,.3,1);max-height:82vh;display:flex;flex-direction:column}
+@keyframes sIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.sin{display:flex;align-items:center;gap:.8rem;padding:1rem 1.2rem;border-bottom:1px solid var(--line);color:var(--slate)}
+.sin input{flex:1;border:0;outline:0;font:inherit;font-size:1.05rem;color:var(--ink);background:none;min-width:0}
+.sin button{border:1px solid var(--line);background:var(--mist);color:var(--slate);font:inherit;font-size:.72rem;
+  padding:.3rem .55rem;border-radius:4px;cursor:pointer}
+.sres{overflow:auto;padding:.5rem}
+.sres a{display:flex;align-items:center;gap:.9rem;padding:.7rem .8rem;border-radius:3px;color:var(--ink)}
+.sres a:hover,.sres a.sel{background:var(--mist)}
+.sres a b{font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;display:block}
+html[lang="ar"] .sres a b{font-family:'IBM Plex Sans Arabic',sans-serif}
+.sres a span{font-size:.76rem;color:var(--slate)}
+.sres a mark{background:none;color:var(--red);font-weight:700}
+.sres .stag{margin-inline-start:auto;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--slate);border:1px solid var(--line);padding:.15rem .45rem;border-radius:3px;flex:none}
+html[lang="ar"] .sres .stag{letter-spacing:0}
+.sempty{padding:2rem;text-align:center;color:var(--slate);font-size:.9rem}
+@media(max-width:640px){.sov{padding:0}.sbox{max-height:100vh;height:100vh}.sbtn{width:36px;height:36px}}
+
+</style>
+
+<style id="kv-polish-v1">
+/* ═══════════ KAVITY · refinement layer v1 ═══════════ */
+:root{
+  --r-lg:20px; --r-md:14px; --r-sm:10px;
+  --sh-1:0 2px 10px rgba(11,18,32,.05);
+  --sh-2:0 16px 38px rgba(11,18,32,.11);
+}
+
+/* ── typography ── */
+h1,h2,h3,h4{letter-spacing:-.028em}
+.display{letter-spacing:-.032em}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4,
+html[lang="ar"] .display{letter-spacing:0}
+.lead{font-size:1.02rem;line-height:1.75;color:#525A61}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
+html[lang="ar"] .eyebrow{letter-spacing:0;text-transform:none;font-size:.9rem}
+
+/* ── product-family cards: separated, rounded, lifting ── */
+.lines{gap:1.1rem;background:transparent}
+.line{border-radius:var(--r-lg);box-shadow:var(--sh-1)}
+.line:hover{transform:translateY(-6px);box-shadow:var(--sh-2)}
+
+/* ── sector cards ── */
+.use{border-radius:var(--r-lg);box-shadow:var(--sh-1);
+  transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s}
+.use:hover{transform:translateY(-6px);box-shadow:var(--sh-2)}
+.use img{border-radius:inherit}
+
+/* ── media blocks ── */
+.st-media,.use-art{border-radius:var(--r-lg);overflow:hidden}
+.st-media img,.use-art img{border-radius:inherit}
+.rng-frame{border-radius:var(--r-md)}
+
+/* ── compliance row: cards, not a table ── */
+.cert-row{border:0;background:transparent;gap:.9rem}
+.cert-row>li{background:var(--white);border:1px solid var(--line);
+  border-radius:var(--r-md);transition:border-color .3s,box-shadow .3s}
+.cert-row>li:hover{border-color:rgba(200,16,46,.32);box-shadow:var(--sh-1)}
+
+/* ── stats band ── */
+.stat{padding-block:2.9rem}
+
+/* ── buttons ── */
+.btn{padding:.95rem 2.05rem;font-weight:600;
+  transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,background .25s,color .25s,border-color .25s}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(200,16,46,.3)}
+.btn-line:hover,.btn-ink:hover,.btn-white:hover{transform:translateY(-2px)}
+
+/* ── projects rail cards ── */
+.grid-proj>.proj{box-shadow:var(--sh-1)}
+.grid-proj>.proj:hover{box-shadow:var(--sh-2)}
+
+/* ── keyboard focus ── */
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:8px}
+
+/* ── motion ── */
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){
+  html,.grid-proj{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* ── v2 fixes ── */
+@media(min-width:1000px){.lines{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:640px) and (max-width:999px){.lines{grid-template-columns:repeat(2,1fr)}}
+.use-art{position:absolute;inset:0;aspect-ratio:auto;border-radius:inherit}
+.use-art img{width:100%;height:100%;object-fit:cover}
+.use-art::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(11,18,32,0) 32%,rgba(11,18,32,.34) 60%,rgba(11,18,32,.85) 100%)}
+.use-cap{z-index:3}
+.svc-item:hover{border-top-color:var(--red)}
+
+/* ── v3 · consistent corner language on the inner pages ── */
+.prod-img,.cat-cover,.phero-img,.sub-thumb,.media,.map-wrap{
+  border-radius:var(--r-md);overflow:hidden}
+.prod-img img,.cat-cover img,.phero-img img,.sub-thumb img,.media img{border-radius:inherit}
+.fam,.ccell,.map-card,.cc,.pspec,.dl,.compare{border-radius:var(--r-md)}
+.compare{overflow:hidden}
+.map-card{box-shadow:var(--sh-1)}
+.prod-img,.cat-cover,.sub-thumb{transition:box-shadow .3s}
+.prod-img:hover,.cat-cover:hover,.sub-thumb:hover{box-shadow:var(--sh-1)}
+
+/* ── v4 · hero still image + stable text sizing ── */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%;
+  transform:scale(1.04);animation:heroDrift 26s ease-in-out infinite alternate}
+@keyframes heroDrift{from{transform:scale(1.04)}to{transform:scale(1.11)}}
+@media(prefers-reduced-motion:reduce){.hero-media img{animation:none;transform:none}}
+.rot span:not(.on){transition-duration:.35s}
+
+/* ── v5 · brand-red hero panel ── */
+.hero-red .hero-media img{object-position:center 62%}
+.hero-red::after{
+  background:linear-gradient(100deg,
+    rgba(58,4,14,.93) 0%, rgba(96,7,22,.72) 38%,
+    rgba(160,12,36,.34) 68%, rgba(200,16,46,.06) 100%)}
+html[dir="rtl"] .hero-red::after{
+  background:linear-gradient(260deg,
+    rgba(58,4,14,.93) 0%, rgba(96,7,22,.72) 38%,
+    rgba(160,12,36,.34) 68%, rgba(200,16,46,.06) 100%)}
+.hero-red .hero-tag{background:rgba(255,255,255,.18);color:#fff;
+  border:1px solid rgba(255,255,255,.34);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hero-red .hero-actions .btn-red{background:#fff;color:#1B1E22;border-color:#fff}
+.hero-red .hero-actions .btn-red:hover{background:#F2F3F4;color:#1B1E22;
+  box-shadow:0 12px 30px rgba(0,0,0,.28)}
+.hero-red .hero-actions .btn-line{border-color:rgba(255,255,255,.6);color:#fff}
+.hero-red .hero-actions .btn-line:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.hero-red h1{text-shadow:0 2px 18px rgba(40,2,10,.4)}
+
+/* ── v6 · hero image sits at natural scale, no zoom ── */
+.hero-red .hero-media img{object-position:center center;transform:none;animation:none;
+  image-rendering:auto}
+
+/* ── v7 · hero gradient painted in CSS (resolution-independent, no banding) ── */
+.hero-red .hero-media{
+  background:linear-gradient(180deg,
+    #FFF7F6 0%, #FDBDB6 12%, #F76F69 24%, #EF3A36 36%,
+    #DE1414 50%, #C90304 68%, #B30000 86%, #A8090A 100%)}
+.hero-red .hero-media::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,
+    #FFFFFF 0%, rgba(255,255,255,.985) 10%, rgba(255,255,255,.88) 22%,
+    rgba(255,255,255,.52) 38%, rgba(255,255,255,.16) 52%, rgba(255,255,255,0) 64%);
+  /* v7b */
+  -webkit-mask-image:linear-gradient(90deg,
+    rgba(0,0,0,.90) 0%,   rgba(0,0,0,.90) 4.4%,
+    rgba(0,0,0,.74) 6.0%, rgba(0,0,0,.74) 13.2%,
+    rgba(0,0,0,.63) 14.8%,rgba(0,0,0,.63) 22.1%,
+    rgba(0,0,0,.45) 23.7%,rgba(0,0,0,.45) 30.9%,
+    rgba(0,0,0,.20) 32.5%,rgba(0,0,0,.20) 39.9%,
+    rgba(0,0,0,.155) 41.5%,rgba(0,0,0,.155) 48.9%,
+    rgba(0,0,0,.14) 50.5%,rgba(0,0,0,.14) 66.5%,
+    rgba(0,0,0,.175) 68.1%,rgba(0,0,0,.175) 75.5%,
+    rgba(0,0,0,.28) 77.1%,rgba(0,0,0,.28) 84.5%,
+    rgba(0,0,0,.54) 86.1%,rgba(0,0,0,.54) 93.3%,
+    rgba(0,0,0,.70) 94.9%,rgba(0,0,0,.70) 100%);
+          mask-image:linear-gradient(90deg,
+    rgba(0,0,0,.90) 0%,   rgba(0,0,0,.90) 4.4%,
+    rgba(0,0,0,.74) 6.0%, rgba(0,0,0,.74) 13.2%,
+    rgba(0,0,0,.63) 14.8%,rgba(0,0,0,.63) 22.1%,
+    rgba(0,0,0,.45) 23.7%,rgba(0,0,0,.45) 30.9%,
+    rgba(0,0,0,.20) 32.5%,rgba(0,0,0,.20) 39.9%,
+    rgba(0,0,0,.155) 41.5%,rgba(0,0,0,.155) 48.9%,
+    rgba(0,0,0,.14) 50.5%,rgba(0,0,0,.14) 66.5%,
+    rgba(0,0,0,.175) 68.1%,rgba(0,0,0,.175) 75.5%,
+    rgba(0,0,0,.28) 77.1%,rgba(0,0,0,.28) 84.5%,
+    rgba(0,0,0,.54) 86.1%,rgba(0,0,0,.54) 93.3%,
+    rgba(0,0,0,.70) 94.9%,rgba(0,0,0,.70) 100%)}
+.hero-red .hero-media::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");background-size:240px 240px}
+html[dir="rtl"] .hero-red .hero-media::before{transform:scaleX(-1)}
+
+/* ── v8 · inner-page banners use the same CSS gradient as the hero ── */
+.banner-img img{display:none}
+.banner-img{
+  background:linear-gradient(180deg,
+    #FFF7F6 0%, #FDBDB6 12%, #F76F69 24%, #EF3A36 36%,
+    #DE1414 50%, #C90304 68%, #B30000 86%, #A8090A 100%)}
+.banner-img::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,
+    #FFFFFF 0%, rgba(255,255,255,.985) 10%, rgba(255,255,255,.88) 22%,
+    rgba(255,255,255,.52) 38%, rgba(255,255,255,.16) 52%, rgba(255,255,255,0) 64%);
+  -webkit-mask-image:linear-gradient(90deg,
+    rgba(0,0,0,.90) 0%,   rgba(0,0,0,.90) 4.4%,
+    rgba(0,0,0,.74) 6.0%, rgba(0,0,0,.74) 13.2%,
+    rgba(0,0,0,.63) 14.8%,rgba(0,0,0,.63) 22.1%,
+    rgba(0,0,0,.45) 23.7%,rgba(0,0,0,.45) 30.9%,
+    rgba(0,0,0,.20) 32.5%,rgba(0,0,0,.20) 39.9%,
+    rgba(0,0,0,.155) 41.5%,rgba(0,0,0,.155) 48.9%,
+    rgba(0,0,0,.14) 50.5%,rgba(0,0,0,.14) 66.5%,
+    rgba(0,0,0,.175) 68.1%,rgba(0,0,0,.175) 75.5%,
+    rgba(0,0,0,.28) 77.1%,rgba(0,0,0,.28) 84.5%,
+    rgba(0,0,0,.54) 86.1%,rgba(0,0,0,.54) 93.3%,
+    rgba(0,0,0,.70) 94.9%,rgba(0,0,0,.70) 100%);
+          mask-image:linear-gradient(90deg,
+    rgba(0,0,0,.90) 0%,   rgba(0,0,0,.90) 4.4%,
+    rgba(0,0,0,.74) 6.0%, rgba(0,0,0,.74) 13.2%,
+    rgba(0,0,0,.63) 14.8%,rgba(0,0,0,.63) 22.1%,
+    rgba(0,0,0,.45) 23.7%,rgba(0,0,0,.45) 30.9%,
+    rgba(0,0,0,.20) 32.5%,rgba(0,0,0,.20) 39.9%,
+    rgba(0,0,0,.155) 41.5%,rgba(0,0,0,.155) 48.9%,
+    rgba(0,0,0,.14) 50.5%,rgba(0,0,0,.14) 66.5%,
+    rgba(0,0,0,.175) 68.1%,rgba(0,0,0,.175) 75.5%,
+    rgba(0,0,0,.28) 77.1%,rgba(0,0,0,.28) 84.5%,
+    rgba(0,0,0,.54) 86.1%,rgba(0,0,0,.54) 93.3%,
+    rgba(0,0,0,.70) 94.9%,rgba(0,0,0,.70) 100%)}
+.banner-img::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");background-size:240px 240px}
+html[dir="rtl"] .banner-img::before{transform:scaleX(-1)}
+.banner::after{
+  background:linear-gradient(105deg,
+    rgba(58,4,14,.92) 0%, rgba(96,7,22,.70) 40%,
+    rgba(160,12,36,.32) 70%, rgba(200,16,46,.06) 100%)}
+html[dir="rtl"] .banner::after{
+  background:linear-gradient(255deg,
+    rgba(58,4,14,.92) 0%, rgba(96,7,22,.70) 40%,
+    rgba(160,12,36,.32) 70%, rgba(200,16,46,.06) 100%)}
+.banner h1{text-shadow:0 2px 18px rgba(40,2,10,.38)}
+.banner .crumb span{color:rgba(255,255,255,.6)}
+</style>
+<script id="kv-theme-pre">try{if(localStorage.getItem('kavity-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#0B0C0E'}}catch(e){}</script>
+<link rel="stylesheet" href="assets/kv/ui.css" id="kv-ui-css">
+</head>
+<body>
+<a class="kv-skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <a href="index.html" class="logo"><img width="760" height="253" src="img/3ebcf65113a0a8.png" alt="KAVITY — For Construction Solutions &amp; Materials"></a>
+    <nav id="nav">
+      <a href="index.html" class="">Home</a>
+      <a href="about.html" class="">About</a>
+      <span class="nav-mm" id="navMM"><a href="products.html" class="has-mm on">Products<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></a><div class="mm" id="mm"><div class="wrap mm-in"><div class="mm-tiles"><button type="button" class="mm-tile on" data-fam="facade" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(img/t/w-cdcb6aeb5af9dc.webp)"><span>Façade fixation</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button><button type="button" class="mm-tile" data-fam="mep" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(img/t/w-1cd92fa16b6372.webp)"><span>MEP &amp; cable management</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button><button type="button" class="mm-tile" data-fam="arch" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(img/t/w-b0fe69ab3aab7a.webp)"><span>Architectural &amp; finishing</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button><button type="button" class="mm-tile" data-fam="civil" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(img/t/w-55de652ef5fc18.webp)"><span>Civil solutions</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button></div><div class="mm-panels"><div class="mm-panel on" data-fam="facade"><div class="mm-links"><div class="mm-item"><a href="product/mechanical-cladding-fixation.html"><b>Mechanical cladding fixation</b><i>Stainless steel brackets, dowels and anchors for stone cladding.</i></a><div class="mm-fly"><a href="s/l-brackets.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/bcb7351a5ba5e6.webp" alt=""></span>L-brackets</a><a href="s/z-brackets.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/fd81f3cf8b7862.webp" alt=""></span>Z-brackets</a><a href="s/omega-bracket.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/628a0ff62669e1.webp" alt=""></span>Omega bracket</a><a href="s/fishtail-bracket.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/4d6f5e7f53f1d9.webp" alt=""></span>Fishtail brackets</a><a href="s/corrugated-dowel.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/fd021a24c7e05e.webp" alt=""></span>Corrugated dowels &amp; studs</a><a href="s/anchors.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-anchors.webp" alt=""></span>Anchors &amp; fixings</a><a href="s/steel-back-support.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/b3c54e14fd8f5c.webp" alt=""></span>Steel back support systems</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="products.html#facade">View all in Façade fixation →</a></div><div class="mm-panel" data-fam="mep"><div class="mm-links"><div class="mm-item"><a href="product/cable-trays.html"><b>Cable trays &amp; accessories</b><i>Perforated and solid trays with bends, tees and covers.</i></a><div class="mm-fly"><a href="s/cable-tray-runs.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-cable-tray-runs.webp" alt=""></span>Cable tray runs</a><a href="s/cable-tray-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-cable-tray-fittings.webp" alt=""></span>Cable tray fittings</a><a href="s/cable-tray-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/924eea727246d5.webp" alt=""></span>Cable tray accessories</a><a href="s/cable-tray-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/86c7774c2a8d6a.webp" alt=""></span>Cable tray support systems</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="product/cable-ladders.html"><b>Cable ladders</b><i>Welded and swaged ladders for heavy runs and long spans.</i></a><div class="mm-fly"><a href="s/welded-ladders.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-welded-ladders.webp" alt=""></span>Welded cable ladders</a><a href="s/swaged-ladders.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/38d9e0f2975330.webp" alt=""></span>Swaged cable ladders</a><a href="s/ladder-fittings-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/1c87cf89fe796f.webp" alt=""></span>Fittings &amp; supports</a><a href="s/ladder-firestop.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/p/hero-ladder-firestop.webp" alt=""></span>Firestop systems</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="product/basket-trays.html"><b>Basket trays</b><i>Wire basket trays for data, control and light power cabling.</i></a><div class="mm-fly"><a href="s/basket-runs-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-basket-runs-fittings.webp" alt=""></span>Runs &amp; fittings</a><a href="s/basket-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/8368bb19c111db.webp" alt=""></span>Accessories, supports &amp; framing</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="product/cable-trunkings.html"><b>Cable trunkings</b><i>Single, double and triple compartment trunking.</i></a><div class="mm-fly"><a href="s/trunking-runs-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/78b453b6f07ce7.webp" alt=""></span>Trunking runs &amp; fittings</a><a href="s/trunking-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/e78bab87ccfea4.webp" alt=""></span>Trunking accessories</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="product/frp-cable-management.html"><b>FRP cable management</b><i>Corrosion-free FRP trays, ladders, grating and handrail.</i></a><div class="mm-fly"><a href="s/frp-trays-ladders.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-frp-trays-ladders.webp" alt=""></span>FRP trays &amp; ladders</a><a href="s/frp-support-systems.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/p/hero-frp-support-systems.webp" alt=""></span>FRP &amp; steel support systems</a><a href="s/frp-grating-handrail.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/1f5b1250989c90.webp" alt=""></span>FRP grating &amp; handrail</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="product/c-channel-strut.html"><b>C-channel strut systems</b><i>Slotted and plain strut channel with nuts and fittings.</i></a><div class="mm-fly"><a href="s/channels.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/f755fb28d2aa6a.webp" alt=""></span>Channels</a><a href="s/toothed-channels.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-toothed-channels.webp" alt=""></span>Toothed channels</a><a href="s/channel-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/91a3a7a5b50ca6.webp" alt=""></span>Fittings</a><a href="s/channel-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-channel-accessories.webp" alt=""></span>Accessories &amp; anchors</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="product/pipe-clamps.html"><b>Pipe clamps &amp; hangers</b><i>Rubber-lined and plain clamps, hangers, rods and anchors.</i></a><div class="mm-fly"><a href="s/clamps-hangers.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/d5e329b951c6cb.webp" alt=""></span>Pipe clamps &amp; hangers</a><a href="s/pipe-support-system.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-pipe-support-system.webp" alt=""></span>Support systems</a><a href="s/threaded-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/1a62e7e04df96e.webp" alt=""></span>Threaded accessories</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="products.html#mep">View all in MEP &amp; cable management →</a></div><div class="mm-panel" data-fam="arch"><div class="mm-links"><div class="mm-item"><a href="product/architectural-expansion-joints.html"><b>Architectural expansion joints</b><i>Floor, wall, ceiling and roof covers for building movement.</i></a><div class="mm-fly"><a href="s/floor-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/73a4d4a9195c79.webp" alt=""></span>Floor expansion joints</a><a href="s/wall-ceiling-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/41e9dfed686d9d.webp" alt=""></span>Wall &amp; ceiling joints</a><a href="s/roof-parking-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/eff46a56d9ec83.webp" alt=""></span>Roof &amp; parking joints</a><a href="s/fire-rated-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/df76382c159fea.webp" alt=""></span>Fire-rated &amp; seismic joints</a><a href="s/tile-movement-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-tile-movement-joints.webp" alt=""></span>Tile movement joints</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="product/metal-ceiling-grid.html"><b>Metal ceiling grid systems</b><i>Main runners, cross tees, hangers and perimeter trims.</i></a><div class="mm-fly"><a href="s/exposed-grid.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/c775c7523a4ea4.webp" alt=""></span>Exposed grid</a><a href="s/concealed-grid.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-concealed-grid.webp" alt=""></span>Semi-concealed &amp; clip-in grid</a><a href="s/grid-sections.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-grid-sections.webp" alt=""></span>Section details &amp; perimeter</a><a href="s/c-channel-ceiling-grid.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/p/hero-c-channel-ceiling-grid.webp" alt=""></span>C-channel ceiling grid systems</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="product/garbage-linen-chutes.html"><b>Garbage &amp; linen chutes</b><i>Waste and linen chutes for hotels, hospitals and towers.</i></a><div class="mm-fly"><a href="s/chute-components.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/786ae01a392e75.webp" alt=""></span>Chute components</a><a href="s/chute-sorters.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-chute-sorters.webp" alt=""></span>Chute sorters &amp; diverters</a><a href="s/chute-sanitising.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-chute-sanitising.webp" alt=""></span>Sanitising &amp; compaction</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="product/raised-access-flooring.html"><b>Raised access flooring</b><i>Adjustable pedestals for terraces, plant rooms and data floors.</i></a><div class="mm-fly"><a href="s/outdoor-pedestals.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-outdoor-pedestals.webp" alt=""></span>Outdoor pedestals</a><a href="s/indoor-access-floor.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/537cda0ba78e7e.webp" alt=""></span>Indoor access floors</a><a href="s/decking-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/kv-decking-supports.webp" alt=""></span>Timber decking supports</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="products.html#arch">View all in Architectural &amp; finishing →</a></div><div class="mm-panel" data-fam="civil"><div class="mm-links"><div class="mm-item"><a href="product/plaster-beads-expanded-metal.html"><b>Plaster beads &amp; expanded metal</b><i>Angle, stop, control and architrave beads with mesh wings.</i></a><div class="mm-fly"><a href="s/plaster-beads.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/eefcf4795af547.webp" alt=""></span>Plaster beads</a><a href="s/expanded-metal-lath.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/ea3d6a51962854.webp" alt=""></span>Expanded metal &amp; lath</a><a href="s/steel-lintels.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/cd964a42b60421.webp" alt=""></span>Steel lintels</a><a href="s/block-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/1c90673f5f7f57.webp" alt=""></span>Block accessories</a><a href="s/block-reinforcement.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="img/t/635037f51b7db0.webp" alt=""></span>Blockwork reinforcement</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="products.html#civil">View all in Civil solutions →</a></div></div></div></div></span>
+      <a href="projects.html" class="">Projects</a>
+      <a href="catalog.html">Catalogues</a>
+      <a href="contact.html" class="">Contact</a>
+    </nav>
+    <div class="tools">
+      <button type="button" class="sbtn" id="sbtn" aria-label="Search">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+</button>
+      <a href="contact.html" class="phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        <span>Get in touch</span>
+      </a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div id="main" tabindex="-1"></div>
+
+<section class="banner">
+  <div class="banner-img"></div>
+  <div class="wrap">
+    <h1>UNITECH portfolio</h1>
+    <p class="crumb"><a href="index.html">Home</a><span>›</span><a href="products.html">Products</a><span>›</span><a href="#">UNITECH portfolio</a></p>
+  </div>
+</section>
+<section class="sec kvp"><div class="wrap"><div class="kvp-head"><div><span class="eyebrow">From the group</span><h2 class="display">More from the UNITECH portfolio</h2><p class="kvp-note">Beyond the systems on this site, the UNITECH group portfolio covers the lines below. KAVITY sources them on request through UNITECH — ask our team for availability and technical data.</p></div><a href="catalogues/KAVITY-14-products-portfolio.pdf" download class="btn btn-red">Download the portfolio</a></div><h3 class="kvf-g">MEP solutions</h3><div class="kvp-grid kvf-grid"><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">MEP solutions – cable management</span><h3>Underfloor trunking</h3><p>Coordinated containment for distributing power and data under floors, in flush-floor and screed-floor trunking systems. Brand: SFSP.</p><dl class="kvp-spec"><div><dt>Systems</dt><dd>Flush floor trunking · screed floor trunking</dd></div><div><dt>Components</dt><dd>Trunking, junction boxes, couplers, levelling kits, risers, floor boxes</dd></div><div><dt>Note</dt><dd>Socket and data plates ordered separately</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=11" target="_blank" rel="noopener">Portfolio p. 11<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">MEP solutions – cable management</span><h3>Weatherproof cable trunking</h3><p>Single, double or triple compartment cable trunking protecting cables from damage and dust, in weatherproof execution. Brand: SFSP.</p><dl class="kvp-spec"><div><dt>Finish</dt><dd>Mill galvanised, hot-dip galvanised, powder coated</dd></div><div><dt>Thickness</dt><dd>1, 1.2, 1.5 mm</dd></div><div><dt>Sizes</dt><dd>50×50 to 600×100 mm</dd></div><div><dt>Length</dt><dd>2400 and 3000 mm</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=11" target="_blank" rel="noopener">Portfolio p. 11<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">MEP solutions</span><h3>PVC electrical conduits and accessories</h3><p>PVC conduit pipes and solvent-cement fittings for electrical cable management, non-flame propagating and corrosion free. Brand: Uniduct (IKKPF).</p><dl class="kvp-spec"><div><dt>Standards</dt><dd>SASO, BS, NEMA, ASTM</dd></div><div><dt>Lengths</dt><dd>2.9, 3 and 6 m straight runs</dd></div><div><dt>Range</dt><dd>Conduits, tubings, ducts, split duct, long radius bends, couplings, bell ends</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=19" target="_blank" rel="noopener">Portfolio p. 19<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">MEP solutions</span><h3>Facade insulation and lightweight fixings</h3><p>Screw-in and hammer-in insulation fixings with large heads, plus frame fixings, ceiling wedge anchors and universal plugs. Brand: Rawlplug.</p><dl class="kvp-spec"><div><dt>Roof fixings</dt><dd>Roofs up to 15° inclination; metal sheet, concrete or timber</dd></div><div><dt>Range</dt><dd>Facade fixings, insulation washers and retaining plates, frame fixings, hammer fixings, universal plugs</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=21" target="_blank" rel="noopener">Portfolio p. 21<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">MEP solutions</span><h3>Cable ties</h3><p>Technical polyamide 6.6 cable ties in standard, stainless-locking, UV-resistant, heat-resistant, detectable, coloured and identification versions. Brand: Elematic.</p><dl class="kvp-spec"><div><dt>Material</dt><dd>Polyamide 6.6</dd></div><div><dt>2-Lock</dt><dd>AISI 316 stainless steel locking system</dd></div><div><dt>Heat resistant</dt><dd>125 °C continuous, 150 °C for 500 h</dd></div><div><dt>Colours</dt><dd>Red, yellow, green, blue</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=22" target="_blank" rel="noopener">Portfolio p. 22<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">MEP solutions</span><h3>Access panels and roof hatches</h3><p>Hook, pivot, tiled, galvanised and stainless steel access panels for walls and ceilings, plus steel roof hatches. Brand: FEROX.</p><dl class="kvp-spec"><div><dt>Frames</dt><dd>Extruded aluminium 6063-T6 or 1.20–1.50 mm steel</dd></div><div><dt>Stainless</dt><dd>Type 304/316L</dd></div><div><dt>Roof hatch</dt><dd>Flat roofs up to 30° slope, powder coated</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=24" target="_blank" rel="noopener">Portfolio p. 24<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">MEP solutions</span><h3>HVAC insulation adhesives, sealants and tapes</h3><p>Adhesives, duct sealants and aluminium foil tapes for fixing and protecting ductwork and pipework insulation. Brand: Bostik (Idenden).</p><dl class="kvp-spec"><div><dt>Adhesives</dt><dd>Water-borne, solvent-based, hot melt</dd></div><div><dt>Sealants</dt><dd>Water-based, solvent-based, silicone</dd></div><div><dt>Tapes</dt><dd>Aluminium foil tapes incl. T303</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=25" target="_blank" rel="noopener">Portfolio p. 25<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article></div><h3 class="kvf-g">Architectural &amp; finishing solutions</h3><div class="kvp-grid kvf-grid"><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Drywall and ceiling profiles</h3><p>Steel profiles for drywall partitions and plasterboard ceilings produced to international standards. Brand: SFSP.</p><dl class="kvp-spec"><div><dt>Drywall</dt><dd>Studs, runners, ceiling channels, omega channels, deflection track, shaft wall track</dd></div><div><dt>Ceiling</dt><dd>Main ceiling channel, furring channels, wall channels</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=29" target="_blank" rel="noopener">Portfolio p. 29<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Gyproc systems and solutions</h3><p>Partition, wall lining, ceiling and finishing systems in plasterboard, including shaft walls for lift shafts. Brand: Gyproc.</p><dl class="kvp-spec"><div><dt>Brand</dt><dd>Gyproc</dd></div><div><dt>Systems</dt><dd>Partitions &amp; walls, wall lining, ceilings, finishing</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=42" target="_blank" rel="noopener">Portfolio p. 42<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Partition systems</h3><p>Metal stud and plasterboard partition systems meeting fire, acoustic, moisture and impact requirements. Brand: Knauf.</p><dl class="kvp-spec"><div><dt>Brand</dt><dd>Knauf</dd></div><div><dt>Systems</dt><dd>Performer, Isolator (twin stud), Shaftwall (C-T stud)</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=42" target="_blank" rel="noopener">Portfolio p. 42<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Gypsum drywall systems</h3><p>Closed drywall systems tested by accredited third parties for fire, acoustic, impact and mould performance. Brands: G-Board, Mada, UMI.</p><dl class="kvp-spec"><div><dt>Brands</dt><dd>G-Board · Mada Plus · UMI</dd></div><div><dt>Performance</dt><dd>Fire, acoustics, impact, mould resistance</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=43" target="_blank" rel="noopener">Portfolio p. 43<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Gypsum boards and accessories</h3><p>Plasterboards with gypsum core between paper liners, with joint compounds, tapes and drywall screws.</p><dl class="kvp-spec"><div><dt>Brands</dt><dd>Gyproc, Mada, UMI, Gboard, UBoard</dd></div><div><dt>Boards</dt><dd>Regular, fire, moisture, impact, acoustic, ceiling, shaft wall</dd></div><div><dt>Accessories</dt><dd>Joint compound, adhesive, tapes, drywall screws</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=44" target="_blank" rel="noopener">Portfolio p. 44<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Cement boards and accessories</h3><p>Fibre cement, magnesium oxide and calcium silicate boards for walls, ceilings, sheathing and passive fire protection. Brand: U Board.</p><dl class="kvp-spec"><div><dt>Types</dt><dd>Fibre cement · magnesium oxide · calcium silicate</dd></div><div><dt>Properties</dt><dd>Asbestos-free, non-combustible, fire and water resistant</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=45" target="_blank" rel="noopener">Portfolio p. 45<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Wall profiles</h3><p>Right-angle and round profiles protecting wall corners, finishing edges and linking tiled or stone stair treads and risers. Brand: NEXUS.</p><dl class="kvp-spec"><div><dt>Manufactured in</dt><dd>SFSP</dd></div><div><dt>Uses</dt><dd>Inside/outside corners, edge finishing, decorative strips</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=31" target="_blank" rel="noopener">Portfolio p. 31<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Stair nosing</h3><p>Slip-resistant profile fitted to the nose of each step to define and protect step edges. Brand: NEXUS.</p><dl class="kvp-spec"><div><dt>Manufactured in</dt><dd>SFSP</dd></div><div><dt>Selection</dt><dd>Covering gauge, step profile, tread cover, colour and LRV difference</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=31" target="_blank" rel="noopener">Portfolio p. 31<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Entrance matting system</h3><p>Heavy-duty entrance mats of aluminium profiles with carpet, brush or rubber inserts that trap dirt and moisture. Brand: NEXUS.</p><dl class="kvp-spec"><div><dt>Manufactured in</dt><dd>SFSP</dd></div><div><dt>Types</dt><dd>URFM 16/24 rubber · UCFM 16/24 carpet · UAFM 17 aluminium</dd></div><div><dt>Use</dt><dd>Heavy footfall, wheelchair and pram suitable</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=32" target="_blank" rel="noopener">Portfolio p. 32<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Phenolic partition systems</h3><p>Black phenolic core HPL toilet compartments and partitions with stainless steel accessories, plus lockers, cabinets and cladding. Brand: Cubix.</p><dl class="kvp-spec"><div><dt>Material</dt><dd>Black phenolic with HPL</dd></div><div><dt>Colours</dt><dd>40 standard</dd></div><div><dt>Hardware</dt><dd>Stainless steel hinges, indicators, locks, brackets</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=33" target="_blank" rel="noopener">Portfolio p. 33<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Heavy impact protection systems</h3><p>Heavy-duty rubber and polymer items protecting car parks, warehouses and loading docks from traffic damage. Brand: U-GUARD.</p><dl class="kvp-spec"><div><dt>Materials</dt><dd>Natural rubber, EPDM, SBR, vinyl, urethane</dd></div><div><dt>Uses</dt><dd>Car parks, loading docks, warehouses, columns</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=36" target="_blank" rel="noopener">Portfolio p. 36<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Handrails and impact protection systems</h3><p>PVC, wood and stainless steel handrails, wall and corner guards, rub rails, speed bumps and bumper guards. Brand: Pawling.</p><dl class="kvp-spec"><div><dt>Handrails</dt><dd>PVC (70 colours), oak, maple, ash, cherry, stainless steel</dd></div><div><dt>Internal</dt><dd>Wall guards, chair rails, corner guards, door guards</dd></div><div><dt>External</dt><dd>Speed bumps, bumper guards, heavy-duty corner guards</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=38" target="_blank" rel="noopener">Portfolio p. 38<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Metal ceilings</h3><p>Plain or perforated metal ceilings in tile, strip, baffle, open-cell and custom designs with acoustic fleece. Brand: Marconi.</p><dl class="kvp-spec"><div><dt>Material</dt><dd>Aluminium 3000/5000 series, HDG steel</dd></div><div><dt>Acoustics</dt><dd>NRC up to 0.98 with Rockwool</dd></div><div><dt>Fire</dt><dd>Non-combustible, BS 476 Part 6/7</dd></div><div><dt>Finish</dt><dd>Polyester powder coat 60–120 µm, RAL 9010 standard</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=39" target="_blank" rel="noopener">Portfolio p. 39<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Acoustical and decorative ceilings</h3><p>Acoustic ceiling panel systems for offices, healthcare, education, social venues and sports halls. Brands: Ecophon and Rockfon.</p><dl class="kvp-spec"><div><dt>Ecophon</dt><dd>Focus, Master, Hygiene, Gedina, Advantage, Sombra, Super G, Combison</dd></div><div><dt>Absorption</dt><dd>Class A for most families</dd></div><div><dt>Rockfon</dt><dd>Stone wool panels and specialty metal ceilings</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=40" target="_blank" rel="noopener">Portfolio p. 40<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Metal doors</h3><p>Steel doors and frames including fire-rated, insulated, acoustic, lead-lined, security, blast and bullet resistant doors and gates. Brand: FEROX.</p><dl class="kvp-spec"><div><dt>Range</dt><dd>Fire, insulated, lead lined, acoustic, louvered, sliding doors, glazed screens</dd></div><div><dt>Security</dt><dd>Detention, blast, bullet, vault, burglar resistant</dd></div><div><dt>Gates</dt><dd>Sliding doors and gates</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=41" target="_blank" rel="noopener">Portfolio p. 41<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Rock wool insulation</h3><p>Non-combustible rock wool for thermal, acoustic and fire insulation of walls, roofs and steel structures. Brand: Saudi Rockwool.</p><dl class="kvp-spec"><div><dt>Acoustic</dt><dd>NRC &gt; 0.95</dd></div><div><dt>Fire</dt><dd>Non-combustible</dd></div><div><dt>Uses</dt><dd>Walls, partitions, roofs, steel protection</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=46" target="_blank" rel="noopener">Portfolio p. 46<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Architectural &amp; finishing solutions</span><h3>Stone wool and glass wool insulation</h3><p>Stone wool slabs, wired mats, rolls, pipe sections and loose wool, plus glass wool, for buildings and industry. Brand: KIMMCO / SIIMCO-ISOVER.</p><dl class="kvp-spec"><div><dt>Forms</dt><dd>Slab, wired mat, roll, pipe section, loose wool</dd></div><div><dt>Materials</dt><dd>Stone wool (Yanbu) · glass wool (Kuwait)</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=47" target="_blank" rel="noopener">Portfolio p. 47<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article></div><h3 class="kvf-g">Civil solutions</h3><div class="kvp-grid kvf-grid"><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Civil solutions</span><h3>Geosynthetics</h3><p>Geocells, geotextiles, geocomposites, porous paving grids and protection meshes for civil, rail, landfill and landscaping works. Brand: Terram.</p><dl class="kvp-spec"><div><dt>Brand</dt><dd>Terram</dd></div><div><dt>Range</dt><dd>HDPE geocells, Bodpave 40/85, geotextiles, trackbed separators, drainage geocomposites, grass reinforcement mesh, warning mesh</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=50" target="_blank" rel="noopener">Portfolio p. 50<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Civil solutions</span><h3>Concrete accessories</h3><p>Formwork tie accessories and PVC concrete products for concrete manufacturers and contractors. Brand: Unicrete.</p><dl class="kvp-spec"><div><dt>Formwork</dt><dd>Tie rods, galvanised waler plates, wing nuts, hexagon nuts, water stoppers, PVC sleeves and cones</dd></div><div><dt>PVC</dt><dd>Chamfer strips, chair and wheel spacers, shim pads</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=51" target="_blank" rel="noopener">Portfolio p. 51<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Civil solutions</span><h3>Extruded polystyrene thermal insulation boards</h3><p>Closed-cell extruded polystyrene boards with very low water absorption for roof, wall and floor insulation. Brand: Esscofoam.</p><dl class="kvp-spec"><div><dt>Standard</dt><dd>ASTM E84</dd></div><div><dt>Properties</dt><dd>Closed cell, low moisture absorption, no vapour barrier needed</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=52" target="_blank" rel="noopener">Portfolio p. 52<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Civil solutions</span><h3>Expanded polystyrene (EPS) thermal insulation boards</h3><p>Rigid lightweight EPS boards produced to customer density and size requirements, in normal and fire-retardant types.</p><dl class="kvp-spec"><div><dt>Standard</dt><dd>BS 3837:1977, DIN, ASTM</dd></div><div><dt>Types</dt><dd>Type N (normal) · Type A (fire retardant, BS 4735)</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=53" target="_blank" rel="noopener">Portfolio p. 53<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Civil solutions</span><h3>Polypropylene protection boards</h3><p>Semi-flexible polypropylene board protecting waterproofing membranes and tiles, highly puncture resistant. Brand: Polyboard.</p><dl class="kvp-spec"><div><dt>Puncture resistance</dt><dd>1100–2600 N (ASTM E-154)</dd></div><div><dt>Use</dt><dd>Hot asphalt, torch-applied and rubber membranes; tile protection</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=54" target="_blank" rel="noopener">Portfolio p. 54<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Civil solutions</span><h3>Bitumen impregnated filler and protection boards</h3><p>Bitumen-coated softwood fibre boards used as pre-moulded expansion joint filler and below-grade waterproofing protection. Brand: BITUBOARD.</p><dl class="kvp-spec"><div><dt>Material</dt><dd>Softwood fibre with bitumen coating</dd></div><div><dt>Uses</dt><dd>Roads, bridges, runways, basements, retaining walls, slabs</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=55" target="_blank" rel="noopener">Portfolio p. 55<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Civil solutions</span><h3>Lead sheets</h3><p>Lead sheets for radiation shielding in hospitals and clinics, roofing, flashing, corrosion protection and soundproofing. Brand: AMRay.</p><dl class="kvp-spec"><div><dt>Standard size</dt><dd>1 × 2 m</dd></div><div><dt>Weight</dt><dd>22.68 / 28.35 kg/m²</dd></div><div><dt>Standards</dt><dd>ASTM B-29, BS EN 12588:2006</dd></div><div><dt>Melting point</dt><dd>327.4 °C</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=56" target="_blank" rel="noopener">Portfolio p. 56<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Civil solutions</span><h3>Polyethylene rolls and films</h3><p>Polyethylene vapour barrier and damp-proof membrane for slabs, insulation and pipeline corrosion protection. Brand: Poliane.</p><dl class="kvp-spec"><div><dt>Thickness</dt><dd>100–1200 gauge (25–300 µm)</dd></div><div><dt>Roll</dt><dd>Up to 25 m long, 4 m wide</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=57" target="_blank" rel="noopener">Portfolio p. 57<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Civil solutions</span><h3>Bituminous protective primers</h3><p>Water-based bitumen coating and solvent-based bitumen primer for damp-proofing and priming before bituminous membranes. Brand: Bolden.</p><dl class="kvp-spec"><div><dt>Types</dt><dd>Bolden WB (water based) · Bolden SB (solvent based)</dd></div><div><dt>Uses</dt><dd>Damp proofing, basements, foundations, membrane priming</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=58" target="_blank" rel="noopener">Portfolio p. 58<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Civil solutions</span><h3>PVC waterstops and swellable waterbars</h3><p>PVC waterstops for concrete joints under hydrostatic load, plus UniSwellAble hydrophilic swelling waterbars. Brand: UNITECH.</p><dl class="kvp-spec"><div><dt>Uses</dt><dd>Reservoirs, dams, sewage plants, basements, parking</dd></div><div><dt>Swellable</dt><dd>Polyurethane-based water-expanding rubber</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=59" target="_blank" rel="noopener">Portfolio p. 59<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article></div><h3 class="kvf-g">Construction chemicals</h3><div class="kvp-grid kvf-grid"><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Construction chemicals</span><h3>Firestop systems</h3><p>Firestop sealants, putties, wraps, collars, pillows, mortar and fire-rated cable pathways. Brand: STI (SpecSeal, EZ Path).</p><dl class="kvp-spec"><div><dt>Sealants</dt><dd>LCI intumescent, LC endothermic, SIL silicone</dd></div><div><dt>Devices</dt><dd>LCC collars, SSW wrap strips, SSB pillows, EZ Path Series 44+</dd></div><div><dt>Other</dt><dd>SSM mortar, CS cable spray, composite sheet</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=61" target="_blank" rel="noopener">Portfolio p. 61<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Construction chemicals</span><h3>Adhesives</h3><p>Construction, polymer, contact, epoxy and wood adhesives, super glues and flooring adhesives. Brand: Bison.</p><dl class="kvp-spec"><div><dt>Quality</dt><dd>ISO 9001</dd></div><div><dt>Range</dt><dd>Construction, polymer, contact, epoxy, PU wood, PVC, flooring adhesives</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=62" target="_blank" rel="noopener">Portfolio p. 62<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Construction chemicals</span><h3>Tile adhesives, grouts and construction chemicals</h3><p>Tile adhesives and grouts, waterproofing, concrete repair, hardeners, flooring, renders and dust control products. Brand: Pleko.</p><dl class="kvp-spec"><div><dt>Brand</dt><dd>Pleko</dd></div><div><dt>Range</dt><dd>PVA/acrylic/SBR, tile adhesives &amp; grouts, waterproofing, concrete refurbishment, hardeners, skim coats, DustStop</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=63" target="_blank" rel="noopener">Portfolio p. 63<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Construction chemicals</span><h3>Polyurethane waterproofing membranes and sealants</h3><p>Liquid-applied polyurethane membranes, top coats, primers, floor coatings, PU sealants and mould-making elastomers. Brand: Poly TI.</p><dl class="kvp-spec"><div><dt>Membranes</dt><dd>1-component PU, POLY TI Aqua water based</dd></div><div><dt>Floor coatings</dt><dd>POLY TI 7100 aromatic, 7200 aliphatic UV-stable</dd></div><div><dt>Sealants</dt><dd>POLY JOINT 30, POLY TI PU</dd></div><div><dt>Moulding</dt><dd>AKD series elastomers</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=64" target="_blank" rel="noopener">Portfolio p. 64<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Construction chemicals</span><h3>Construction sealants, moulding systems and tile products</h3><p>Silicone, acrylic and weather sealants, RTV silicone moulding rubber, marble glue, tile adhesives and grouts. Brands: Eagle Seal, Eagle Mastic, Unifix, UniGrout.</p><dl class="kvp-spec"><div><dt>Sealants</dt><dd>Acetoxy, bath &amp; kitchen, neutral weather, Pro silicone, acrylic</dd></div><div><dt>Moulding</dt><dd>RTV AKD 40A for GRC moulds</dd></div><div><dt>Tile</dt><dd>Unifix 401/402 adhesive, UniGrout 201</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=67" target="_blank" rel="noopener">Portfolio p. 67<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Construction chemicals</span><h3>Construction foams</h3><p>One-component polyurethane foam for perimeter, window-frame, partition and pipe-opening joints. Brand: Eagle Seal.</p><dl class="kvp-spec"><div><dt>Sizes</dt><dd>500 ml and 700 ml</dd></div><div><dt>Origin</dt><dd>Made in Germany</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=69" target="_blank" rel="noopener">Portfolio p. 69<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Construction chemicals</span><h3>Adhesives, sealants and construction chemicals</h3><p>Products for ceramics and stone, waterproofing, structural strengthening, flooring, concrete admixtures and wall coatings. Brand: Mapei.</p><dl class="kvp-spec"><div><dt>Range</dt><dd>Ceramic &amp; stone, building, strengthening, waterproofing, resilient &amp; wood flooring, UTT, admixtures, coatings</dd></div><div><dt>Availability</dt><dd>KSA, UAE and Lebanon</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=70" target="_blank" rel="noopener">Portfolio p. 70<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Construction chemicals</span><h3>Construction specialty chemicals</h3><p>Fluid-applied polyurethane waterproofing membranes and high-performance polyurethane joint sealants. Brand: Tremco.</p><dl class="kvp-spec"><div><dt>Membranes</dt><dd>TREMproof 250GC, TREMproof 60</dd></div><div><dt>Sealants</dt><dd>Dymeric 240, THC-900/901, Dymonic 100</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=71" target="_blank" rel="noopener">Portfolio p. 71<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article></div><h3 class="kvf-g">Power, industrial &amp; hand tools</h3><div class="kvp-grid kvf-grid"><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Power, industrial &amp; hand tools</span><h3>Power tools and accessories</h3><p>Cordless and corded power tools for drilling, fastening, wood and metalworking, with batteries and chargers. Brand: AEG.</p><dl class="kvp-spec"><div><dt>Range</dt><dd>Drilling &amp; breaking, fastening, woodworking, metalworking, site equipment</dd></div><div><dt>Warranty</dt><dd>6-year tool, 3-year batteries and chargers</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=73" target="_blank" rel="noopener">Portfolio p. 73<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Power, industrial &amp; hand tools</span><h3>Industrial tools</h3><p>Professional hand tools and power tool accessories including locking tools, saw blades, clamps and drill bits. Brand: IRWIN.</p><dl class="kvp-spec"><div><dt>Brand</dt><dd>IRWIN</dd></div><div><dt>Range</dt><dd>Chisels, saw blades, clamps, drill bits, hammers, levels, pliers, wrenches, taps &amp; dies, vises</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=74" target="_blank" rel="noopener">Portfolio p. 74<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Power, industrial &amp; hand tools</span><h3>Cutting and grinding abrasive discs</h3><p>Abrasive cutting and grinding discs and flap discs. Brand: Grandinetti / BIG NET.</p><dl class="kvp-spec"><div><dt>Lines</dt><dd>Abrasive discs, flap discs, glass mesh</dd></div><div><dt>Standards</dt><dd>EN 12413, EN 13743, FEPA; ISO 9001, OSA member</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=75" target="_blank" rel="noopener">Portfolio p. 75<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Power, industrial &amp; hand tools</span><h3>Heavy duty generators and air compressors</h3><p>Portable and customised power generators with smart monitoring, and portable air compressors. Brand: Dynamik.</p><dl class="kvp-spec"><div><dt>Brand</dt><dd>Dynamik</dd></div><div><dt>Range</dt><dd>Portable power generators · air compressors</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=76" target="_blank" rel="noopener">Portfolio p. 76<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Power, industrial &amp; hand tools</span><h3>Professional hand tools and equipment</h3><p>Professional hand tools, clamps, measuring, application and safety equipment for trade professionals. Brand: XAKT.</p><dl class="kvp-spec"><div><dt>Brand</dt><dd>XAKT</dd></div><div><dt>Range</dt><dd>Saws, chisels, wrenches, clamps, trowels, pliers, levels, sealant guns, safety equipment</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=77" target="_blank" rel="noopener">Portfolio p. 77<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Power, industrial &amp; hand tools</span><h3>Construction machinery</h3><p>Machines for construction jobsites and road construction, from rebar cutting and bending to compaction. Brand: XAKT.</p><dl class="kvp-spec"><div><dt>Brand</dt><dd>XAKT</dd></div><div><dt>Range</dt><dd>Cutting, bending, stirrup bending machines, concrete vibrators, road rollers, floor grinders, power trowels, plate compactors</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=78" target="_blank" rel="noopener">Portfolio p. 78<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article></div><h3 class="kvf-g">Sustainable solutions</h3><div class="kvp-grid kvf-grid"><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Sustainable solutions</span><h3>GFRP concrete reinforcement</h3><p>Glass fibre reinforced polymer rebar removing corrosion risk in aggressive environments such as coastal and underwater structures. Brand: Mateenbar.</p><dl class="kvp-spec"><div><dt>Compliance</dt><dd>ACI, ASTM, CSA Grade III</dd></div><div><dt>Design codes</dt><dd>ACI 440.1R, AASHTO LRFD, CAN/CSA S806</dd></div><div><dt>Properties</dt><dd>Corrosion free, non-conductive, non-magnetic</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=80" target="_blank" rel="noopener">Portfolio p. 80<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Sustainable solutions</span><h3>Clean energy solutions (solar PV)</h3><p>Off-grid, hybrid and grid-tied solar PV systems, storage batteries, inverters and mounting systems.</p><dl class="kvp-spec"><div><dt>Panels</dt><dd>440–660 W</dd></div><div><dt>Systems</dt><dd>Residential up to 15 kW, commercial up to 60 kW, industrial up to 1 MW</dd></div><div><dt>Storage</dt><dd>LiFePO4 24/48 V, gel, lead acid</dd></div><div><dt>Mounting</dt><dd>HDG and GI steel</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=81" target="_blank" rel="noopener">Portfolio p. 81<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Sustainable solutions</span><h3>Paints</h3><p>Interior and exterior paints, epoxy and polyurethane floor coatings, fillers and application tools. Brand: Caparol.</p><dl class="kvp-spec"><div><dt>Range</dt><dd>Interior paints, exterior finishes, flooring coatings, fillers &amp; base coats, application tools</dd></div><div><dt>Production</dt><dd>Dubai plant</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=82" target="_blank" rel="noopener">Portfolio p. 82<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Sustainable solutions</span><h3>Specialised coating solutions</h3><p>Elastomeric ceramic roof, wall and industrial membranes providing seamless waterproof, heat-reflective, corrosion-resistant barriers. Brand: Numastec.</p><dl class="kvp-spec"><div><dt>Systems</dt><dd>Re-Ply roofing, fluid-applied membranes</dd></div><div><dt>Performance</dt><dd>Surpasses R19 heat gain testing; fire resistant surface</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=83" target="_blank" rel="noopener">Portfolio p. 83<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Sustainable solutions</span><h3>Oil spill recovery</h3><p>Graphene-based GRAFYSORBER adsorbent barriers and pillows for oil spill clean-up. Brand: Directa Plus (G+).</p><dl class="kvp-spec"><div><dt>Product</dt><dd>GRAFYSORBER®</dd></div><div><dt>Forms</dt><dd>Adsorbent barriers and pillows</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=84" target="_blank" rel="noopener">Portfolio p. 84<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Sustainable solutions</span><h3>Oil spill absorbent</h3><p>USDA bio-preferred absorbent for spills in industry, utilities and transport, supplied from bags to super sacks. Brand: Spill Tackle.</p><dl class="kvp-spec"><div><dt>Packs</dt><dd>Super sack, 55 gal drum, 5 gal bucket, spill kits, bags, socks</dd></div><div><dt>Testing</dt><dd>USEPA leachate tested</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=85" target="_blank" rel="noopener">Portfolio p. 85<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article></div><h3 class="kvf-g">Hygienic solutions</h3><div class="kvp-grid kvf-grid"><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Hygienic solutions</span><h3>Hygienic wall and ceiling panels</h3><p>FRP wall panels and Sanigrid ceiling grid for kitchens, cleanrooms, food plants and hospitals. Brand: Crane Composites.</p><dl class="kvp-spec"><div><dt>Panels</dt><dd>Glasbord with Surfaseal, Varietex, Designs, Kemply</dd></div><div><dt>Ceiling</dt><dd>Sanigrid ceiling grid</dd></div><div><dt>Certification</dt><dd>GREENGUARD; meets USDA/FSIS</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=87" target="_blank" rel="noopener">Portfolio p. 87<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Hygienic solutions</span><h3>Commercial flooring solutions</h3><p>Vinyl rolls, luxury vinyl tiles and planks, laminate, luxury sheet and carpet flooring with accessories. Brand: Tarkett.</p><dl class="kvp-spec"><div><dt>Brand</dt><dd>Tarkett</dd></div><div><dt>Range</dt><dd>LVT/LVP (flex and rigid core), laminate, luxury sheet, carpet, accessories</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=88" target="_blank" rel="noopener">Portfolio p. 88<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Hygienic solutions</span><h3>Hygienic cleanroom solutions</h3><p>FRP wall coverings and phenolic HPL partitions, furniture and lockers for medical, laboratory and food environments. Brand: Cubix+ Plus.</p><dl class="kvp-spec"><div><dt>Materials</dt><dd>FRP wall coverings, phenolic HPL panels</dd></div><div><dt>Properties</dt><dd>Antibacterial, moisture proof, chemical and UV resistant</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=89" target="_blank" rel="noopener">Portfolio p. 89<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article><article class="kvp-card kvf-card"><div class="kvp-body"><span class="kvp-grp">Hygienic solutions</span><h3>Hygienic stainless steel trims and skirting</h3><p>Seamless radius-form stainless steel trims and skirting resisting bacteria and mould in kitchens, hospitals and cleanrooms. Brand: Nexus.</p><dl class="kvp-spec"><div><dt>Material</dt><dd>Stainless steel</dd></div><div><dt>Uses</dt><dd>Commercial kitchens, food plants, hospitals, cleanrooms, laboratories</dd></div></dl><a class="kvp-cat" href="catalogues/KAVITY-14-products-portfolio.pdf#page=90" target="_blank" rel="noopener">Portfolio p. 90<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></article></div></div></section>
+
+<section class="kv-cta">
+  <div class="wrap kv-cta-in">
+    <div class="kv-cta-txt">
+      <span class="kv-cta-kick">Start a project</span>
+      <h2>Have a project in design or at tender?</h2>
+      <p>Send the elevations, sections and load requirements. Our engineers size the system and prepare a technical proposal, with the calculation and shop drawings needed for approval.</p>
+    </div>
+    <div class="kv-cta-act">
+      <a href="contact.html#proposal" class="btn btn-white">Request a technical proposal</a>
+      <a href="https://wa.me/962797774295" class="kv-cta-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.2 1.4Z"/></svg><span>WhatsApp +962 79 777 4295</span></a>
+    </div>
+    <div class="kv-cta-refs"><span>Installed on</span><ul><li>Abdali Boulevard</li><li>Via Amman</li><li>Taj Mall</li><li>King Hussein Cancer Center</li><li>The Hashemite University</li></ul></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="flogo"><img width="760" height="253" loading="lazy" decoding="async" src="img/a0fbdcf78ccd96.webp" alt="KAVITY"></div>
+        <p
+          >Exclusive UNITECH agent in Jordan. Part of KABRI International Contracting Co. LLC and the IKK Group. Engineered building systems, specified and supplied from Amman.</p>
+      </div>
+      <div>
+        <h5>Products</h5>
+        <ul>
+          <li><a href="product/mechanical-cladding-fixation.html">Façade fixation</a></li>
+          <li><a href="product/cable-trays.html">Cable management</a></li>
+          <li><a href="product/architectural-expansion-joints.html">Expansion joints</a></li>
+          <li><a href="product/raised-access-flooring.html">Raised access flooring</a></li>
+          <li><a href="product/plaster-beads-expanded-metal.html">Plaster beads</a></li>
+          <li><a href="products.html">All systems →</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="catalog.html">Catalogues</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html#proposal">Technical proposal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul class="fcontact">
+          <li><a href="tel:+96265515905">+962 6 551 5905</a></li>
+          <li><a href="tel:+962797774295">+962 79 777 4295</a></li>
+          <li><a href="mailto:info.jordan@kabrillc.com">info.jordan@kabrillc.com</a></li>
+          <li>Wasfi Al-Tal St. — Noura Complex, Amman</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 KAVITY · KABRI International Contracting Co. LLC</span>
+      <span>Amman, Jordan</span>
+    </div>
+  </div>
+</footer>
+<button id="toTop" class="totop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+
+<a class="wa" href="https://wa.me/962797774295" aria-label="WhatsApp" target="_blank" rel="noopener">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5c0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
+</a>
+
+<div class="sov" id="sov" hidden>
+  <div class="sbox">
+    <div class="sin">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="sq" type="search" autocomplete="off" spellcheck="false" placeholder="Search products, e.g. omega, cable tray, HDG…">
+      <button type="button" id="sclose" aria-label="Close">Esc</button>
+    </div>
+    <div class="sres" id="sres"></div>
+  </div>
+</div>
+
+<script src="assets/kv/site.js" defer id="kv-site-js"></script>
+<script src="assets/kv/ui.js" defer id="kv-ui-js"></script>
+</body>
+</html>

@@ -114,7 +114,8 @@ html[lang="ar"] .kv3d-hint{text-transform:none;letter-spacing:0;font-family:'IBM
 /* ── photoreal hero: stacked renders, cross-faded by scroll ── */
 .kvh-stack{position:absolute;inset:0;overflow:hidden;background:#1d2127}
 .kvh-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--ox,50%) 50%;
-  opacity:0;transform-origin:var(--ox,50%) 50%;will-change:opacity,transform;display:block}
+  opacity:0;transform-origin:var(--ox,50%) 50%;display:block;visibility:hidden}
+.kvh-img.on{visibility:visible}   /* only the one or two renders in view are composited */
 .kvh-img:first-child{opacity:1}
 picture.kvh-img img{width:100%;height:100%;object-fit:cover;object-position:var(--ox,50%) 50%;display:block}
 @media (max-width:899px){picture.kvh-img img{object-position:50% 100%}}
