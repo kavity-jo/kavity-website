@@ -411,3 +411,6 @@ html[data-theme="dark"] .kvp-img{background:var(--kv-well)}
 .kv3v-loading .kv3d-open{opacity:.6}
 @keyframes kvspin{to{transform:rotate(360deg)}}
 @media(max-width:600px){.kv3d-open{right:.6rem;bottom:.6rem;padding:.55rem .8rem .55rem .65rem}.kv3d-open small{display:none}}
+
+/* v34: fly-outs of the right-hand menu column open inwards so they never leave the viewport */
+@media(min-width:1081px){.mm-links>.mm-item:nth-child(even) .mm-fly{inset-inline-start:auto;inset-inline-end:calc(100% - .5rem)}}
