@@ -414,3 +414,15 @@ html[data-theme="dark"] .kvp-img{background:var(--kv-well)}
 
 /* v34: fly-outs of the right-hand menu column open inwards so they never leave the viewport */
 @media(min-width:1081px){.mm-links>.mm-item:nth-child(even) .mm-fly{inset-inline-start:auto;inset-inline-end:calc(100% - .5rem)}}
+
+/* v36: heading voice — light with a bold phrase, on every page */
+.display{font-weight:300;text-transform:none;letter-spacing:-.025em;line-height:1.08}
+.display b{font-weight:700}
+.kvn-mini{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+.kvn-mini li{display:grid;gap:.15rem;padding:1rem 1.1rem;background:var(--white);border:1px solid var(--line);border-inline-start:3px solid var(--red);border-radius:10px}
+.kvn-mini b{font:600 1rem/1.2 'Outfit',sans-serif;color:var(--ink)}
+.kvn-mini span{font-size:.84rem;color:var(--slate)}
+.kvn-mini i{font-style:normal;font-size:.78rem;color:var(--slate);opacity:.85}
+html[data-theme="dark"] .kvn-mini li{background:var(--kv-surface,#16181B)}
+@media(max-width:900px){.kvn-mini{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.kvn-mini{grid-template-columns:1fr}}
