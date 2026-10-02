@@ -114,16 +114,9 @@ html[lang="ar"] .kv3d-hint{text-transform:none;letter-spacing:0;font-family:'IBM
 /* ── photoreal hero: stacked renders, cross-faded by scroll ── */
 .kvh-stack{position:absolute;inset:0;overflow:hidden;background:#1d2127}
 .kvh-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--ox,50%) 50%;
-  display:block;opacity:0;visibility:hidden;z-index:1;transition:opacity .42s ease,visibility 0s linear .42s}
-.kvh-img.on{opacity:1;visibility:visible;transition:opacity .42s ease}   /* only the renders in view are composited */
-.kvh-img.top{z-index:2}
-.kvh-img.cut{transition:none}
-.hero-media .kvh-stack img{animation:none;transform:none}   /* no drift: callouts and clips stay registered on the render */
-/* camera flights: pre-rendered clips, shown only once their first frame is on screen */
-.kvh-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;
-  z-index:5;opacity:0;pointer-events:none;display:block;background:transparent}
-.kvh-vid.on{opacity:1}
-@media (max-width:899px){.kvh-vid{display:none}}
+  display:block;opacity:0;visibility:hidden;z-index:1;backface-visibility:hidden}
+.kvh-img.on{opacity:1;visibility:visible;will-change:transform,opacity}   /* only the renders in view are composited */
+.hero-media .kvh-stack img{animation:none;transform:none}   /* no drift: callouts stay registered on the render */
 picture.kvh-img img{width:100%;height:100%;object-fit:cover;object-position:var(--ox,50%) 50%;display:block}
 @media (max-width:899px){picture.kvh-img img{object-position:50% 100%}}
 .kvh-stack{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
