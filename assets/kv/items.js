@@ -16,7 +16,6 @@
     return esc(s).replace(/([A-Z]?\d[\d.]*(?:\s*(?:×|x|·)\s*[A-Z]?\d[\d.]*)+(?:\s*(?:mm|m|مم))?)/g, '<span class="kvr-ltr" dir="ltr">$1</span>');
   };
   var mm = function () { return T(' mm', ' مم'); };
-  var kg = function () { return T(' kg', ' كغ'); };
 
   var ICON = {
     bolt: '<path d="M6 7h12v3H6z"/><path d="M10 10v10h4V10"/><path d="M10 13h4M10 16h4M10 19h4"/>',
@@ -35,7 +34,7 @@
 
   var COLS = {
     code: ['Item', 'الصنف'], size: ['Size', 'المقاس'], t: ['Thickness', 'السماكة'],
-    prof: ['Section (mm)', 'المقطع (مم)'], w: ['Weight / pc', 'الوزن / قطعة'],
+    prof: ['Section (mm)', 'المقطع (مم)'],
     bolt: ['Flat head bolt', 'البرغي المسطح'], stf: ['Stiffeners', 'التقويات'], feat: ['Type', 'النوع']
   };
   var gradeCls = function (g) {
@@ -72,7 +71,6 @@
     if (c === 'size') return '<span class="kvr-num" dir="ltr">' + esc(T(r.size, r.size.replace(/ cm$/, ' سم').replace(/ mm$/, ' مم').replace(/ m$/, ' م'))) + '</span>';
     if (c === 't') return r.t ? '<span class="kvr-num">' + r.t + mm() + '</span>' : '<span class="kvr-na">—</span>';
     if (c === 'prof') return r.prof ? '<span class="kvr-num kvr-prof" dir="ltr">' + esc(r.prof) + '</span>' : '<span class="kvr-na">—</span>';
-    if (c === 'w') return r.w ? '<span class="kvr-num">' + esc(r.w) + kg() + '</span>' : '<span class="kvr-na">—</span>';
     if (c === 'bolt') {
       if (!r.bolt) return '<span class="kvr-na">' + esc(T('Per project', 'حسب المشروع')) + '</span>';
       var a = D.acc[r.bolt];
@@ -116,8 +114,8 @@
     h += '<div class="kvr-head"><div>' +
       '<span class="eyebrow">' + esc(T('Range & accessories', 'المقاسات والإكسسوارات')) + '</span>' +
       '<h2 class="display">' + esc(fam.kit ? T('Every size, and the kit that fixes it', 'كل مقاس، والطقم الذي يثبّته') : T('Stock range and sizes', 'المقاسات المتوفرة')) + '</h2></div>' +
-      '<p class="lead">' + esc(T('Standard sizes from the KAVITY item master, with the section, thickness and weight of each piece. Final size, grade and fixing are confirmed by the structural calculation for each project.',
-        'المقاسات القياسية من سجل أصناف كافيتي، مع مقطع كل قطعة وسماكتها ووزنها. يُعتمد المقاس والدرجة وطريقة التثبيت النهائية وفق الحساب الإنشائي لكل مشروع.')) + '</p></div>';
+      '<p class="lead">' + esc(T('Standard sizes from the KAVITY item master, with the section and thickness of each piece. Final size, grade and fixing are confirmed by the structural calculation for each project.',
+        'المقاسات القياسية من سجل أصناف كافيتي، مع مقطع كل قطعة وسماكتها. يُعتمد المقاس والدرجة وطريقة التثبيت النهائية وفق الحساب الإنشائي لكل مشروع.')) + '</p></div>';
 
     if (fam.kit) {
       h += '<div class="kvr-kit"><div class="kvr-kit-h"><span class="kvr-kit-t">' + icon('bracket') +
@@ -181,7 +179,7 @@
     if (rows.length > LIMIT) {
       h += '<button type="button" class="kvr-more">' + esc(state.all ? T('Show fewer', 'عرض أقل') : T('Show all ' + rows.length + ' sizes', 'عرض كل المقاسات (' + rows.length + ')')) + '</button>';
     }
-    h += '<p class="kvr-foot">' + esc(T('Weights are nominal per piece. Sizes not listed can be supplied to order.', 'الأوزان اسمية لكل قطعة. يمكن توريد المقاسات غير المدرجة حسب الطلب.')) + '</p>';
+    h += '<p class="kvr-foot">' + esc(T('Sizes not listed can be supplied to order.', 'يمكن توريد المقاسات غير المدرجة حسب الطلب.')) + '</p>';
 
     var focusSearch = document.activeElement && document.activeElement.matches && document.activeElement.matches('.kvr-search input');
     var caret = focusSearch ? document.activeElement.selectionStart : 0;
