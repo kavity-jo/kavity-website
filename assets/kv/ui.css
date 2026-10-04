@@ -834,3 +834,15 @@ html[lang="ar"] .sub-card b{font-family:'IBM Plex Sans Arabic',sans-serif}
 #sov,.sov{-webkit-backdrop-filter:blur(6px)}
 /* phones: the WhatsApp button keeps clear of the hero while it is on screen */
 html.kv-fab-hero .wa{transform:translateY(160%);opacity:0;pointer-events:none}
+/* one or two related cards keep their normal size */
+@media (min-width:641px){.rel-grid{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))!important}}
+/* a single product group: the group label on every card adds nothing */
+.kvp:not(:has(.kvp-chips)) .kvp-grp{display:none}
+/* phones: size-table chips, catalogue size note, CTA labels and links legible and tappable */
+@media (max-width:640px){html .kvr-g,html .kvr-z{font-size:.75rem}.btn-size{font-size:.75rem}.kv-cta-kick,.kv-cta-refs>span{font-size:.75rem}}
+@media (pointer:coarse){.kv-cta-wa{padding-block:.6rem;min-height:44px}.kvp-cat{min-height:44px;display:inline-flex;align-items:center}}
+/* sub-range chips fade only on the side that has more chips */
+@media(max-width:640px){.sub-nav{-webkit-mask:none;mask:none}
+  .sub-nav.kv-r{-webkit-mask:linear-gradient(90deg,#000 85%,transparent);mask:linear-gradient(90deg,#000 85%,transparent)}
+  .sub-nav.kv-l{-webkit-mask:linear-gradient(90deg,transparent,#000 15%);mask:linear-gradient(90deg,transparent,#000 15%)}
+  .sub-nav.kv-l.kv-r{-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}}
