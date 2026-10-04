@@ -143,26 +143,34 @@
       ].filter(function (r) { return r[1]; }).map(function (r) { return r[0] + ': ' + r[1]; })
         .concat(['', val('message')]).join('\n');
     }
-    function check () {
-      var ok = true;
-      ['name', 'email', 'message'].forEach(function (n) {
-        var el = f.elements[n];
-        if (!el.checkValidity() || !el.value.trim()) { ok && el.focus(); ok = false; el.setAttribute('aria-invalid', 'true'); }
+    function check (req) {
+      var first = null;
+      req.forEach(function (n) {
+        var el = f.elements[n]; if (!el) return;
+        if (!el.checkValidity() || !el.value.trim()) { first = first || el; el.setAttribute('aria-invalid', 'true'); }
         else el.removeAttribute('aria-invalid');
       });
-      if (!ok && f.reportValidity) f.reportValidity();
-      return ok;
+      if (first) { first.focus(); if (first.reportValidity) first.reportValidity(); }
+      return !first;
+    }
+    var ok = f.querySelector('.kv-form-ok');
+    if (ok && navigator.clipboard) {                         /* no mail app opened? copy the composed message instead */
+      var cp = d.createElement('button'); cp.type = 'button'; cp.className = 'kv-copy'; cp.textContent = 'Copy the message';
+      cp.addEventListener('click', function () {
+        navigator.clipboard.writeText('To: info.jordan@kabrillc.com\n' + lines()).then(function () { cp.textContent = 'Copied ✓'; setTimeout(function () { cp.textContent = 'Copy the message'; }, 2200); });
+      });
+      ok.appendChild(d.createTextNode(' ')); ok.appendChild(cp);
     }
     f.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!check()) return;
+      if (!check(['name', 'email', 'message'])) return;
       var subj = 'Technical proposal request' + (val('project') ? ' — ' + val('project') : '');
       location.href = 'mailto:info.jordan@kabrillc.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(lines());
       f.classList.add('sent');
     });
     var wa = f.querySelector('[data-wa]');
     if (wa) wa.addEventListener('click', function () {
-      if (!check()) return;
+      if (!check(['name', 'message'])) return;            /* the reply comes on WhatsApp: no e-mail needed */
       window.open('https://wa.me/' + wa.getAttribute('data-wa') + '?text=' + encodeURIComponent('Technical proposal request\n' + lines()), '_blank', 'noopener');
     });
   });
@@ -722,3 +730,4 @@
     sync(); paint();
   })();
 })();
+/* PROJECTS v2 END */

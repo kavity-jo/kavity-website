@@ -128,3 +128,29 @@ a.kv3d-chip::after{content:'';width:.8rem;height:.8rem;flex:none;margin-left:.1r
   mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E") center/contain no-repeat}
 a.kv3d-chip:hover,a.kv3d-chip:focus-visible{background:var(--red,#C8102E);border-color:var(--red,#C8102E)}
 a.kv3d-chip:hover b{background:#fff;color:var(--red,#C8102E)}
+/* ── v38 · phones: the copy on a dark band, the building below it (it used to sit hidden behind the text) ── */
+@media (max-width:899px){
+  .hero.has-3d{flex-direction:column;align-items:stretch;padding-bottom:0;background:#111316}
+  .hero.has-3d>.wrap{order:1;position:relative;z-index:2;padding-top:2.2rem;padding-bottom:1.8rem}
+  .hero.has-3d .hero-media{position:relative;inset:auto;order:2;aspect-ratio:4/5;width:100%}
+  .hero-red.has-3d::after{display:none}
+  .hero.has-3d picture.kvh-img img{object-position:50% 30%}
+}
+/* the tour as a swipeable strip of the chapter renders: phones, and desktops with Reduce motion */
+.kvh-tour{display:none;background:#111316;color:#fff;padding:2.4rem 0 2.6rem}
+.kvh-tour.show{display:block}
+@media (max-width:899px){.kvh-tour{display:block}}
+.kvh-tour .eyebrow{color:#ff6b7f}
+.kvh-tour-lead{margin:.4rem 0 1.2rem;color:rgba(255,255,255,.72);font-size:.95rem}
+.kvh-tour-rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad,16px) .4rem;scroll-padding-inline:var(--pad,16px);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.kvh-tour-rail::-webkit-scrollbar{display:none}
+.kvh-tour-card{flex:0 0 86%;max-width:560px;scroll-snap-align:start;background:#1a1c20;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden}
+@media (min-width:900px){.kvh-tour-card{flex-basis:40%}}
+.kvh-tour-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#22252a}
+.kvh-tour-card h3{margin:.9rem 1rem .5rem;font:600 1.02rem/1.3 'Outfit',sans-serif;color:#fff}
+.kvh-tour-card h3 b{color:#ff6b7f;font-weight:600;margin-inline-end:.25rem}
+.kvh-tour-card ul{list-style:none;margin:0;padding:0 1rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.kvh-tour-card li a,.kvh-tour-card li span{display:inline-block;font:500 .8rem/1 Inter,sans-serif;padding:.55rem .75rem;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none}
+.kvh-tour-card li a:active{background:#C8102E;border-color:#C8102E}
+/* laptops and iPad landscape: the chapter bar stops short of the WhatsApp button */
+@media (min-width:900px) and (max-width:1399px){.kv3d-steps{inset-inline-end:calc(20px + 56px + 14px)}}

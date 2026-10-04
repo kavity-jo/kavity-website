@@ -718,3 +718,73 @@ html[dir="rtl"] .kvpr.is-armed .kvpr-card{transform:translateX(-64px)}
   .kvpr.is-armed .kvpr-card{opacity:1;transform:none;transition:none}
   .kvpr-thumb{transition:none}
 }
+/* PROJECTS v2 END */
+/* ── v38 · audit fixes: phones, dark theme, touch targets ── */
+/* mobile menu: scrolls inside itself below the header (long Products lists were unreachable); page behind stays still */
+@media(max-width:920px){
+  header nav{top:100%;max-height:calc(100vh - 100%);max-height:calc(100dvh - 100%);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  html.nav-open .wa,html.nav-open .totop{opacity:0;pointer-events:none}
+}
+/* Who-we-are keeps a dark surface in the dark theme */
+html[data-theme="dark"] .kv-intro{background:var(--kv-bg)}
+html[data-theme="dark"] .kv-intro-media img{box-shadow:0 40px 80px -40px rgba(0,0,0,.85)}
+/* floating WhatsApp / back-to-top: smaller on phones, step aside while scrolling down, never cover the footer text */
+.wa,.totop{transition:transform .35s cubic-bezier(.2,.7,.3,1),opacity .3s,visibility .3s}
+html.kv-fab-hide .wa,html.kv-fab-hide .totop.show{transform:translateY(160%);opacity:0;pointer-events:none}
+@media(max-width:640px){
+  .wa{width:50px;height:50px;inset-inline-end:14px;bottom:calc(14px + env(safe-area-inset-bottom))}
+  .totop{width:42px;height:42px;inset-inline-end:18px;bottom:calc(74px + env(safe-area-inset-bottom))}
+  footer .fbot{padding-bottom:96px}
+}
+/* search overlay: the dynamic viewport on iOS so the last results are not under Safari's toolbar */
+@media(max-width:640px){.sbox{height:100vh;height:100dvh;max-height:100dvh;padding-bottom:env(safe-area-inset-bottom)}}
+/* header buttons: 44px touch targets on phones */
+@media(max-width:640px){.sbtn,.kv-theme{width:42px;height:42px}.burger{min-width:44px;min-height:44px}}
+/* network map: country names legible on phones */
+@media(max-width:640px){.kvn-map .kvn-country{font-size:20px;letter-spacing:.1em;fill:rgba(255,255,255,.62)}.kvn-map .kvn-country-home{fill:rgba(255,214,221,.9)}}
+/* certificates: a lone last card spans the row on phones */
+@media(max-width:640px){.cert-row>li:last-child:nth-child(odd){grid-column:1/-1}}
+/* hero tag: the group name never splits */
+.hero-tag .nw{white-space:nowrap}
+@media(max-width:640px){.hero-red .hero-tag{letter-spacing:.08em;line-height:1.55;border-radius:16px}}
+/* phones: shorter product-family cards, sectors as a swipe rail */
+@media(max-width:640px){
+  .lines .line.kv-photo{min-height:240px}
+  .uses{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;scrollbar-width:none;margin-inline:calc(-1 * var(--pad,16px));padding-inline:var(--pad,16px);scroll-padding-inline:var(--pad,16px)}
+  .uses::-webkit-scrollbar{display:none}
+  .uses>.use{flex:0 0 78%;scroll-snap-align:start;aspect-ratio:4/5}
+}
+/* burger shows a close state while the menu is open */
+.burger span{transition:transform .25s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+/* contact form: 16px fields on phones so iOS does not zoom on focus */
+@media (max-width:920px){.kv-f input,.kv-f select,.kv-f textarea{font-size:16px}.kv-f label{font-size:.8rem}}
+/* contact map: the address card goes under the map on phones, so the pin is not hidden */
+@media(max-width:640px){.map-wrap{height:auto;aspect-ratio:auto;display:flex;flex-direction:column}.map-wrap iframe{height:300px;flex:none;position:static}.map-card{position:static;margin:0;max-width:none;border:0;border-top:1px solid var(--line);border-radius:0;box-shadow:none}}
+/* WhatsApp button text with AA contrast */
+.kv-btn-wa{color:#0A6B36}
+html[data-theme="dark"] .kv-btn-wa{color:#5BE58F;border-color:rgba(91,229,143,.4)}
+/* portfolio on phones: one column with the description */
+@media(max-width:640px){.kvf-grid{grid-template-columns:1fr}.kvf-card .kvp-body p{display:block;font-size:.84rem}.kvf-card .kvp-grp{display:none}.kvf-card .kvp-spec div{grid-template-columns:minmax(90px,34%) 1fr}}
+.kvf-g{scroll-margin-top:110px}
+/* products: a family with one product shows it as one wide card */
+@media(min-width:760px){.prods:has(>.prod:only-child){grid-template-columns:1fr}.prods>.prod:only-child{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:stretch}.prods>.prod:only-child .prod-img{height:100%;min-height:300px;border-bottom:0;border-inline-end:1px solid var(--line)}.prods>.prod:only-child .prod-body{padding:2rem 2.2rem;align-self:center}}
+.fam{border-radius:0}
+/* gallery: do not upscale the 880px project photos beyond their size */
+.kvlb-img{max-width:min(100%,880px)}
+/* about: certificates 3 + 3 */
+@media(min-width:641px){.cert-row:has(>li:nth-child(6):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* contact: bigger touch targets for phone links and stage chips */
+.ccell dd a{display:inline-block;padding-block:.45rem;min-height:40px}
+@media(max-width:640px){.kv-chips span{min-height:42px;display:inline-flex;align-items:center;padding-inline:1rem}}
+/* anchors land below the sticky header */
+#proposal,section[id]{scroll-margin-top:84px}
+/* 'Installed on' names link to their projects */
+.kv-cta-refs a{color:inherit;text-decoration:none}
+.kv-cta-refs a:hover{color:#fff;text-decoration:underline}
+.kv-copy{appearance:none;border:1px solid rgba(15,122,61,.4);background:#fff;color:#0A6B36;font:600 .8rem/1 Inter,sans-serif;padding:.5rem .8rem;border-radius:999px;cursor:pointer;margin-top:.5rem}
+html[data-theme="dark"] .kv-copy{background:transparent;color:#5BE58F;border-color:rgba(91,229,143,.4)}
+html.nav-open header{background:var(--white)}
+html[data-theme="dark"].nav-open header{background:var(--kv-bg)}
