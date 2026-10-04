@@ -788,3 +788,40 @@ html[data-theme="dark"] .kv-btn-wa{color:#5BE58F;border-color:rgba(91,229,143,.4
 html[data-theme="dark"] .kv-copy{background:transparent;color:#5BE58F;border-color:rgba(91,229,143,.4)}
 html.nav-open header{background:var(--white)}
 html[data-theme="dark"].nav-open header{background:var(--kv-bg)}
+/* ── v38 · range pages ── */
+/* sub-range card titles in the site type (an Arabic-only font rule had lost its scope) */
+.sub-card b{font-family:'Outfit',sans-serif;font-weight:600}
+html[lang="ar"] .sub-card b{font-family:'IBM Plex Sans Arabic',sans-serif}
+/* 'In this range' grid: column count follows the number of cards, no lone orphan */
+@media(min-width:1000px){
+  .sub-list:has(>.sub-card:nth-child(4):last-child),.sub-list:has(>.sub-card:nth-child(7):last-child),.sub-list:has(>.sub-card:nth-child(8):last-child){grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sub-list:has(>.sub-card:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+/* phones: compact horizontal cards (picture left, text right) instead of full-width 4:3 tiles */
+@media(max-width:600px){
+  .sub-card{display:grid;grid-template-columns:104px 1fr;grid-template-rows:auto 1fr auto;column-gap:.9rem;padding:.75rem;align-items:start}
+  .sub-card .sub-thumb{grid-row:1/4;aspect-ratio:1;padding:.35rem;border:1px solid var(--line);border-radius:10px}
+  .sub-card>b,.sub-card>p,.sub-card>span{padding-inline:0}
+  .sub-card>b{margin-top:0}
+  .sub-card p{margin-bottom:.4rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .rel-grid .rel{display:grid!important;grid-template-columns:96px 1fr;align-items:center}
+  .rel-grid .rel-img{aspect-ratio:1;padding:.4rem;border-bottom:0;border-inline-end:1px solid var(--line)}
+  .rel-grid .rel-t{padding:.7rem .9rem}
+}
+/* data tables: wrap on phones, scroll sideways inside their own box with an edge shadow when wider */
+.ptable-wrap{max-width:100%}
+@media(max-width:700px){
+  .ptable{display:table;white-space:normal;font-size:.8rem;width:100%}
+  .ptable th,.ptable td{padding:.55rem .6rem}
+  .ptable th{letter-spacing:.04em}
+  .ptable-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;
+    background:linear-gradient(90deg,var(--white) 30%,transparent) left/40px 100% no-repeat local,linear-gradient(270deg,var(--white) 30%,transparent) right/40px 100% no-repeat local,radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.18),transparent) right/14px 100% no-repeat scroll}
+}
+.ptable td:nth-child(2){white-space:nowrap}
+/* the 'Explore in 3D' pill gets its own strip under the picture */
+.phero-img[data-kv3d]{padding-bottom:4.6rem}
+@media(max-width:600px){.phero-img[data-kv3d]{padding-bottom:3.6rem}.kv3d-open{min-height:44px}.crumb a{padding-block:.6rem!important}}
+/* size note on the catalogue button */
+.btn-size{font-size:.72em;font-weight:500;opacity:.7;margin-inline-start:.35rem;letter-spacing:0;text-transform:none}
+/* phones: back-to-top is redundant (tap the status bar); WhatsApp stays small */
+@media(max-width:600px){.totop{display:none!important}}

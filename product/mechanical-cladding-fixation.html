@@ -875,7 +875,7 @@ html[dir="rtl"] .banner::after{
 .banner .crumb span{color:rgba(255,255,255,.6)}
 </style>
 <script id="kv-theme-pre">try{if(localStorage.getItem('kavity-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#0B0C0E'}}catch(e){}if(self!==top){document.documentElement.style.visibility='hidden';try{top.location.replace(location.href)}catch(e){}}</script>
-<link rel="stylesheet" href="../assets/kv/ui.css?v=0fca4361" id="kv-ui-css">
+<link rel="stylesheet" href="../assets/kv/ui.css?v=e709dc4d" id="kv-ui-css">
 </head>
 <style>
 .phero{background:var(--mist);padding-block:clamp(2rem,5vw,3.5rem);border-bottom:1px solid var(--line)}
@@ -956,7 +956,7 @@ html[lang="ar"] .dl b{font-family:'IBM Plex Sans Arabic',sans-serif}
 
 <section class="phero">
   <div class="wrap">
-    <nav class="crumb">
+    <nav class="crumb" aria-label="Breadcrumb">
       <a href="../index.html">Home</a><span>/</span>
       <a href="../products.html">Products</a><span>/</span>
       <a href="../products.html#facade">Façade fixation</a>
@@ -968,10 +968,10 @@ html[lang="ar"] .dl b{font-family:'IBM Plex Sans Arabic',sans-serif}
         <p class="lead">Stainless steel bracket systems that carry stone and ceramic cladding independently of the wall behind it.</p>
         <div class="phero-cta">
           <a href="../contact.html#proposal" class="btn btn-red">Request a technical proposal</a>
-          <a href="../catalogues/KAVITY-01-mechanical-fixation.pdf" download class="btn btn-line">Download catalogue</a>
+          <a href="../catalogues/KAVITY-01-mechanical-fixation.pdf" download class="btn btn-line">Download catalogue <small class="btn-size">PDF · 7.0 MB</small></a>
         </div>
       </div>
-      <div class="phero-img" data-kv3d="facade"><img width="1200" height="900" fetchpriority="high" src="../img/cdcb6aeb5af9dc.webp" alt=""></div>
+      <div class="phero-img" data-kv3d="facade"><img width="1200" height="900" fetchpriority="high" src="../img/cdcb6aeb5af9dc.webp" alt="Mechanical cladding fixation"></div>
     </div>
   </div>
 </section>
@@ -981,20 +981,20 @@ html[lang="ar"] .dl b{font-family:'IBM Plex Sans Arabic',sans-serif}
     <div class="pbody">
       <div>
         <p>A mechanically fixed façade transfers the weight of every panel back to the structure through a bracket and an anchor. Nothing relies on adhesive, and nothing relies on the render coat. That is what makes the system inspectable and what makes it last the life of the building.</p><p>KAVITY supplies the full STANGLE range — L- and Z-brackets, omega brackets, fishtail brackets and corrugated dowels — in four stainless grades and in mill- or hot-dip galvanized S235JR where the exposure allows it. Our technical department sizes the system from your elevation, panel weight, cavity depth and wind load, and issues the structural calculation and shop drawings needed for consultant approval.</p>
-        <table class="ptable"><thead><tr><th>Component</th><th>Type</th><th>Function</th><th>Typical use</th></tr></thead><tbody><tr><td>L-bracket — up</td><td>ST-500 1300</td><td>Load bearing</td><td>Panel courses on concrete or blockwork</td></tr><tr><td>L-bracket — up &amp; down</td><td>ST-500 1200</td><td>Load bearing &amp; restraint</td><td>Continuous horizontal joints</td></tr><tr><td>L-bracket — with pin</td><td>ST-500 1100</td><td>Load bearing &amp; restraint</td><td>Vertical joints and edge location</td></tr><tr><td>Z-bracket, returned leg</td><td>ST-600 1100</td><td>Load bearing &amp; restraint</td><td>Deep or insulated cavities</td></tr><tr><td>Omega bracket</td><td>ST-700 1100</td><td>Load bearing</td><td>Panels fixed beneath a concrete slab — soffits</td></tr><tr><td>Fishtail with pin</td><td>ST-800 1100</td><td>Restraint</td><td>Panel edge location</td></tr><tr><td>Fishtail up &amp; down</td><td>ST-800 1200</td><td>Load bearing &amp; restraint</td><td>Horizontal joints — carries the panel above, restrains the one below</td></tr><tr><td>Corrugated dowel</td><td>ST-900 1100</td><td>Load bearing &amp; restraint</td><td>Last panel course — wind load up to 1 kN</td></tr></tbody></table>
-<h3 style="margin:2.6rem 0 .5rem">How the system is sized</h3><p style="margin-bottom:1.2rem">Dead load is taken from the panel volume at a design density of 27 kN/m³. In a vertical joint one anchor carries a whole panel; in a horizontal joint it carries half. A 600 × 1000 × 40 mm stone panel therefore puts 65 kg on a single anchor in a vertical joint, or 32 kg in a horizontal joint. Wind is taken from DIN 1055-4 by the height of the façade above ground:</p><table class="ptable"><thead><tr><th>Height above ground</th><th>Wind pressure</th><th>Wind suction</th></tr></thead><tbody><tr><td>0 – 8 m</td><td>0.50 kN/m²</td><td>−1.00 kN/m²</td></tr><tr><td>8 – 20 m</td><td>0.80 kN/m²</td><td>−1.60 kN/m²</td></tr><tr><td>20 – 100 m</td><td>1.10 kN/m²</td><td>−2.20 kN/m²</td></tr><tr><td>over 100 m</td><td>1.30 kN/m²</td><td>−2.60 kN/m²</td></tr></tbody></table><p style="margin-top:1rem;font-size:.85rem;color:var(--slate)">Figures are the catalogue design basis. Every project is calculated individually — panel size, cavity depth, substrate and exposure change the result.</p>
+        <div class="ptable-wrap"><table class="ptable"><thead><tr><th>Component</th><th>Type</th><th>Function</th><th>Typical use</th></tr></thead><tbody><tr><td>L-bracket — up</td><td>ST-500 1300</td><td>Load bearing</td><td>Panel courses on concrete or blockwork</td></tr><tr><td>L-bracket — up &amp; down</td><td>ST-500 1200</td><td>Load bearing &amp; restraint</td><td>Continuous horizontal joints</td></tr><tr><td>L-bracket — with pin</td><td>ST-500 1100</td><td>Load bearing &amp; restraint</td><td>Vertical joints and edge location</td></tr><tr><td>Z-bracket, returned leg</td><td>ST-600 1100</td><td>Load bearing &amp; restraint</td><td>Deep or insulated cavities</td></tr><tr><td>Omega bracket</td><td>ST-700 1100</td><td>Load bearing</td><td>Panels fixed beneath a concrete slab — soffits</td></tr><tr><td>Fishtail with pin</td><td>ST-800 1100</td><td>Restraint</td><td>Panel edge location</td></tr><tr><td>Fishtail up &amp; down</td><td>ST-800 1200</td><td>Load bearing &amp; restraint</td><td>Horizontal joints — carries the panel above, restrains the one below</td></tr><tr><td>Corrugated dowel</td><td>ST-900 1100</td><td>Load bearing &amp; restraint</td><td>Last panel course — wind load up to 1 kN</td></tr></tbody></table></div>
+<h3 style="margin:2.6rem 0 .5rem">How the system is sized</h3><p style="margin-bottom:1.2rem">Dead load is taken from the panel volume at a design density of 27 kN/m³. In a vertical joint one anchor carries a whole panel; in a horizontal joint it carries half. A 600 × 1000 × 40 mm stone panel therefore puts 65 kg on a single anchor in a vertical joint, or 32 kg in a horizontal joint. Wind is taken from DIN 1055-4 by the height of the façade above ground:</p><div class="ptable-wrap"><table class="ptable"><thead><tr><th>Height above ground</th><th>Wind pressure</th><th>Wind suction</th></tr></thead><tbody><tr><td>0 – 8 m</td><td>0.50 kN/m²</td><td>−1.00 kN/m²</td></tr><tr><td>8 – 20 m</td><td>0.80 kN/m²</td><td>−1.60 kN/m²</td></tr><tr><td>20 – 100 m</td><td>1.10 kN/m²</td><td>−2.20 kN/m²</td></tr><tr><td>over 100 m</td><td>1.30 kN/m²</td><td>−2.60 kN/m²</td></tr></tbody></table></div><p style="margin-top:1rem;font-size:.85rem;color:var(--slate)">Figures are the catalogue design basis. Every project is calculated individually — panel size, cavity depth, substrate and exposure change the result.</p>
 
         <div class="dl">
           <div>
             <b>Full technical catalogue</b>
-            <span>Dimensions, load tables, accessories and standards</span>
+            <span>Dimensions, load tables, accessories and standards · PDF, 7.0 MB</span>
           </div>
           <a href="../catalogues/KAVITY-01-mechanical-fixation.pdf" download class="btn btn-red">Download PDF</a>
         </div>
       </div>
       <aside class="pspec">
         <h3>Specification</h3>
-        <dl><div class="r"><dt>Standard</dt><dd>ASTM A276 / A276M</dd></div><div class="r"><dt>Stainless grades</dt><dd>SS304 · SS316 · SS316L · SS316Ti</dd></div><div class="r"><dt>Coated steel</dt><dd>S235JR mill-galvanized · S235JR hot-dip galvanized</dd></div><div class="r"><dt>Design basis</dt><dd>DIN 1055-4 wind loads · DIN 18515 anchoring</dd></div><div class="r"><dt>Adjustability</dt><dd>Two directions · ±5 mm and ±10 mm</dd></div><div class="r"><dt>Fixings</dt><dd>M8 · M10 · M12</dd></div><div class="r"><dt>Service temperature</dt><dd>≤ 50 °C, 24-hour average</dd></div><div class="r"><dt>Cladding</dt><dd>Natural stone · ceramic · porcelain</dd></div><div class="r"><dt>Design service</dt><dd>Structural calculation per project</dd></div><div class="r"><dt>Brand</dt><dd>STANGLE · manufactured by SFSP · UNITECH-IKK Group</dd></div></dl>
+        <dl><div class="r"><dt>Standard</dt><dd>ASTM A276 / A276M</dd></div><div class="r"><dt>Stainless grades</dt><dd>SS304 · SS316 · SS316L · SS316Ti</dd></div><div class="r"><dt>Coated steel</dt><dd>S235JR mill-galvanized · S235JR hot-dip galvanized</dd></div><div class="r"><dt>Design basis</dt><dd>DIN 1055-4 wind loads · DIN 18515 anchoring</dd></div><div class="r"><dt>Adjustability</dt><dd>Two directions · ±5 mm and ±10 mm</dd></div><div class="r"><dt>Fixings</dt><dd>M8 · M10 · M12</dd></div><div class="r"><dt>Service temperature</dt><dd>≤ 50 °C, 24-hour average</dd></div><div class="r"><dt>Cladding</dt><dd>Natural stone · ceramic · porcelain</dd></div><div class="r"><dt>Design service</dt><dd>Structural calculation per project</dd></div><div class="r"><dt>Brand</dt><dd>STANGLE · manufactured by SFSP · UNITECH – IKK Group</dd></div></dl>
       </aside>
     </div>
   </div>
@@ -1028,7 +1028,7 @@ html[lang="ar"] .dl b{font-family:'IBM Plex Sans Arabic',sans-serif}
       <a href="../contact.html#proposal" class="btn btn-white">Request a technical proposal</a>
       <a href="https://wa.me/962797774295" class="kv-cta-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.2 1.4Z"/></svg><span>WhatsApp +962 79 777 4295</span></a>
     </div>
-    <div class="kv-cta-refs"><span>Installed on</span><ul><li><a href="../projects.html#abdali-boulevard">Abdali Boulevard</a></li><li><a href="../projects.html#via-amman">Via Amman</a></li><li><a href="../projects.html#taj-mall">Taj Mall</a></li><li><a href="../projects.html#king-hussein-cancer-center">King Hussein Cancer Center</a></li><li><a href="../projects.html#hashemite-university">The Hashemite University</a></li></ul></div>
+    <div class="kv-cta-refs"><span>KAVITY projects include</span><ul><li><a href="../projects.html#abdali-boulevard">Abdali Boulevard</a></li><li><a href="../projects.html#via-amman">Via Amman</a></li><li><a href="../projects.html#taj-mall">Taj Mall</a></li><li><a href="../projects.html#king-hussein-cancer-center">King Hussein Cancer Center</a></li><li><a href="../projects.html#hashemite-university">The Hashemite University</a></li></ul></div>
   </div>
 </section>
 
@@ -1097,7 +1097,7 @@ html[lang="ar"] .dl b{font-family:'IBM Plex Sans Arabic',sans-serif}
   </div>
 </div>
 
-<script src="../assets/kv/site.js?v=b853a53b" defer id="kv-site-js"></script>
-<script src="../assets/kv/ui.js?v=6ec1f4bb" defer id="kv-ui-js"></script>
+<script src="../assets/kv/site.js?v=5a9a1338" defer id="kv-site-js"></script>
+<script src="../assets/kv/ui.js?v=050be3df" defer id="kv-ui-js"></script>
 </body>
 </html>
