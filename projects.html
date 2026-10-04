@@ -2,7 +2,9 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-9QA26sb78+fDYXpYmI6osGjom1I/uFa+y+oPGyyQ+kc='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src https://www.google.com; manifest-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Projects | KAVITY</title>
 <link rel="canonical" href="https://kavity-jo.github.io/kavity-website/projects.html">
 <meta property="og:url" content="https://kavity-jo.github.io/kavity-website/projects.html">
@@ -16,10 +18,10 @@
 <meta property="og:site_name" content="KAVITY">
 <meta name="theme-color" content="#C8102E">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23C8102E'/%3E%3Ctext x='32' y='46' font-family='Arial' font-weight='700' font-size='40' fill='white' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 :root{
   --red:    #C8102E;   --deep:   #8E0B21;   --ink:    #2E3134;   --slate:  #6A7278;   --mist:   #F6F7F8;   --line:   #E3E6E9;
@@ -817,8 +819,8 @@ html[dir="rtl"] .banner::after{
 .banner h1{text-shadow:0 2px 18px rgba(40,2,10,.38)}
 .banner .crumb span{color:rgba(255,255,255,.6)}
 </style>
-<script id="kv-theme-pre">try{if(localStorage.getItem('kavity-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#0B0C0E'}}catch(e){}</script>
-<link rel="stylesheet" href="assets/kv/ui.css?v=89b702bc" id="kv-ui-css">
+<script id="kv-theme-pre">try{if(localStorage.getItem('kavity-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#0B0C0E'}}catch(e){}if(self!==top){document.documentElement.style.visibility='hidden';try{top.location.replace(location.href)}catch(e){}}</script>
+<link rel="stylesheet" href="assets/kv/ui.css?v=b646929e" id="kv-ui-css">
 </head>
 <body>
 <a class="kv-skip" href="#main">Skip to content</a>
@@ -855,31 +857,66 @@ html[dir="rtl"] .banner::after{
     <p class="crumb"><a href="index.html">Home</a><span>›</span><a href="#">Projects</a></p>
   </div>
 </section>
-<section class="sec">
+<section class="sec kvpj" aria-labelledby="kvpj-title">
   <div class="wrap">
-    <div style="margin-bottom:2.5rem">
+    <div class="kvpj-head">
       <span class="eyebrow">Delivered</span>
-      <h2 class="display">Completed <b>projects</b></h2>
-      <p class="lead"
-        >A selection of projects in Jordan where our systems are installed. The full reference list is available on request.</p>
+      <h2 class="display" id="kvpj-title">Completed <b>projects</b></h2>
+      <p class="lead">A selection of projects in Jordan where our systems are installed. The full reference list is available on request.</p>
     </div>
-    <div class="filters">
-      <button type="button" data-market="all"    aria-pressed="true" >All</button>
-      <button type="button" data-market="retail" aria-pressed="false">Retail &amp; mixed-use</button>
-      <button type="button" data-market="health" aria-pressed="false">Healthcare</button>
-      <button type="button" data-market="edu"    aria-pressed="false">Education</button>
+    <div class="kvpj-bar">
+      <div class="kvpj-filters" role="group" aria-label="Filter projects by sector">
+        <button type="button" data-market="all" aria-pressed="true">All</button>
+        <button type="button" data-market="retail" aria-pressed="false">Retail &amp; mixed-use</button>
+        <button type="button" data-market="health" aria-pressed="false">Healthcare</button>
+        <button type="button" data-market="edu" aria-pressed="false">Education</button>
+      </div>
+      <p class="kvpj-count" role="status" aria-live="polite">5 projects</p>
     </div>
-    <div class="grid-proj">
-      <article class="proj" data-market="retail"><img width="880" height="660" loading="lazy" decoding="async" src="img/4fc9ba04db2b1d.webp" alt="Abdali Boulevard"><div class="proj-cap"><b>Abdali Boulevard</b><span>Amman · Mixed-use</span></div></article>
-      <article class="proj" data-market="retail"><img width="880" height="660" loading="lazy" decoding="async" src="img/4f63a460745f5b.webp" alt="Via Amman"><div class="proj-cap"><b>Via Amman</b><span>Amman · Retail &amp; leisure</span></div></article>
-      <article class="proj" data-market="retail"><img width="880" height="660" loading="lazy" decoding="async" src="img/a0d6c670a126c7.webp" alt="Taj Mall"><div class="proj-cap"><b>Taj Mall</b><span>Amman · Retail</span></div></article>
-      <article class="proj" data-market="health"><img width="880" height="660" loading="lazy" decoding="async" src="img/22967d1d8f8ff7.webp" alt="King Hussein Cancer Center"><div class="proj-cap"><b>King Hussein Cancer Center</b><span>Amman · Healthcare</span></div></article>
-      <article class="proj" data-market="edu"><img width="880" height="660" loading="lazy" decoding="async" src="img/8c68f9ce16d27a.webp" alt="The Hashemite University"><div class="proj-cap"><b>The Hashemite University</b><span>Zarqa · Education</span></div></article>
-      <article class="proj" data-market="retail"><img width="880" height="660" loading="lazy" decoding="async" src="img/7db8c73bb3041c.webp" alt="Abdali Boulevard"><div class="proj-cap"><b>Abdali Boulevard</b><span>Amman · Public realm detail</span></div></article>
-      <article class="proj" data-market="retail"><img width="880" height="660" loading="lazy" decoding="async" src="img/d3be9d4954a045.webp" alt="Via Amman"><div class="proj-cap"><b>Via Amman</b><span>Amman · Façade detail</span></div></article>
+    <div class="kvpj-grid">
+      <article class="kvpj-card" id="abdali-boulevard" data-market="retail"
+        data-photos="img/4fc9ba04db2b1d.webp|Amman · Mixed-use;img/7db8c73bb3041c.webp|Amman · Public realm detail">
+        <div class="kvpj-media"><img width="880" height="660" loading="lazy" decoding="async" src="img/4fc9ba04db2b1d.webp" alt="Abdali Boulevard, Amman"></div>
+        <div class="kvpj-body">
+          <h3><button type="button" class="kvpj-open">Abdali Boulevard</button></h3>
+          <p class="kvpj-meta">Amman · Mixed-use</p>
+        </div>
+      </article>
+      <article class="kvpj-card" id="via-amman" data-market="retail"
+        data-photos="img/4f63a460745f5b.webp|Amman · Retail &amp; leisure;img/d3be9d4954a045.webp|Amman · Façade detail">
+        <div class="kvpj-media"><img width="880" height="660" loading="lazy" decoding="async" src="img/4f63a460745f5b.webp" alt="Via Amman, Amman"></div>
+        <div class="kvpj-body">
+          <h3><button type="button" class="kvpj-open">Via Amman</button></h3>
+          <p class="kvpj-meta">Amman · Retail &amp; leisure</p>
+        </div>
+      </article>
+      <article class="kvpj-card" id="taj-mall" data-market="retail">
+        <div class="kvpj-media"><img width="880" height="660" loading="lazy" decoding="async" src="img/a0d6c670a126c7.webp" alt="Taj Mall, Amman"></div>
+        <div class="kvpj-body">
+          <h3><button type="button" class="kvpj-open">Taj Mall</button></h3>
+          <p class="kvpj-meta">Amman · Retail</p>
+        </div>
+      </article>
+      <article class="kvpj-card" id="king-hussein-cancer-center" data-market="health">
+        <div class="kvpj-media"><img width="880" height="660" loading="lazy" decoding="async" src="img/22967d1d8f8ff7.webp" alt="King Hussein Cancer Center, Amman"></div>
+        <div class="kvpj-body">
+          <h3><button type="button" class="kvpj-open">King Hussein Cancer Center</button></h3>
+          <p class="kvpj-meta">Amman · Healthcare</p>
+        </div>
+      </article>
+      <article class="kvpj-card" id="hashemite-university" data-market="edu">
+        <div class="kvpj-media"><img width="880" height="660" loading="lazy" decoding="async" src="img/8c68f9ce16d27a.webp" alt="The Hashemite University, Zarqa"></div>
+        <div class="kvpj-body">
+          <h3><button type="button" class="kvpj-open">The Hashemite University</button></h3>
+          <p class="kvpj-meta">Zarqa · Education</p>
+        </div>
+      </article>
+      <aside class="kvpj-more" aria-label="Full reference list">
+        <span class="kvpj-more-k">Reference list</span>
+        <p>And a growing list of further projects across Jordan and the region. Contact us for the complete reference list for your sector.</p>
+        <a href="contact.html">Request the reference list <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </aside>
     </div>
-    <p class="more"
-      >And a growing list of further projects across Jordan and the region. Contact us for the complete reference list for your sector.</p>
   </div>
 </section>
 
@@ -965,6 +1002,6 @@ html[dir="rtl"] .banner::after{
 </div>
 
 <script src="assets/kv/site.js?v=1042edba" defer id="kv-site-js"></script>
-<script src="assets/kv/ui.js?v=f0734701" defer id="kv-ui-js"></script>
+<script src="assets/kv/ui.js?v=4e37476e" defer id="kv-ui-js"></script>
 </body>
 </html>
