@@ -825,3 +825,12 @@ html[lang="ar"] .sub-card b{font-family:'IBM Plex Sans Arabic',sans-serif}
 .btn-size{font-size:.72em;font-weight:500;opacity:.7;margin-inline-start:.35rem;letter-spacing:0;text-transform:none}
 /* phones: back-to-top is redundant (tap the status bar); WhatsApp stays small */
 @media(max-width:600px){.totop{display:none!important}}
+/* touch targets and small labels on phones (sub-pages) */
+@media (pointer:coarse){.kvp-chips button,.kvr-chips button,.kvr-tabs button{min-height:40px}.kvp-cat{padding:.7rem 0}}
+@media (max-width:640px){.kvp-grp,.kvr-g{font-size:.75rem}.kvp-chips button i{font-size:.75rem}
+  .sub-nav{-webkit-mask:linear-gradient(90deg,#000 85%,transparent);mask:linear-gradient(90deg,#000 85%,transparent)}}
+/* Safari before 18 needs the prefixed blur */
+.kv-lb{-webkit-backdrop-filter:blur(6px)}
+#sov,.sov{-webkit-backdrop-filter:blur(6px)}
+/* phones: the WhatsApp button keeps clear of the hero while it is on screen */
+html.kv-fab-hero .wa{transform:translateY(160%);opacity:0;pointer-events:none}
