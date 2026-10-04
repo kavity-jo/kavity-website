@@ -126,3 +126,16 @@ html[lang="ar"] .kvr-th{letter-spacing:0;font-size:.76rem}
 @media (prefers-reduced-motion:reduce){.kvr-row .kvr-tr{animation:none}.kvr-detail{transition:none}}
 .kvr-ltr,.kv-range [dir="ltr"]{unicode-bidi:isolate;direction:ltr;display:inline-block}
 html[dir="rtl"] .kvr-num[dir="ltr"]{text-align:right}
+
+/* v38: 16px search text (no iOS zoom on focus); compact size rows on phones */
+.kvr-search input{font-size:16px}
+.kvr-count .kvr-cg{text-transform:none}
+.kvr-still .kvr-row .kvr-tr{animation:none}
+@media (max-width:700px){
+  .kvr-tr{grid-template-columns:repeat(3,minmax(0,1fr));gap:.35rem .8rem;padding:.7rem .9rem}
+  .kvr-tr > span[data-l]:not(:first-child)::before{font-size:.6rem;margin-bottom:.1rem}
+  .kvr-tr > span:has(> .kvr-prof){grid-column:1 / -1}
+  .kvr-x{grid-column:-2 / -1;justify-self:end}
+  .kvr-uni .kvr-tr > span:first-child{grid-column:auto}
+  .kvr-kitbtn{width:auto;padding:.45rem .7rem}
+}

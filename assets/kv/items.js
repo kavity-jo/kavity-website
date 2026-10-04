@@ -90,7 +90,9 @@
     });
   }
 
-  function render () {
+  function norm (s) { return String(s || '').toLowerCase().replace(/[x*×]/g, '×').replace(/\s+/g, ''); }
+
+  function render (rowsOnly) {
     var groups = fam.groups;
     var group = groups[Math.min(state.g, groups.length - 1)];
     var grades = [], thick = [];
@@ -99,14 +101,16 @@
       if (r.t && thick.indexOf(r.t) < 0) thick.push(r.t);
     });
     thick.sort(function (a, b) { return a - b; });
-    var q = state.q.trim().toLowerCase();
+    var q = norm(state.q);
     var rows = group.rows.filter(function (r) {
       if (state.grade !== 'all' && r.g !== state.grade) return false;
       if (state.t !== 'all' && r.t !== state.t) return false;
-      if (q && (r.code + ' ' + r.size + ' ' + (r.prof || '') + ' ' + (r.feat ? r.feat.en + ' ' + r.feat.ar : '')).toLowerCase().indexOf(q) < 0) return false;
+      if (q && norm([r.code || '', r.size, r.prof || '', r.feat ? r.feat.en + ' ' + r.feat.ar : ''].join(' ')).indexOf(q) < 0) return false;
       return true;
     });
-    var cols = colsFor(group.rows);
+    /* groups without codes and with one grade: the name and grade would repeat on every row, so they go in the count line */
+    var uni = grades.length === 1 && group.rows.every(function (r) { return !r.code && !r.feat; });
+    var cols = colsFor(group.rows).filter(function (c) { return !(uni && c === 'code'); });
     var shown = state.all ? rows : rows.slice(0, LIMIT);
     var anyKit = group.rows.some(function (r) { return r.kit; });
 
@@ -145,14 +149,15 @@
         }).join('') + '</div>';
     }
     if (group.rows.length > 14) {
+      var ex = String(group.rows[Math.min(3, group.rows.length - 1)].size || '').replace(/ ?(cm|mm|m)$/, '').split(' × ')[0].split(' ')[0];
       h += '<label class="kvr-search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>' +
-        '<input type="search" value="' + esc(state.q) + '" placeholder="' + esc(T('Search size, e.g. 280', 'ابحث عن مقاس، مثل 280')) + '" aria-label="' + esc(T('Search sizes', 'ابحث في المقاسات')) + '"></label>';
+        '<input type="search" value="' + esc(state.q) + '" placeholder="' + esc(T('Search size, e.g. ' + ex, 'ابحث عن مقاس، مثل ' + ex)) + '" aria-label="' + esc(T('Search sizes', 'ابحث في المقاسات')) + '"></label>';
     }
-    h += '<span class="kvr-count">' + rows.length + ' ' + esc(T(rows.length === 1 ? 'item' : 'items', 'صنف')) + '</span></div></div>';
+    h += '<span class="kvr-count">' + rows.length + ' ' + esc(T(rows.length === 1 ? 'item' : 'items', 'صنف')) + (uni ? ' · <span class="kvr-cg">' + esc(gradeLabel(grades[0])) + '</span>' : '') + '</span></div></div>';
 
     var CW = { code: 'minmax(120px,1.05fr)', size: 'minmax(90px,.9fr)', t: 'minmax(70px,.7fr)', prof: 'minmax(190px,1.6fr)', w: 'minmax(80px,.8fr)', bolt: 'minmax(90px,.85fr)', stf: 'minmax(80px,.8fr)', feat: 'minmax(140px,1.5fr)' };
     var gt = cols.map(function (c) { return CW[c]; }).join(' ') + (anyKit ? ' 84px' : '');
-    h += '<div class="kvr-table" role="table" style="--gt:' + gt + '">';
+    h += '<div class="kvr-res"><div class="kvr-table' + (uni ? ' kvr-uni' : '') + '" role="table" style="--gt:' + gt + '">';
     h += '<div class="kvr-tr kvr-th" role="row">' + cols.map(function (c) {
       return '<span role="columnheader">' + esc(T(COLS[c][0], COLS[c][1])) + '</span>';
     }).join('') + (anyKit ? '<span class="kvr-x" role="columnheader"><span class="sr">' + esc(T('Kit', 'الطقم')) + '</span></span>' : '') + '</div>';
@@ -179,8 +184,17 @@
     if (rows.length > LIMIT) {
       h += '<button type="button" class="kvr-more">' + esc(state.all ? T('Show fewer', 'عرض أقل') : T('Show all ' + rows.length + ' sizes', 'عرض كل المقاسات (' + rows.length + ')')) + '</button>';
     }
-    h += '<p class="kvr-foot">' + esc(T('Sizes not listed can be supplied to order.', 'يمكن توريد المقاسات غير المدرجة حسب الطلب.')) + '</p>';
+    h += '</div><p class="kvr-foot">' + esc(T('Sizes not listed can be supplied to order.', 'يمكن توريد المقاسات غير المدرجة حسب الطلب.')) + '</p>';
 
+    /* typing in the size search swaps only the rows and the count, so the input (and the iOS keyboard) stay put */
+    var res = host.querySelector('.kvr-res');
+    if (rowsOnly && res) {
+      var tmp = document.createElement('div'); tmp.innerHTML = h;
+      var nr = tmp.querySelector('.kvr-res'); nr.classList.add('kvr-still');
+      res.replaceWith(nr);
+      host.querySelector('.kvr-count').innerHTML = tmp.querySelector('.kvr-count').innerHTML;
+      return;
+    }
     var focusSearch = document.activeElement && document.activeElement.matches && document.activeElement.matches('.kvr-search input');
     var caret = focusSearch ? document.activeElement.selectionStart : 0;
     host.querySelector('.wrap').innerHTML = h;
@@ -206,8 +220,8 @@
     if (r && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); r.click(); }
   });
   host.addEventListener('input', function (e) {
-    if (e.target.matches('.kvr-search input')) { state.q = e.target.value; render(); }
+    if (e.target.matches('.kvr-search input')) { state.q = e.target.value; render(true); }
   });
-  new MutationObserver(render).observe(html, { attributes: true, attributeFilter: ['lang'] });
+  new MutationObserver(function () { render(); }).observe(html, { attributes: true, attributeFilter: ['lang'] });
   render();
 })();
