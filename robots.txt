@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kavity-jo.github.io/kavity-website/sitemap.xml
+Sitemap: https://www.kavityengineering.com/sitemap.xml

@@ -237,14 +237,14 @@
 })();
 
 /* Copies of the site on other domains get a notice pointing to the official site (a banner, never a redirect).
-   If KAVITY moves to its own domain, add it to OFFICIAL. */
+   The official domain is www.kavityengineering.com (and the bare kavityengineering.com). */
 (function(){
-  var OFFICIAL=['kavity-jo.github.io','localhost','127.0.0.1',''];
+  var OFFICIAL=['www.kavityengineering.com','kavityengineering.com','localhost','127.0.0.1',''];
   var h=location.hostname;
   if(OFFICIAL.indexOf(h)>=0||/\.translate\.goog$/.test(h)||location.protocol==='file:') return;
   var b=document.createElement('div');
   b.className='kv-copy-note'; b.setAttribute('role','note');
-  b.innerHTML='This is not the official KAVITY website. The official site is <a href="https://kavity-jo.github.io/kavity-website/">kavity-jo.github.io/kavity-website</a> · <a href="mailto:info.jordan@kabrillc.com">info.jordan@kabrillc.com</a>';
+  b.innerHTML='This is not the official KAVITY website. The official site is <a href="https://www.kavityengineering.com/">www.kavityengineering.com</a> · <a href="mailto:info.jordan@kabrillc.com">info.jordan@kabrillc.com</a>';
   document.body.insertBefore(b,document.body.firstChild);
 })();
 
