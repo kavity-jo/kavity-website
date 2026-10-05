@@ -540,7 +540,7 @@ html[data-theme="dark"] .kvpj-filters button[aria-pressed="true"]{color:#0B0C0E}
 /* reference-list tile closing the grid */
 .kvpj-more{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:1.4rem;
   aspect-ratio:4/3;padding:clamp(1.3rem,2.4vw,1.9rem);border-radius:var(--r-md,14px);
-  background:var(--ink);color:#fff;overflow:hidden;isolation:isolate}
+  background:var(--ink);color:#fff;overflow:hidden;overflow:clip;isolation:isolate}
 .kvpj-more::before{content:'';position:absolute;z-index:-1;inset:auto -30% -55% auto;width:85%;aspect-ratio:1;border-radius:50%;
   background:radial-gradient(closest-side,rgba(200,16,46,.55),rgba(200,16,46,0));transition:transform .8s cubic-bezier(.2,.7,.3,1)}
 .kvpj-more:hover::before{transform:scale(1.12)}
@@ -782,7 +782,7 @@ html[data-theme="dark"] .kv-btn-wa{color:#5BE58F;border-color:rgba(91,229,143,.4
 /* 'Installed on' names link to their projects */
 .kv-cta-refs a{color:inherit;text-decoration:none}
 .kv-cta-refs a:hover{color:#fff;text-decoration:underline}
-.kv-copy{appearance:none;border:1px solid rgba(15,122,61,.4);background:#fff;color:#0A6B36;font:600 .8rem/1 Inter,sans-serif;padding:.5rem .8rem;border-radius:999px;cursor:pointer;margin-top:.5rem}
+.kv-copy{appearance:none;border:1px solid rgba(15,122,61,.4);background:#fff;color:#0A6B36;font:600 .8rem/1 Inter,sans-serif;padding:.7rem 1rem;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;cursor:pointer;margin-top:.5rem}
 html[data-theme="dark"] .kv-copy{background:transparent;color:#5BE58F;border-color:rgba(91,229,143,.4)}
 html.nav-open header{background:var(--white)}
 html[data-theme="dark"].nav-open header{background:var(--kv-bg)}
@@ -848,3 +848,21 @@ html.kv-fab-hero .wa{transform:translateY(160%);opacity:0;pointer-events:none}
 /* v38: CTA project links are 44 px tap targets on touch screens; spec labels stay readable on phones */
 @media (pointer:coarse){.kv-cta-refs a{display:inline-flex;align-items:center;min-height:44px}.kv-cta-refs ul{row-gap:0}}
 @media (max-width:640px){html .pspec dt{font-size:.75rem}}
+
+/* v38j: the group name never splits (a break after the dash left ' IKK Group' indented) */
+.nw{white-space:nowrap}
+/* phones: range tables fit their columns instead of hiding the last one */
+@media (max-width:600px){.ptable td:nth-child(2){white-space:normal}.ptable th,.ptable td{padding:.5rem .35rem}.ptable th{letter-spacing:0;font-size:.7rem}}
+/* dark theme: picture frames match the dimmed white of the catalogue pictures */
+html[data-theme="dark"] :is(.sub-thumb,.prod-img,.phero-img,.cat-cover,.rel-img,.mm-fly-img){background:#f7f7f7}
+/* phones: range tables become stacked label / value rows instead of a table wider than the screen */
+@media (max-width:600px){
+  .ptable,.ptable tbody,.ptable tr,.ptable td{display:block;width:100%}
+  .ptable thead{display:none}
+  .ptable tr{border:1px solid var(--line);border-radius:12px;margin-bottom:.6rem;overflow:hidden}
+  .ptable td{display:grid;grid-template-columns:38% 1fr;gap:.6rem;align-items:baseline;padding:.32rem .8rem;line-height:1.35;border:0;white-space:normal}
+  .ptable td:first-child{padding-top:.55rem}.ptable td:last-child{padding-bottom:.55rem}
+  .ptable td::before{content:attr(data-l);font:600 .66rem/1.5 Inter,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--slate)}
+  .ptable td:first-child{font-weight:600}
+  .ptable tr:nth-child(even) td{background:transparent}
+}
