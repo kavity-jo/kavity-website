@@ -687,9 +687,7 @@ html[dir="rtl"] .kvpr-prev svg,html[dir="rtl"] .kvpr-next svg{transform:scaleX(-
 .kvpr-ring circle{fill:none;stroke-width:1.5}
 .kvpr-ring .kvpr-ring-bg{stroke:var(--line)}
 .kvpr-ring .kvpr-ring-fg{stroke:var(--red);stroke-dasharray:138.23;stroke-dashoffset:138.23}
-.kvpr.is-auto .kvpr-ring-fg{animation:kvprTick var(--kvpr-dur,6s) linear forwards}
-.kvpr.is-auto.is-hold .kvpr-ring-fg{animation-play-state:paused}
-@keyframes kvprTick{to{stroke-dashoffset:0}}
+/* the ring is drawn by ui.js (stroke-dashoffset per frame) */
 .kvpr-play .kvpr-i-play{display:none}
 .kvpr-play[data-state="paused"] .kvpr-i-play{display:block}
 .kvpr-play[data-state="paused"] .kvpr-i-pause{display:none}
@@ -750,7 +748,7 @@ html.kv-fab-hide .wa,html.kv-fab-hide .totop.show{transform:translateY(160%);opa
 /* phones: shorter product-family cards, sectors as a swipe rail */
 @media(max-width:640px){
   .lines .line.kv-photo{min-height:240px}
-  .uses{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;scrollbar-width:none;margin-inline:calc(-1 * var(--pad,16px));padding-inline:var(--pad,16px);scroll-padding-inline:var(--pad,16px)}
+  .uses{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;scrollbar-width:none;margin-inline:-1.1rem;padding-inline:1.1rem;scroll-padding-inline:1.1rem}
   .uses::-webkit-scrollbar{display:none}
   .uses>.use{flex:0 0 78%;scroll-snap-align:start;aspect-ratio:4/5}
 }

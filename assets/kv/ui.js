@@ -551,9 +551,10 @@
 })();
 
 /* ── PROJECTS v2 · rail — homepage "Completed projects": scroll-snap rail with
-   mouse drag + thrown glide, gentle auto-advance (ring timer, pauses on hover,
-   focus, off-screen, hidden tab; stops on any manual use), progress line,
-   image parallax. Does nothing when .kvpr is absent. ── */
+   mouse drag + thrown glide, auto-advance (JS timer drawn on the play button's
+   ring; waits while keyboard focus is inside, off-screen or in a hidden tab, and
+   for a few seconds after any manual scroll; the button pauses it for good),
+   progress line, image parallax. Does nothing when .kvpr is absent. ── */
 (function () {
   'use strict';
   var d = document;
@@ -621,10 +622,30 @@
     if ('ResizeObserver' in window) new ResizeObserver(queue).observe(view);
     window.addEventListener('load', queue);
 
-    /* auto-advance: the ring on the play button is the timer (CSS animation) */
+    /* auto-advance. The timer runs in JS (requestAnimationFrame) and draws the ring itself:
+       Safari can miss animationend on an SVG ring, and pausing on hover stopped the rail
+       whenever the mouse happened to rest on it. Manual use only waits a few seconds. */
     var auto = !reduce && slides.length > 1 && !!ring && !!play, user = false;
-    var hold = { hover: false, focus: false, off: true, hidden: d.hidden, drag: false };
+    var hold = { focus: false, off: true, hidden: d.hidden, drag: false };
+    var RING = 138.23, DUR = (function () {
+      var v = getComputedStyle(sec).getPropertyValue('--kvpr-dur').trim(), n = parseFloat(v);
+      return n ? (/ms$/.test(v) ? n : n * 1000) : 6000;
+    })(), WAIT = 6000;
+    var elapsed = 0, idleUntil = 0, last = 0, loop = 0;
     function held () { for (var k in hold) if (hold[k]) return true; return false; }
+    function drawRing () { if (ring) ring.style.strokeDashoffset = (RING * (1 - Math.min(1, elapsed / DUR))).toFixed(2); }
+    function tick (t) {
+      loop = 0;
+      if (!auto || user || hold.off || hold.hidden) { last = 0; return; }
+      var dt = last ? Math.min(100, t - last) : 0; last = t;
+      if (!held() && performance.now() >= idleUntil) {
+        elapsed += dt;
+        if (elapsed >= DUR) { elapsed = 0; if (!step(1)) to(0, true); }
+      }
+      drawRing();
+      loop = requestAnimationFrame(tick);
+    }
+    function run () { if (!loop && auto && !user && !hold.off && !hold.hidden) { last = 0; loop = requestAnimationFrame(tick); } }
     function sync () {
       sec.classList.toggle('is-auto', auto && !user);
       sec.classList.toggle('is-hold', held());
@@ -633,29 +654,21 @@
         play.setAttribute('data-state', user ? 'paused' : 'playing');
         play.setAttribute('aria-label', user ? 'Play automatic scrolling' : 'Pause automatic scrolling');
       }
+      run();
     }
-    function restart () { sec.classList.remove('is-auto'); if (ring) void ring.getBoundingClientRect(); sync(); }
-    function stopAuto () { if (auto && !user) { user = true; sync(); } }
-    if (ring) ring.addEventListener('animationend', function (e) {
-      if (e.animationName !== 'kvprTick' || !auto || user || held()) return;
-      if (!step(1)) to(0, true);
-      restart();
+    function nudge () { if (auto && !user) { elapsed = 0; drawRing(); idleUntil = performance.now() + WAIT; } }
+    if (play) play.addEventListener('click', function () { user = !user; elapsed = 0; idleUntil = 0; drawRing(); sync(); });
+    view.addEventListener('focusin', function (e) {
+      var t = e.target; hold.focus = !!(t && t.matches && (function () { try { return t.matches(':focus-visible'); } catch (_) { return true; } })()); sync();
     });
-    if (play) play.addEventListener('click', function () { user = !user; restart(); });
-    [view, ctl].forEach(function (el) {
-      if (!el) return;
-      el.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hold.hover = true; sync(); } });
-      el.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hold.hover = false; sync(); } });
-    });
-    view.addEventListener('focusin', function () { hold.focus = true; sync(); });
     view.addEventListener('focusout', function (e) { if (!view.contains(e.relatedTarget)) { hold.focus = false; sync(); } });
     d.addEventListener('visibilitychange', function () { hold.hidden = d.hidden; sync(); });
-    view.addEventListener('touchstart', stopAuto, { passive: true });
-    view.addEventListener('wheel', function (e) { if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) stopAuto(); }, { passive: true });
+    view.addEventListener('touchstart', nudge, { passive: true });
+    view.addEventListener('wheel', function (e) { if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > 3) nudge(); }, { passive: true });
 
     /* arrows */
-    if (prev) prev.addEventListener('click', function () { if (prev.getAttribute('aria-disabled') !== 'true') { stopAuto(); step(-1); } });
-    if (next) next.addEventListener('click', function () { if (next.getAttribute('aria-disabled') !== 'true') { stopAuto(); step(1); } });
+    if (prev) prev.addEventListener('click', function () { if (prev.getAttribute('aria-disabled') !== 'true') { nudge(); step(-1); } });
+    if (next) next.addEventListener('click', function () { if (next.getAttribute('aria-disabled') !== 'true') { nudge(); step(1); } });
 
     /* keyboard: ←/→ move between cards when one has focus */
     view.addEventListener('keydown', function (e) {
@@ -664,7 +677,7 @@
       if (!s) return;
       var j = slides.indexOf(s) + ((e.key === 'ArrowRight') !== isRtl(view) ? 1 : -1);
       if (j < 0 || j >= slides.length) return;
-      e.preventDefault(); stopAuto();
+      e.preventDefault(); nudge();
       var a = slides[j].querySelector('a'); if (a) a.focus({ preventScroll: true });
       var r = slides[j].getBoundingClientRect(), vr = view.getBoundingClientRect(),
           edge = parseFloat(getComputedStyle(track).paddingLeft) || 0;
@@ -689,7 +702,7 @@
       var dx = e.clientX - g.x;
       if (!g.on) {
         if (Math.abs(dx) < 5) return;
-        g.on = true; moved = true; stopAuto(); hold.drag = true; sync();
+        g.on = true; moved = true; nudge(); hold.drag = true; sync();
         view.classList.add('is-drag');
         try { view.setPointerCapture(g.id); } catch (_) {}
       }
@@ -704,7 +717,7 @@
       if (!q.on) return;
       if (performance.now() - q.lt > 90) q.v = 0;          /* paused before letting go: no throw */
       view.classList.remove('is-drag'); view.classList.add('is-free');
-      hold.drag = false;
+      hold.drag = false; nudge();
       to(pos(nearest(now() - q.v * (isRtl(view) ? -1 : 1) * 260)), true);
       settle(function () { view.classList.remove('is-free'); sync(); });
       setTimeout(function () { moved = false; }, 0);

@@ -64,7 +64,7 @@ html[lang="ar"] .kv3d-chip{font-family:'IBM Plex Sans Arabic',sans-serif;letter-
 .kv3d-step b{font:700 .66rem/1 'Inter',sans-serif;opacity:.7}
 .kv3d-step:hover{color:#fff}
 .kv3d-step.on{background:rgba(255,255,255,.14);color:#fff}
-.kv3d-step.on b{color:var(--red,#C8102E);opacity:1}
+.kv3d-step.on b{color:#ff6b7f;opacity:1}
 .kv3d-step span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .5s cubic-bezier(.2,.8,.2,1)}
 .kv3d-step.on span,.kv3d-steps:hover .kv3d-step span{max-width:14rem}
 html[lang="ar"] .kv3d-step{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:0;font-size:.8rem}
@@ -154,3 +154,6 @@ a.kv3d-chip:hover b{background:#fff;color:var(--red,#C8102E)}
 .kvh-tour-card li a:active{background:#C8102E;border-color:#C8102E}
 /* laptops and iPad landscape: the chapter bar stops short of the WhatsApp button */
 @media (min-width:900px) and (max-width:1399px){.kv3d-steps{inset-inline-end:calc(20px + 56px + 14px)}}
+
+/* reduced motion / no pinned tour: the hidden attribute must win over display:flex */
+.kv3d-steps[hidden],.kv3d-hint[hidden]{display:none!important}
