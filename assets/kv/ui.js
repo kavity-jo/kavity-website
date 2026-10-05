@@ -226,7 +226,7 @@
 (function(){
   var host=document.querySelector('[data-kv3d]'); if(!host) return;
   var me=document.getElementById('kv-ui-js'), base=me?new URL(me.getAttribute('src'),location.href).href.replace(/ui\.js.*$/,''):'';
-  var url=base+'product3d.js?v=67293a9d';
+  var url=base+'product3d.js?v=76033e7f';
   var b=document.createElement('button'); b.type='button'; b.className='kv3d-open';
   b.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 2.8 20.5 7.5v9L12 21.2 3.5 16.5v-9z"/><path d="M3.5 7.5 12 12.2l8.5-4.7M12 12.2v9"/></svg><span><b>Explore in 3D</b><small>Rotate · exploded view · key data</small></span>';
   host.appendChild(b);
