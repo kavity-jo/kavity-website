@@ -1,5 +1,5 @@
 /* KAVITY · range & accessories panel for sub-product pages.
-   Data: window.KV_ITEMS (items-data.js, generated from the Zoho Books item master). */
+   Data: window.KV_ITEMS (items-data.js). */
 (function () {
   'use strict';
   var D = window.KV_ITEMS;

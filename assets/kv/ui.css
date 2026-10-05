@@ -92,7 +92,7 @@ html[data-theme="dark"]{
   color-scheme:dark;
   --ink:#ECEEF0; --slate:#A4ACB3; --mist:#15171A; --line:#2A2E33;
   --red:#E0243F; --deep:#9E0E26;
-  --kv-bg:#0B0C0E; --kv-surface:#131518; --kv-surface-2:#1B1E22; --kv-well:#F1F2F4;
+  --kv-bg:#0B0C0E; --kv-surface:#131518; --kv-surface-2:#1B1E22; --kv-well:#F7F7F7;
 }
 html[data-theme="dark"] body{background:var(--kv-bg)}
 

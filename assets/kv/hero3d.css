@@ -115,7 +115,7 @@ html[lang="ar"] .kv3d-hint{text-transform:none;letter-spacing:0;font-family:'IBM
 .kvh-stack{position:absolute;inset:0;overflow:hidden;background:#1d2127}
 .kvh-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--ox,50%) 50%;
   display:block;opacity:0;visibility:hidden;z-index:1;backface-visibility:hidden}
-.kvh-img.on{opacity:1;visibility:visible;will-change:transform,opacity}   /* only the renders in view are composited */
+.kvh-img.on{opacity:1;visibility:inherit;will-change:transform,opacity}   /* only the renders in view are composited */
 .hero-media .kvh-stack img{animation:none;transform:none}   /* no drift: callouts stay registered on the render */
 picture.kvh-img img{width:100%;height:100%;object-fit:cover;object-position:var(--ox,50%) 50%;display:block}
 @media (max-width:899px){picture.kvh-img img{object-position:50% 100%}}
