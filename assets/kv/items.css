@@ -139,3 +139,5 @@ html[dir="rtl"] .kvr-num[dir="ltr"]{text-align:right}
   .kvr-uni .kvr-tr > span:first-child{grid-column:auto}
   .kvr-kitbtn{width:auto;padding:.45rem .7rem}
 }
+/* v38l: long sizes wrap inside their phone column instead of running into the next one */
+@media (max-width:700px){.kvr-tr .kvr-num{white-space:normal;overflow-wrap:anywhere}}

@@ -149,7 +149,7 @@
         }).join('') + '</div>';
     }
     if (group.rows.length > 14) {
-      var ex = String(group.rows[Math.min(3, group.rows.length - 1)].size || '').replace(/ ?(cm|mm|m)$/, '').split(' × ')[0].split(' ')[0];
+      var ex = String(group.rows[Math.min(3, group.rows.length - 1)].size || '').split(' × ')[0].replace(/ (mm|m)$/, '');
       h += '<label class="kvr-search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>' +
         '<input type="search" value="' + esc(state.q) + '" placeholder="' + esc(T('Search size, e.g. ' + ex, 'ابحث عن مقاس، مثل ' + ex)) + '" aria-label="' + esc(T('Search sizes', 'ابحث في المقاسات')) + '"></label>';
     }

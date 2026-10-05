@@ -866,3 +866,7 @@ html[data-theme="dark"] :is(.sub-thumb,.prod-img,.phero-img,.cat-cover,.rel-img,
   .ptable td:first-child{font-weight:600}
   .ptable tr:nth-child(even) td{background:transparent}
 }
+/* v38l: card spec labels wrap inside their column; range labels on related cards sit tight above the title */
+.kvp-spec dt{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}
+.rel-t span{display:block;line-height:1.35;margin-bottom:.3rem}
+html[data-theme="dark"] .kvp-img{background:#fff}
