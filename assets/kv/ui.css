@@ -393,7 +393,7 @@ html[data-theme="dark"] .kvp-img{background:var(--kv-well)}
 .kvp-body h3{font-size:1.02rem;line-height:1.25;letter-spacing:-.01em}
 .kvp-body p{color:var(--slate);font-size:.84rem;line-height:1.55}
 .kvp-spec{margin:.2rem 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
-.kvp-spec div{display:grid;grid-template-columns:minmax(76px,34%) 1fr;gap:.6rem;padding:.42rem 0;border-bottom:1px solid var(--line);font-size:.78rem;line-height:1.4}
+.kvp-spec div{display:grid;grid-template-columns:minmax(94px,34%) 1fr;gap:.6rem;padding:.42rem 0;border-bottom:1px solid var(--line);font-size:.78rem;line-height:1.4}
 .kvp-spec dt{color:var(--slate)}
 .kvp-spec dd{color:var(--ink);font-weight:500;overflow-wrap:anywhere}
 .kvp-cat{margin-top:auto;padding-top:.55rem;display:inline-flex;align-items:center;gap:.35rem;font:600 .76rem/1 Inter,sans-serif;color:var(--ink);align-self:flex-start}
@@ -867,6 +867,6 @@ html[data-theme="dark"] :is(.sub-thumb,.prod-img,.phero-img,.cat-cover,.rel-img,
   .ptable tr:nth-child(even) td{background:transparent}
 }
 /* v38l: card spec labels wrap inside their column; range labels on related cards sit tight above the title */
-.kvp-spec dt{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}
+.kvp-spec dt{hyphens:auto;-webkit-hyphens:auto}
 .rel-t span{display:block;line-height:1.35;margin-bottom:.3rem}
 html[data-theme="dark"] .kvp-img{background:#fff}
