@@ -874,4 +874,4 @@ html[data-theme="dark"] :is(.sub-thumb,.prod-img,.phero-img,.cat-cover,.rel-img,
 html[data-theme="dark"] .kvp-img{background:#fff}
 /* v39: Arabic names and the Arabic overview page */
 :lang(ar){font-family:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif;letter-spacing:0}
-.ar-name{direction:rtl;text-align:left;font:500 1rem/1.6 'IBM Plex Sans Arabic',system-ui,sans-serif;color:var(--slate);margin:.35rem 0 0}
+.ar-name{direction:rtl;text-align:left;font:500 1rem/1.6 'IBM Plex Sans Arabic',system-ui,sans-serif;color:var(--slate);margin:.35rem 0 .6rem}
