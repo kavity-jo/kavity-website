@@ -1,6 +1,6 @@
 # KAVITY
 
-> KAVITY — exclusive agent in Jordan for UNITECH – IKK Group. Façade fixation, cable management, expansion joints, ceiling grid, chutes and raised flooring, supplied from Amman with in-house structural calculation and shop drawings.
+> KAVITY, Amman: façade fixation, cable management and expansion joints, with calculations and shop drawings; exclusive agent in Jordan for UNITECH – IKK Group.
 
 KAVITY (KAVITY for Construction Solutions & Materials; in Arabic كافيتي) is an engineering and supply company for specialised building systems in Amman, Jordan: Wasfi Al-Tal St. (Gardens St.), Noura Complex, Amman. It is the exclusive agent in Jordan for UNITECH – IKK Group. Project teams send drawings, the specification and the load requirements; KAVITY's engineers size the system and prepare a technical proposal with the calculation and shop drawings needed for approval.
 
@@ -17,7 +17,7 @@ KAVITY (KAVITY for Construction Solutions & Materials; in Arabic كافيتي) i
 - [Z-brackets — Mechanical cladding fixation](https://www.kavityengineering.com/s/z-brackets.html): Used where the cavity is deeper than an L-bracket suits — the offset leg sets the panel line further out from the anchor. Common on insulated façades.
 - [Omega brackets — Mechanical cladding fixation](https://www.kavityengineering.com/s/omega-bracket.html): Designed for panels fixed beneath a concrete slab — soffits and returns. Adjustable in two directions, ±5 mm and ±10 mm.
 - [Fishtail brackets — Mechanical cladding fixation](https://www.kavityengineering.com/s/fishtail-bracket.html): Fishtail anchors embedded in reinforced concrete or solid blockwork walls, with a pin or up-and-down tabs that support and restrain the stone panels.
-- [Corrugated dowels & studs — Mechanical cladding fixation](https://www.kavityengineering.com/s/corrugated-dowel.html): Mortar anchors with a corrugated stud, set in cement mortar in the backing wall — used for the last row of panels, in horizontal or vertical joints, for wind loads up to 1 kN.
+- [Corrugated dowels & studs — Mechanical cladding fixation](https://www.kavityengineering.com/s/corrugated-dowel.html): Corrugated dowels: mortar anchors set in the backing wall for the last row of panels, in horizontal or vertical joints, for wind loads up to 1 kN.
 - [Anchors & fixings — Mechanical cladding fixation](https://www.kavityengineering.com/s/anchors.html): Chemical and mechanical anchors sized to the substrate — concrete, hollow block or brickwork — and to the pull-out load of the bracket.
 - [Steel back support systems — Mechanical cladding fixation](https://www.kavityengineering.com/s/steel-back-support.html): Where the structure cannot take the fixing directly, a secondary steel frame carries the cladding back to the slab.
 
@@ -67,7 +67,7 @@ KAVITY (KAVITY for Construction Solutions & Materials; in Arabic كافيتي) i
 - [Wall & tile profiles — Entrance matting, profiles & wall protection](https://www.kavityengineering.com/s/wall-profiles.html): Right-angle and round profiles that protect wall corners and finish the edges of tile and stone.
 - [Handrails & wall protection — Entrance matting, profiles & wall protection](https://www.kavityengineering.com/s/handrails-wall-protection.html): Handrails, wall guards, corner guards and door protection for corridors that carry trolleys, beds and carts.
 - [Heavy impact protection — Entrance matting, profiles & wall protection](https://www.kavityengineering.com/s/heavy-impact-protection.html): Rubber and polymer guards that protect columns, walls and docks in car parks, warehouses and loading areas.
-- [Metal ceiling grid systems](https://www.kavityengineering.com/product/metal-ceiling-grid.html): C-channel ceiling grids hung from the soffit on threaded rods and omega brackets — Standard, Advanced, Extreme and back-to-back series, sized to the ceiling and services they carry.
+- [Metal ceiling grid systems](https://www.kavityengineering.com/product/metal-ceiling-grid.html): C-channel ceiling grids hung on threaded rods and omega brackets — Standard, Advanced, Extreme and back-to-back series, for allowable loads of 40–350 kg/m².
 - [Exposed grid — Metal ceiling grid systems](https://www.kavityengineering.com/s/exposed-grid.html): The standard tee-bar system — main runners and cross tees visible below the tile, giving full access to the void.
 - [Semi-concealed & clip-in grid — Metal ceiling grid systems](https://www.kavityengineering.com/s/concealed-grid.html): Systems where the grid is partly or fully hidden behind the tile edge — tiles are clipped or hooked in.
 - [Section details & connectors — Metal ceiling grid systems](https://www.kavityengineering.com/s/grid-sections.html): C-channel sections, couplers, omega brackets, threaded rods and L or T bracket connectors that assemble and hang the grid.
@@ -97,9 +97,9 @@ KAVITY (KAVITY for Construction Solutions & Materials; in Arabic كافيتي) i
 - [Projects](https://www.kavityengineering.com/projects.html): A selection of projects in Jordan where our systems are installed. The full reference list is available on request.
 - [Technical catalogues (PDF)](https://www.kavityengineering.com/catalog.html): Fourteen technical catalogues covering every system we supply — specifications, dimensions, load tables and standards. Direct download, no forms.
 - [Contact](https://www.kavityengineering.com/contact.html): Contact KAVITY in Amman for technical proposals, submittals and supply of façade fixation, cable management and building systems across Jordan.
-- [Products overview](https://www.kavityengineering.com/products.html): As exclusive agent in Jordan for UNITECH – IKK Group, KAVITY supplies façade fixation, cable management, expansion joints, ceiling grid, chutes and raised access flooring from UNITECH and SFSP, together with the specialist brands represented by the group.
+- [Products overview](https://www.kavityengineering.com/products.html): KAVITY, exclusive agent in Jordan for UNITECH – IKK Group, supplies façade fixation, cable management, expansion joints, ceiling grid, chutes and raised floors.
 - [Arabic overview — نظرة عامة بالعربية](https://www.kavityengineering.com/ar/): Arabic overview of KAVITY and every product line, with links to the English product pages.
 
 ## Optional
 
-- [UNITECH group portfolio](https://www.kavityengineering.com/portfolio.html): UNITECH group lines that KAVITY sources on request in Jordan: MEP, architectural and finishing, civil, construction chemicals, tools, sustainable and hygienic solutions. Ask our team for availability and technical data.
+- [UNITECH group portfolio](https://www.kavityengineering.com/portfolio.html): UNITECH group lines KAVITY sources on request in Jordan: MEP, architectural, civil, construction chemicals, tools, sustainable and hygienic solutions.
