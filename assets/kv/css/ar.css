@@ -1,0 +1,33 @@
+.ar-page{font-family:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif}
+.ar-page .display,.ar-page h1,.ar-page h3{font-family:'IBM Plex Sans Arabic','Outfit',system-ui,sans-serif;letter-spacing:0}
+.ar-page .display{font-weight:400}.ar-page .display b{font-weight:700}
+.ar-page .eyebrow{letter-spacing:0}
+.ar-page .lead{max-width:70ch;line-height:1.9}
+.ar-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.ar-cta .btn-line{color:var(--ink);border-color:rgba(0,0,0,.22)}
+.ar-cta .btn-line:hover{border-color:var(--red);color:var(--red)}
+html[data-theme="dark"] .ar-cta .btn-line{color:#fff;border-color:rgba(255,255,255,.4)}
+.ar-note{color:var(--slate);margin:.4rem 0 2rem}
+.ar-fam{margin:0 0 2.6rem}
+.ar-fam>h3{font-size:1.35rem;font-weight:700;margin:0 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--red)}
+.ar-fam>h3 span{font:500 .8rem/1 Inter,sans-serif;color:var(--slate);margin-inline-start:.6rem}
+.ar-range{border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.2rem;margin-bottom:1rem;background:var(--kv-card,#fff)}
+.ar-item{display:block;text-decoration:none;color:inherit}
+.ar-item b{display:block;font-size:1.1rem;font-weight:700;color:var(--ink)}
+.ar-item .ar-en{display:block;font:500 .78rem/1.4 Inter,sans-serif;color:var(--red);margin:.15rem 0 .35rem;text-align:right}
+.ar-item p{margin:0;color:var(--slate);line-height:1.8;font-size:.95rem}
+.ar-item:hover b{color:var(--red)}
+.ar-subs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.6rem;margin-top:.9rem;padding-top:.9rem;border-top:1px dashed var(--line)}
+.ar-item.sm{padding:.55rem .7rem;border-radius:10px;background:var(--kv-bg2,#f6f7f8)}
+.ar-item.sm b{font-size:.95rem}.ar-item.sm p{font-size:.85rem;line-height:1.7}
+.ar-cl{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.5rem;font-size:1.05rem}
+.ar-cl a{color:inherit}
+html[data-theme="dark"] .ar-item.sm{background:var(--kv-surface-2,#1B1E22)}
+
+/* v40: the page is dir="rtl" (the base sheet already mirrors the header, mega menu, flyouts and banner).
+   Arabic letters join, so no letter-spacing anywhere on the page; and every Arabic glyph in the header, menu,
+   CTA band, footer and search box comes from IBM Plex Sans Arabic (their Latin stacks would fall back to a system
+   Arabic font), Latin glyphs keep Inter. Upper-casing has no meaning in Arabic. */
+html[lang="ar"] body :not(svg):not(svg *){letter-spacing:0!important}
+html[lang="ar"] :is(header,footer,.kv-cta,.sov,#sov,.mm,#mm) :not(svg):not(svg *):not([lang="en"]):not([lang="en"] *){font-family:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif!important;text-transform:none!important}
+html[lang="ar"] body :is(em,i,cite,.stag):not([lang="en"]){font-style:normal}   /* Arabic has no italics */

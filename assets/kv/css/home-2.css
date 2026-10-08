@@ -1,0 +1,67 @@
+/* headline voice: light with a bold phrase, an accent bar on the hero */
+.hero h1{font-weight:300;font-size:clamp(2rem,4.5vw,3.7rem);line-height:1.06;letter-spacing:-.025em;max-width:none;margin-bottom:1.6rem}
+.hero h1 span{border-inline-start:5px solid #E0243F;padding-inline-start:clamp(1rem,1.8vw,1.6rem)}
+.hero h1 b{display:block}
+.hero h1 b{font-weight:700}
+.hero p{font-size:clamp(1rem,1.3vw,1.16rem);line-height:1.6;max-width:60ch;margin-bottom:2.2rem;color:rgba(255,255,255,.9)}
+.hero-red .hero-tag{letter-spacing:.14em}
+.hero-actions .btn{border-radius:3px;text-transform:uppercase;letter-spacing:.13em;font-weight:600;font-size:.8rem;padding:1.05rem 1.9rem}
+.display{font-weight:300;text-transform:none;letter-spacing:-.025em;line-height:1.08;font-size:clamp(1.8rem,3.9vw,3.1rem)}
+.display b{font-weight:700}
+.kv-intro-txt .display{max-width:19ch}
+@media(max-width:640px){.hero h1{font-size:clamp(1.7rem,8vw,2.2rem);}.hero h1 span{border-inline-start-width:4px}.hero-actions .btn{padding:.85rem 1.2rem;font-size:.72rem}}
+/* agency + manufacturing network */
+.kvn{padding-block:clamp(4rem,8vw,7rem);background:var(--mist);border-block:1px solid var(--line)}
+.kvn-head{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(1.5rem,5vw,5rem);align-items:end;margin-bottom:clamp(2rem,4vw,3.4rem)}
+.kvn-head .display{margin-bottom:0;max-width:22ch}
+.kvn-head .lead{margin:0;color:var(--slate)}
+.kvn-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.kvn-map{margin:0;position:relative;border-radius:var(--r-lg,18px);overflow:hidden;background:#0b1016;box-shadow:0 40px 80px -46px rgba(20,22,25,.55);display:flex;flex-direction:column}
+.kvn-map svg{display:block;width:100%;height:auto;aspect-ratio:800/540}
+.kvn-map figcaption{padding:.9rem 1.2rem 1.1rem;font-size:.82rem;color:rgba(255,255,255,.62);border-top:1px solid rgba(255,255,255,.08)}
+.kvn-grat{fill:none;stroke:rgba(255,255,255,.06);stroke-width:.6}
+.kvn-land{fill:#262d36;stroke:#4a5562;stroke-width:.75;stroke-linejoin:round}
+.kvn-c{stroke-linejoin:round}.kvn-c-plant{fill:#313a45;stroke:#6c7a88;stroke-width:.85}.kvn-c-home{fill:#4a2630;stroke:#E0243F;stroke-width:1.4}
+.kvn-country{fill:rgba(255,255,255,.42);font:600 10.5px/1 'Outfit',sans-serif;letter-spacing:.28em;text-anchor:middle}
+.kvn-country-home{fill:rgba(255,214,221,.8);font-size:9.5px}
+.kvn-sealab{fill:rgba(138,172,204,.48);font:italic 400 11.5px/1 'Inter',sans-serif;letter-spacing:.14em;text-anchor:middle}
+.kvn-arcg{transition:opacity .3s}
+.kvn-arc{fill:none;stroke-width:2;stroke-linecap:round;opacity:.92;transition:stroke-width .3s}
+.kvn-arc-glow{fill:none;stroke:#E0243F;stroke-width:7;stroke-linecap:round;opacity:.13}
+.kvn-flow{fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:1.5 15;opacity:.8;animation:kvnFlow 1.5s linear infinite}
+@keyframes kvnFlow{to{stroke-dashoffset:-16.5}}
+.kvn-dot{fill:#E0243F;stroke:#fff;stroke-width:2}
+.kvn-pulse{fill:none;stroke:#E0243F;stroke-width:1.4;transform-box:fill-box;transform-origin:center;animation:kvnPulse 2.6s ease-out infinite}
+@keyframes kvnPulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+.kvn-pname,.kvn-pcity,.kvn-hname,.kvn-hcity{paint-order:stroke;stroke:#0b1016;stroke-width:4px;stroke-linejoin:round}
+.kvn-pname{fill:#fff;font:600 16.5px/1 'Outfit',sans-serif;letter-spacing:.01em}
+.kvn-pcity{fill:rgba(255,255,255,.7);font:500 12.5px/1 'Inter',sans-serif}
+.kvn-home-halo{fill:rgba(255,255,255,.1);transform-box:fill-box;transform-origin:center;animation:kvnPulse 3.4s ease-out infinite}
+.kvn-home-ring{fill:rgba(224,36,63,.28);stroke:#fff;stroke-width:1.4}.kvn-home-dot{fill:#fff}.kvn-home-core{fill:#E0243F}
+.kvn-hname{fill:#fff;font:700 18.5px/1 'Outfit',sans-serif;letter-spacing:.05em}
+.kvn-hcity{fill:rgba(255,255,255,.75);font:500 12.5px/1 'Inter',sans-serif}
+.kvn-legend text,.kvn-scale text{fill:rgba(255,255,255,.6);font:500 11px/1 'Inter',sans-serif}
+.kvn-scale path{fill:none;stroke:rgba(255,255,255,.5);stroke-width:1.2}.kvn-scale text{text-anchor:middle}
+.kvn-pin{transition:opacity .3s}
+.kvn-map.has-hot .kvn-arcg:not(.hot),.kvn-map.has-hot .kvn-pin:not(.hot){opacity:.2}
+.kvn-arcg.hot .kvn-arc{stroke-width:3.2}.kvn-arcg.hot .kvn-arc-glow{opacity:.3}
+@media(max-width:640px){.kvn-pname{font-size:25px}.kvn-hname{font-size:27px}.kvn-pcity,.kvn-hcity{display:none}.kvn-country{font-size:14px}.kvn-sealab,.kvn-scale,.kvn-legend{display:none}.kvn-dot{stroke-width:2.6}}
+@media(prefers-reduced-motion:reduce){.kvn-flow,.kvn-pulse,.kvn-home-halo{animation:none}.kvn-flow{display:none}}
+.kvn-pcity{fill:rgba(255,255,255,.7);font:500 12.5px/1 'Inter',sans-serif}
+.kvn-hcity{fill:rgba(255,255,255,.75);font:500 12.5px/1 'Inter',sans-serif}
+.kvn-pcity{fill:rgba(255,255,255,.68);font:500 11.5px/1 'Inter',sans-serif}
+.kvn-hcity{fill:rgba(255,255,255,.72);font:500 11.5px/1 'Inter',sans-serif}
+.kvn-side h3{font:600 .8rem/1 'Outfit',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem}
+.kvn-cards{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.kvn-card{display:grid;gap:.12rem;padding:1rem 1.15rem;background:var(--white);border:1px solid var(--line);border-inline-start:3px solid var(--red);border-radius:var(--r-sm,10px);cursor:default;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,border-color .25s}
+.kvn-card:hover,.kvn-card.hot{transform:translateX(4px);box-shadow:0 14px 30px -18px rgba(20,22,25,.4)}
+.kvn-card b{font:600 1.04rem/1.2 'Outfit',sans-serif;color:var(--ink)}
+.kvn-card span{font-size:.86rem;color:var(--slate)}
+.kvn-card .kvn-full{color:var(--ink);font-size:.88rem}
+.kvn-card i{font-style:normal;font-size:.8rem;color:var(--slate);opacity:.85}
+.kvn-pts{list-style:none;margin:clamp(1.6rem,3vw,2.6rem) 0 0;padding:1.4rem 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem 2.2rem}
+.kvn-pts li{position:relative;padding-inline-start:1.3rem;font-size:.92rem;color:var(--ink)}
+.kvn-pts li::before{content:'';position:absolute;inset-inline-start:0;top:.55em;width:.5rem;height:.5rem;border-radius:2px;background:var(--red)}
+@media(max-width:900px){.kvn-head,.kvn-grid,.kvn-pts{grid-template-columns:1fr}}
+html[data-theme="dark"] .kvn-card{background:var(--kv-surface,#16181B)}
+html[data-theme="dark"] .kvn-map{background:#0F1114;box-shadow:none;border:1px solid var(--line)}

@@ -171,7 +171,7 @@
     var wa = f.querySelector('[data-wa]');
     if (wa) wa.addEventListener('click', function () {
       if (!check(['name', 'message'])) return;            /* the reply comes on WhatsApp: no e-mail needed */
-      window.open('https://wa.me/' + wa.getAttribute('data-wa') + '?text=' + encodeURIComponent('Technical proposal request\n' + lines()), '_blank', 'noopener');
+      window.open('https://api.whatsapp.com/send?phone=' + wa.getAttribute('data-wa') + '&text=' + encodeURIComponent('Technical proposal request\n' + lines()), '_blank', 'noopener');
     });
   });
 

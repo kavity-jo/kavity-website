@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-9QA26sb78+fDYXpYmI6osGjom1I/uFa+y+oPGyyQ+kc='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src https://www.google.com; manifest-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
@@ -11,6 +11,7 @@
 <link rel="alternate" hreflang="ar" href="https://www.kavityengineering.com/ar/">
 <link rel="alternate" hreflang="x-default" href="https://www.kavityengineering.com/">
 <link rel="canonical" href="https://www.kavityengineering.com/ar/">
+<meta property="og:locale" content="ar_JO">
 <meta property="og:url" content="https://www.kavityengineering.com/ar/">
 <meta property="og:image" content="https://www.kavityengineering.com/img/og-kavity-2.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -26,982 +27,73 @@
 
 <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-<style>
-:root{
-  --red:    #C8102E;   --deep:   #8E0B21;   --ink:    #2E3134;   --slate:  #6A7278;   --mist:   #F6F7F8;   --line:   #E3E6E9;
-  --white:  #FFFFFF;
-  --pad: clamp(1.25rem,5vw,4.5rem);
-  --gap: clamp(4.5rem,8vw,7.5rem);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--white);color:var(--ink);font-size:15px;
-  font-family:'Inter','IBM Plex Sans Arabic',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-html[lang="ar"] body{font-family:'IBM Plex Sans Arabic',sans-serif}
-h1,h2,h3,h4{font-family:'Outfit','IBM Plex Sans Arabic',sans-serif;font-weight:700;line-height:1.1;letter-spacing:-.02em}
-html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4{
-  font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:0;line-height:1.3}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-:focus-visible{outline:2px solid var(--red);outline-offset:3px}
-.wrap{max-width:1280px;margin-inline:auto;padding-inline:var(--pad)}
+<link rel="stylesheet" href="../assets/kv/css/sub.css?v=342917a1">
 
-.eyebrow{display:block;font-family:'Outfit',sans-serif;font-size:clamp(.9rem,1.6vw,1.25rem);
-  font-weight:400;color:var(--slate);letter-spacing:.01em;margin-bottom:.35rem}
-html[lang="ar"] .eyebrow{font-family:'IBM Plex Sans Arabic',sans-serif}
-.display{font-size:clamp(1.65rem,3.9vw,3rem);text-transform:uppercase;line-height:1.02;margin-bottom:1.5rem}
-html[lang="ar"] .display{text-transform:none;line-height:1.25}
-.lead{color:var(--slate);font-size:.95rem;max-width:62ch}
-
-.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.9rem;
-  font-size:.92rem;font-weight:500;border:1px solid transparent;border-radius:100px;transition:.2s}
-.btn-red{background:var(--red);color:var(--white)}
-.btn-red:hover{background:var(--deep)}
-.btn-line{border-color:rgba(255,255,255,.5);color:var(--white)}
-.btn-line:hover{background:var(--white);color:var(--red)}
-.btn-ink{background:var(--ink);color:var(--white)}
-.btn-ink:hover{background:var(--red)}
-
-header{overflow:visible;position:sticky;top:0;z-index:80;background:rgba(255,255,255,.97);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:1.4rem;height:78px}
-.logo{flex:none}
-.logo img{height:46px;width:auto;object-fit:contain}
-header nav{display:flex;gap:1.5rem;margin-inline-start:auto;font-size:.85rem}
-header nav a{color:var(--ink);padding-block:.5rem;border-bottom:2px solid transparent;transition:.2s}
-header nav a:hover{color:var(--red);border-bottom-color:var(--red)}
-header nav a.on{color:var(--red);border-bottom-color:var(--red)}
-.tools{display:flex;align-items:center;gap:.7rem}
-.lang{font-size:.8rem;font-weight:500;color:var(--ink);background:none;border:1px solid var(--line);
-  padding:.5rem .9rem;border-radius:100px;cursor:pointer;transition:.2s;font-family:inherit}
-.lang:hover{background:var(--red);color:var(--white);border-color:var(--red)}
-.phone{display:inline-flex;align-items:center;gap:.5rem;background:var(--red);color:var(--white);
-  font-weight:600;padding:.62rem 1.2rem;border-radius:100px;font-size:.8rem;white-space:nowrap;transition:.2s}
-.phone:hover{background:var(--deep)}
-.burger{display:none;background:none;border:0;cursor:pointer;padding:.5rem}
-.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:4.5px 0}
-
-.hero{position:relative;min-height:min(72vh,620px);display:flex;align-items:center;
-  background:var(--ink);overflow:hidden}
-.hero-media{position:absolute;inset:0;z-index:0}
-.hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover}
-.hero::after{content:'';position:absolute;inset:0;z-index:1;
-  background:linear-gradient(100deg,rgba(20,22,25,.9) 0%,rgba(20,22,25,.6) 50%,rgba(20,22,25,.2) 100%)}
-html[dir="rtl"] .hero::after{
-  background:linear-gradient(260deg,rgba(20,22,25,.9) 0%,rgba(20,22,25,.6) 50%,rgba(20,22,25,.2) 100%)}
-.hero .wrap{position:relative;z-index:2;width:100%;padding-block:clamp(3rem,6vw,5rem)}
-.hero h1{color:var(--white);font-size:clamp(1.7rem,3.5vw,2.7rem);max-width:16ch;margin-bottom:1.2rem}
-.hero p{color:rgba(255,255,255,.85);font-size:clamp(.92rem,1.2vw,1rem);max-width:50ch;margin-bottom:1.9rem}
-.hero-tag{display:inline-block;background:var(--red);color:var(--white);font-size:.72rem;font-weight:600;
-  letter-spacing:.14em;text-transform:uppercase;padding:.4rem .9rem;border-radius:100px;margin-bottom:1.3rem}
-html[lang="ar"] .hero-tag{letter-spacing:0}
-.hero-actions{display:flex;flex-wrap:wrap;gap:.85rem}
-
-.banner{position:relative;background:var(--ink);overflow:hidden;
-  padding-block:clamp(3.5rem,7vw,5.5rem)}
-.banner-img{position:absolute;inset:0;z-index:0}
-.banner-img img{width:100%;height:100%;object-fit:cover;opacity:.8}
-.banner::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(20,22,25,.86) 0%,rgba(20,22,25,.55) 55%,rgba(20,22,25,.3) 100%)}
-.banner .wrap{position:relative;z-index:2}
-.banner h1{color:var(--white);font-size:clamp(1.5rem,3vw,2.2rem);text-transform:uppercase;margin-bottom:.6rem}
-html[lang="ar"] .banner h1{text-transform:none}
-.crumb{font-size:.85rem;color:rgba(255,255,255,.72)}
-.crumb a:hover{color:var(--white)}
-.crumb span{color:var(--red);margin-inline:.4rem}
-
-.feats{background:var(--mist);padding-block:var(--gap)}
-.feats-card{background:var(--white);border:1px solid var(--line);
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
-.feat{padding:2.6rem 1.75rem;text-align:center;border-inline-end:1px solid var(--line)}
-.feat:last-child{border-inline-end:0}
-.feat .ic{color:var(--red);display:flex;justify-content:center;margin-bottom:1rem}
-.feat h4{font-size:1.05rem;text-transform:uppercase;margin-bottom:.7rem}
-html[lang="ar"] .feat h4{text-transform:none}
-.feat h4::after{content:'';display:block;width:34px;height:3px;background:var(--ink);margin:.7rem auto 0}
-.feat p{color:var(--slate);font-size:.9rem}
-
-.lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line)}
-.line{position:relative;background:var(--red);color:var(--white);
-  padding:clamp(2.5rem,4vw,3.5rem);min-height:290px;display:flex;flex-direction:column;
-  justify-content:flex-end;overflow:hidden;transition:.25s}
-.line:nth-child(2){background:#B00D28}
-.line:nth-child(3){background:var(--deep)}
-.line:hover{filter:brightness(1.12)}
-.line .no{position:absolute;top:.2rem;inset-inline-end:1rem;font-family:'Outfit',sans-serif;
-  font-size:clamp(5rem,11vw,8.5rem);font-weight:700;color:rgba(255,255,255,.16);line-height:1}
-.line h3{position:relative;font-size:clamp(1.3rem,2.4vw,1.7rem);text-transform:uppercase;margin-bottom:.8rem}
-html[lang="ar"] .line h3{text-transform:none}
-.line p{position:relative;color:rgba(255,255,255,.85);font-size:.92rem;margin-bottom:1.2rem}
-.line .go{position:relative;font-size:1.5rem;line-height:1}
-
-.sec{padding-block:var(--gap)}
-.sec-mist{background:var(--mist)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
-.media{aspect-ratio:4/3;background:var(--deep);overflow:hidden}
-.media img{width:100%;height:100%;object-fit:cover}
-.checks{list-style:none;margin-top:1.6rem;display:grid;gap:.8rem}
-.checks li{display:flex;gap:.7rem;align-items:flex-start;font-size:.97rem}
-.checks svg{flex:none;margin-top:.35rem;color:var(--red)}
-
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.75rem}
-.card{background:var(--white);border:1px solid var(--line);overflow:hidden;
-  display:flex;flex-direction:column;transition:.25s}
-.card:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.1)}
-.card-media{aspect-ratio:16/10;background:var(--deep);overflow:hidden}
-.card-media img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1.85rem;flex:1;display:flex;flex-direction:column}
-.card h3{font-size:1.08rem;margin-bottom:.7rem}
-.card p{color:var(--slate);font-size:.87rem;flex:1;margin-bottom:1.3rem}
-.card-link{color:var(--red);font-size:.85rem;font-weight:600}
-
-.stats{background:var(--red)}
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-.stat{padding:2.4rem 1.5rem;border-inline-end:1px solid rgba(255,255,255,.25)}
-.stat:last-child{border-inline-end:0}
-.stat b{display:block;font-family:'Outfit',sans-serif;font-size:1.7rem;color:var(--white);line-height:1;margin-bottom:.45rem}
-html[lang="ar"] .stat b{font-family:'IBM Plex Sans Arabic',sans-serif}
-.stat span{font-size:.86rem;color:rgba(255,255,255,.85)}
-
-.cta{background:var(--red);color:var(--white);padding-block:clamp(3rem,6vw,4.5rem)}
-.cta-in{display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:space-between}
-.cta h3{font-size:clamp(1.2rem,2.2vw,1.65rem);max-width:24ch;color:var(--white)}
-.btn-white{background:var(--white);color:var(--red)}
-.btn-white:hover{background:var(--ink);color:var(--white)}
-
-.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
-.filters button{font-family:inherit;font-size:.86rem;background:var(--white);color:var(--slate);
-  border:1px solid var(--line);padding:.65rem 1.4rem;cursor:pointer;transition:.2s}
-.filters button:hover{border-color:var(--red);color:var(--red)}
-.filters button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:var(--white)}
-.grid-proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem}
-.proj{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--deep)}
-.proj img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.proj:hover img{transform:scale(1.05)}
-.proj-cap{position:absolute;inset-inline:0;bottom:0;z-index:2;padding:1.5rem;color:var(--white);
-  background:linear-gradient(transparent,rgba(20,22,25,.92))}
-.proj-cap b{display:block;font-family:'Outfit',sans-serif;font-size:.96rem}
-html[lang="ar"] .proj-cap b{font-family:'IBM Plex Sans Arabic',sans-serif}
-.proj-cap span{font-size:.78rem;color:rgba(255,255,255,.75)}
-
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.75rem}
-.cat{border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:.25s}
-.cat:hover{border-color:var(--red);box-shadow:0 14px 36px rgba(0,0,0,.1)}
-.cat-cover{aspect-ratio:3/4;background:var(--red);display:flex;flex-direction:column;
-  justify-content:space-between;padding:2rem;color:var(--white)}
-.cat:nth-child(2) .cat-cover{background:#B00D28}
-.cat:nth-child(3) .cat-cover{background:var(--deep)}
-.cat-cover .kick{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
-html[lang="ar"] .cat-cover .kick{letter-spacing:0}
-.cat-cover h4{font-size:1.2rem;line-height:1.25}
-.cat-foot{padding:1.35rem 1.75rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.cat-foot span{font-size:.82rem;color:var(--slate)}
-.cat-foot b{font-size:.85rem;color:var(--red)}
-
-.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
-.ccell{border:1px solid var(--line);padding:2.1rem}
-.ccell .ic{color:var(--red);margin-bottom:1.1rem}
-.ccell dt{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--slate);margin-bottom:.6rem}
-html[lang="ar"] .ccell dt{letter-spacing:0}
-.ccell dd{font-size:.95rem}
-.pending{color:var(--red);font-weight:600}
-
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2.5rem}
-.why-item .num{font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.1em;
-  color:var(--red);padding-bottom:.9rem;margin-bottom:.9rem;border-bottom:2px solid var(--line);display:block}
-html[lang="ar"] .why-item .num{font-family:'IBM Plex Sans Arabic',sans-serif}
-.why-item h4{font-size:1.06rem;margin-bottom:.55rem}
-.why-item p{color:var(--slate);font-size:.93rem}
-
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
-.cc{background:var(--white);padding:clamp(1.75rem,3.5vw,2.75rem)}
-.cc.on{background:var(--red);color:var(--white)}
-.cc h4{font-size:1.15rem;margin-bottom:1rem}
-.cc.on h4{color:var(--white)}
-.cc p{color:var(--slate);font-size:.95rem}
-.cc.on p{color:rgba(255,255,255,.9)}
-.tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-  padding:.3rem .7rem;margin-bottom:1rem;background:var(--line);color:var(--slate)}
-.cc.on .tag{background:rgba(255,255,255,.22);color:var(--white)}
-html[lang="ar"] .tag{letter-spacing:0}
-
-footer{background:var(--deep);color:rgba(255,255,255,.78);padding-top:4rem}
-.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:clamp(2rem,5vw,4rem);padding-bottom:3rem}
-.fgrid h5{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--white);margin-bottom:1.2rem}
-html[lang="ar"] .fgrid h5{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:0}
-.fgrid p{font-size:.9rem;max-width:42ch}
-.fgrid ul{list-style:none;display:grid;gap:.65rem;font-size:.9rem}
-.fgrid a:hover{color:var(--white)}
-.flogo img{height:52px;width:auto;margin-bottom:1.3rem;image-rendering:auto}
-.fbot{border-top:1px solid rgba(255,255,255,.18);padding-block:1.6rem;
-  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.8rem}
-
-.wa{position:fixed;inset-inline-end:20px;bottom:20px;z-index:90;width:56px;height:56px;
-  border-radius:50%;background:#25D366;display:grid;place-items:center;
-  box-shadow:0 6px 22px rgba(0,0,0,.24);transition:transform .2s}
-.wa:hover{transform:scale(1.08)}
-
-@media(max-width:920px){
-  .split,.compare{grid-template-columns:1fr}
-  .split .media{order:-1}
-  .fgrid{grid-template-columns:1fr}
-  .feat,.stat{border-inline-end:0;border-bottom:1px solid var(--line)}
-  .stat{border-bottom-color:rgba(255,255,255,.25)}
-  .logo img{height:38px}
-  header nav{display:none;position:absolute;top:78px;inset-inline:0;flex-direction:column;gap:0;
-    background:var(--white);border-bottom:1px solid var(--line);padding:.5rem 0}
-  header nav.open{display:flex}
-  header nav a{padding:.9rem var(--pad);border-bottom:0}
-  .burger{display:block;margin-inline-start:auto}
-  .tools .phone{display:none}
-}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-
-
-.tools{margin-inline-start:auto}
-header nav{margin-inline-start:auto}
-
-.progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;
-  background:var(--red);z-index:100;transition:width .1s linear}
-
-header{transition:height .3s cubic-bezier(.4,0,.2,1),box-shadow .3s}
-.bar{transition:height .3s cubic-bezier(.4,0,.2,1)}
-.logo img{transition:height .3s cubic-bezier(.4,0,.2,1)}
-header.small{box-shadow:0 2px 18px rgba(0,0,0,.07)}
-header.small .bar{height:62px}
-header.small .logo img{height:38px}
-
-.btn{
-  position:relative;overflow:hidden;
-  transition:transform .28s cubic-bezier(.34,1.4,.5,1),
-             background .25s ease, color .25s ease, box-shadow .3s ease;
-  will-change:transform;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(0) scale(.97);transition-duration:.08s}
-.btn-red:hover{box-shadow:0 10px 26px rgba(200,16,46,.36)}
-.btn-red:active{box-shadow:0 0 0 6px rgba(200,16,46,.22)}
-.btn-ink:hover{box-shadow:0 10px 26px rgba(46,49,52,.3)}
-.btn-ink:active{box-shadow:0 0 0 6px rgba(46,49,52,.18)}
-.btn-white:hover{box-shadow:0 10px 26px rgba(0,0,0,.22)}
-.btn-line:hover{box-shadow:0 10px 26px rgba(255,255,255,.22)}
-.btn::after{
-  content:'';position:absolute;top:0;inset-inline-start:-120%;
-  width:60%;height:100%;transform:skewX(-20deg);
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
-  transition:inset-inline-start .6s ease;pointer-events:none;
-}
-.btn:hover::after{inset-inline-start:130%}
-
-.phone{transition:transform .28s cubic-bezier(.34,1.4,.5,1),background .25s,box-shadow .3s}
-.phone:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(200,16,46,.34)}
-.phone:active{transform:scale(.96)}
-.lang{transition:transform .2s,background .25s,color .25s,border-color .25s}
-.lang:active{transform:scale(.94)}
-
-.card{transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,border-color .3s}
-.card-media img{transition:transform .7s cubic-bezier(.2,.7,.3,1)}
-.card:hover .card-media img{transform:scale(1.06)}
-.card-link{transition:letter-spacing .3s,color .25s}
-.card:hover .card-link{letter-spacing:.03em}
-
-.line .go{display:inline-block;transition:transform .35s cubic-bezier(.34,1.3,.5,1)}
-.line:hover .go{transform:translateX(10px)}
-html[dir="rtl"] .line:hover .go{transform:translateX(-10px)}
-.line{transition:filter .3s,transform .4s cubic-bezier(.2,.7,.3,1)}
-.line:hover{transform:translateY(-5px);z-index:2}
-
-.cat{transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,border-color .3s}
-.cat:hover{transform:translateY(-6px)}
-.feat{transition:background .3s,transform .35s}
-.feat:hover{background:var(--mist)}
-.filters button{transition:transform .25s,background .25s,color .25s,border-color .25s}
-.filters button:active{transform:scale(.95)}
-.proj{transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s}
-.proj:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.18)}
-header nav a{transition:color .25s,border-color .25s}
-
-.reveal{opacity:0;transform:translateY(26px);
-  transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
-.reveal.in{opacity:1;transform:none}
-
-.uses{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-.use{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--deep)}
-.use img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.3,1)}
-.use:hover img{transform:scale(1.07)}
-.use::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(transparent 35%,rgba(20,22,25,.88));transition:background .4s}
-.use:hover::after{background:linear-gradient(transparent 15%,rgba(142,11,33,.9))}
-.use-cap{position:absolute;inset-inline:0;bottom:0;z-index:2;padding:1.9rem;color:var(--white)}
-.use-cap b{display:block;font-family:'Outfit',sans-serif;font-size:1.08rem;margin-bottom:.35rem}
-html[lang="ar"] .use-cap b{font-family:'IBM Plex Sans Arabic',sans-serif}
-.use-cap span{font-size:.88rem;color:rgba(255,255,255,.82)}
-
-@media(prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none}
-  .btn::after{display:none}
-}
-
-
-.trust{background:var(--mist);padding-block:clamp(3.5rem,7vw,5.5rem);text-align:center;
-  border-top:1px solid var(--line)}
-.trust h3{font-size:clamp(1.25rem,2.4vw,1.85rem);margin-bottom:.9rem}
-.trust p{color:var(--slate);max-width:56ch;margin-inline:auto}
-
-
-.fam-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:3.5rem}
-.fam-nav a{font-size:.86rem;border:1px solid var(--line);padding:.6rem 1.3rem;
-  border-radius:100px;color:var(--slate);transition:.22s}
-.fam-nav a:hover{background:var(--red);border-color:var(--red);color:var(--white)}
-.fam{padding-block:clamp(2.5rem,5vw,3.5rem);border-top:1px solid var(--line);scroll-margin-top:110px}
-.fam-head{display:flex;gap:clamp(1rem,3vw,2.5rem);margin-bottom:2rem}
-.fam-no{font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;
-  color:var(--line);line-height:1;flex:none}
-html[lang="ar"] .fam-no{font-family:'IBM Plex Sans Arabic',sans-serif}
-.fam-head h2{font-size:clamp(1.15rem,2vw,1.6rem);margin-bottom:.6rem}
-.fam-brand{font-family:'Outfit',sans-serif;font-size:.74rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--red);margin-top:.8rem}
-html[lang="ar"] .fam-brand{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:0}
-.fam-body{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.5rem,4vw,3.5rem)}
-.fam-list{list-style:none;columns:2;column-gap:2rem;font-size:.88rem}
-.fam-list li{padding:.42rem 0 .42rem 1.1rem;position:relative;break-inside:avoid;color:var(--ink)}
-.fam-list li::before{content:'';position:absolute;inset-inline-start:0;top:.95rem;
-  width:5px;height:5px;background:var(--red)}
-html[dir="rtl"] .fam-list li{padding:.42rem 1.1rem .42rem 0}
-.fam-spec{background:var(--mist);padding:1.6rem;align-self:start}
-.sp{padding-block:.7rem;border-bottom:1px solid var(--line)}
-.sp:last-child{border-bottom:0}
-.sp dt{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--slate);margin-bottom:.3rem}
-html[lang="ar"] .sp dt{letter-spacing:0}
-.sp dd{font-size:.9rem;color:var(--ink)}
-.note{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
-  color:var(--slate);font-size:.9rem}
-@media(max-width:900px){.fam-body{grid-template-columns:1fr}.fam-list{columns:1}}
-
-.cat-cover{justify-content:space-between}
-.cat-cover p{font-size:.85rem;color:rgba(255,255,255,.85);margin-top:.5rem}
-.cat-a .cat-cover{background:var(--red)}
-.cat-b .cat-cover{background:#B00D28}
-.cat-c .cat-cover{background:var(--deep)}
-.cat:nth-child(2) .cat-cover,.cat:nth-child(3) .cat-cover{background:inherit}
-
-
-.stat{position:relative;overflow:hidden}
-.stat::after{content:'';position:absolute;bottom:0;inset-inline-start:0;height:3px;width:0;
-  background:rgba(255,255,255,.5);transition:width .9s cubic-bezier(.25,.8,.3,1)}
-.stat.in::after{width:100%}
-.stat:nth-child(2).in::after{transition-delay:.14s}
-.stat:nth-child(3).in::after{transition-delay:.28s}
-.stat:nth-child(4).in::after{transition-delay:.42s}
-.line::before{content:'';position:absolute;inset-inline-start:0;top:0;height:100%;width:0;
-  background:rgba(255,255,255,.1);transition:width .5s cubic-bezier(.25,.8,.3,1)}
-.line:hover::before{width:100%}
-.fam-spec .sp{position:relative}
-.svc-item::after{content:'';display:block;height:2px;width:0;background:var(--red);
-  margin-top:1rem;transition:width .55s cubic-bezier(.25,.8,.3,1)}
-.svc-item:hover::after{width:38px}
-
-
-.fam-head{align-items:center;margin-bottom:1.6rem}
-.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
-.prod{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;
-  transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,border-color .3s}
-.prod:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.08)}
-.prod-img{aspect-ratio:4/3;background:var(--white);border-bottom:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;overflow:hidden;padding:1.2rem}
-.prod-img img{width:100%;height:100%;object-fit:contain;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
-.prod:hover .prod-img img{transform:scale(1.05)}
-.prod-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
-.prod h3{font-size:1.05rem;margin-bottom:.6rem}
-.prod p{color:var(--slate);font-size:.86rem;line-height:1.65;flex:1;margin-bottom:1rem}
-.prod-spec{list-style:none;border-top:1px solid var(--line);padding-top:.8rem;margin-bottom:1.1rem;
-  display:grid;gap:.3rem}
-.prod-spec li{font-size:.78rem;color:var(--ink);padding-inline-start:.9rem;position:relative}
-.prod-spec li::before{content:'';position:absolute;inset-inline-start:0;top:.55em;width:4px;height:4px;background:var(--red)}
-html[dir="rtl"] .prod-spec li{padding-inline-start:.9rem}
-.prod-link{color:var(--red);font-size:.82rem;font-weight:600;transition:letter-spacing .3s}
-.prod:hover .prod-link{letter-spacing:.02em}
-
-
-.has-mm{position:relative;display:inline-flex;align-items:center;gap:.32rem}
-.has-mm>svg{transition:transform .3s}
-.nav-mm.open .has-mm>svg{transform:rotate(180deg)}
-.mm{position:absolute;top:100%;inset-inline:0;background:var(--white);
-  border-top:1px solid var(--line);box-shadow:0 26px 50px rgba(0,0,0,.13);
-  opacity:0;visibility:hidden;transform:translateY(-10px);
-  transition:opacity .3s ease,transform .34s cubic-bezier(.2,.7,.3,1),visibility .3s;z-index:60}
-.nav-mm.open .mm{opacity:1;visibility:visible;transform:translateY(0)}
-.mm-in{display:grid;grid-template-columns:320px 1fr;gap:2.5rem;padding-block:2rem}
-.mm-tiles{display:grid;gap:.6rem;align-content:start}
-.mm-tile{display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  width:100%;text-align:start;padding:1.15rem 1.2rem;border:0;cursor:pointer;
-  background-size:cover;background-position:center;color:var(--white);
-  font-family:'Outfit',sans-serif;font-size:.94rem;font-weight:600;
-  position:relative;overflow:hidden;transition:.35s}
-html[lang="ar"] .mm-tile{font-family:'IBM Plex Sans Arabic',sans-serif}
-.mm-tile svg{flex:none;opacity:.6;transition:.35s}
-html[dir="rtl"] .mm-tile svg{transform:scaleX(-1)}
-.mm-tile::after{content:'';position:absolute;inset-inline-start:0;top:0;height:100%;width:0;
-  background:var(--red);transition:width .35s cubic-bezier(.25,.8,.3,1);z-index:-1}
-.mm-tile:hover,.mm-tile.on{filter:saturate(1.15)}
-.mm-tile.on svg{opacity:1;transform:translateX(4px)}
-html[dir="rtl"] .mm-tile.on svg{transform:scaleX(-1) translateX(4px)}
-.mm-tile.on{box-shadow:inset 0 0 0 2px var(--red)}
-.mm-panel{display:none}
-.mm-panel.on{display:block;animation:mmIn .35s cubic-bezier(.2,.7,.3,1)}
-@keyframes mmIn{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
-html[dir="rtl"] .mm-panel.on{animation-name:mmInR}
-@keyframes mmInR{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
-.mm-links{display:grid;grid-template-columns:repeat(2,1fr);gap:.2rem 2rem}
-.mm-links a{display:block;padding:.7rem .9rem;border-radius:2px;transition:background .25s}
-.mm-links a:hover{background:var(--mist)}
-.mm-links b{display:block;font-family:'Outfit',sans-serif;font-size:.9rem;color:var(--ink);
-  font-weight:600;margin-bottom:.18rem}
-html[lang="ar"] .mm-links b{font-family:'IBM Plex Sans Arabic',sans-serif}
-.mm-links a:hover b{color:var(--red)}
-.mm-links i{font-style:normal;font-size:.76rem;color:var(--slate);line-height:1.5;display:block}
-.mm-all{display:inline-block;margin-top:1.4rem;margin-inline-start:.9rem;
-  color:var(--red);font-size:.83rem;font-weight:600}
-
-.mm-tile{min-height:74px}
-.mm-tile.on{box-shadow:inset 0 0 0 2px var(--red),0 8px 22px rgba(200,16,46,.22)}
-.mm-panels{min-height:264px}
-.mm-links i{overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-@media(max-width:1080px){
-  .mm{position:static;box-shadow:none;border-top:0;opacity:1;visibility:visible;
-    transform:none;display:none;background:var(--mist)}
-  .nav-mm.open .mm{display:block}
-  .mm-in{grid-template-columns:1fr;gap:1rem;padding-block:1rem}
-  .mm-tile{background-image:none!important;background:var(--ink)}
-  .mm-links{grid-template-columns:1fr}
-  .mm-links i{display:none}
-}
-
-
-.mm-item{position:relative}
-.mm-car{position:absolute;inset-inline-end:.6rem;top:1rem;color:var(--line);
-  opacity:0;transition:.28s;pointer-events:none}
-html[dir="rtl"] .mm-car{transform:scaleX(-1)}
-.mm-item:hover .mm-car{opacity:1;color:var(--red)}
-.mm-fly{position:absolute;top:-.5rem;inset-inline-start:100%;min-width:250px;
-  background:var(--white);border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.14);
-  padding:.6rem;opacity:0;visibility:hidden;transform:translateX(-8px);
-  transition:.28s cubic-bezier(.2,.7,.3,1);z-index:70}
-html[dir="rtl"] .mm-fly{transform:translateX(8px)}
-.mm-item:hover .mm-fly{opacity:1;visibility:visible;transform:none}
-.mm-fly a{display:flex;align-items:center;gap:.6rem;padding:.4rem .6rem;font-size:.83rem;color:var(--ink);
-  border-radius:2px;transition:.2s}
-.mm-fly a:hover{background:var(--mist);color:var(--red)}
-@media(max-width:1080px){
-  .mm-fly{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;
-    border:0;border-inline-start:2px solid var(--line);margin-inline-start:.9rem;padding-block:0}
-  .mm-fly a{padding:.4rem .8rem;font-size:.8rem;color:var(--slate)}
-  .mm-car{display:none}
-}
-
-
-.mm-fly-img{flex:none;width:38px;height:30px;background:var(--white);border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;padding:2px;overflow:hidden}
-.mm-fly-img img{width:100%;height:100%;object-fit:contain}
-@media(max-width:1080px){.mm-fly-img{display:none}}
-
-@media(max-width:640px){
-  body{font-size:14.5px}
-  .wrap{padding-inline:1.1rem}
-  .sec{padding-block:2.6rem}
-  .display{font-size:clamp(1.45rem,7vw,1.95rem);line-height:1.18}
-  .banner h1{font-size:clamp(1.4rem,7vw,1.8rem)}
-  .hero h1{font-size:clamp(1.5rem,7.5vw,2rem)}
-  .hero p{font-size:.92rem}
-  .lead{font-size:.92rem}
-  .btn{padding:.75rem 1.35rem;font-size:.82rem}
-  .phero-cta{gap:.55rem}
-  .phero-cta .btn{flex:1 1 100%;justify-content:center}
-  .ptable{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;font-size:.78rem}
-  .ptable th,.ptable td{padding:.6rem .75rem}
-  .prods,.rel-grid,.sub-list,.grid-proj,.uses{grid-template-columns:1fr!important}
-  .grid-proj>.proj{max-width:100%!important}
-  .fam-list{columns:1}
-  .fam-body{grid-template-columns:1fr}
-  .lines{grid-template-columns:1fr}
-  .rng{grid-template-columns:1fr}
-  .rng-view{position:static}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .svc-grid{grid-template-columns:1fr}
-  .proc-steps{grid-template-columns:1fr;gap:1.6rem}
-  .proc-line{display:none}
-  .proc-steps li{padding-top:0;padding-inline-start:1.6rem;border-inline-start:2px solid var(--line)}
-  .proc-steps li::before{top:.2rem;inset-inline-start:-7.5px}
-  .dl{flex-direction:column;align-items:flex-start;gap:1rem;padding:1.25rem}
-  .dl .btn{width:100%;justify-content:center}
-  .sub-nav,.fam-nav,.filters{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;
-    padding-bottom:.4rem;scrollbar-width:none}
-  .sub-nav::-webkit-scrollbar,.fam-nav::-webkit-scrollbar,.filters::-webkit-scrollbar{display:none}
-  .sub-nav a,.fam-nav a,.filters button{white-space:nowrap;flex:none}
-  .crumb{font-size:.72rem}
-  .banner{padding-block:2.6rem}
-  .banner-img img{opacity:.62}
-  .mm-fly a,.mm-links a,header nav>a,.nav-mm>a{min-height:44px;display:flex;align-items:center}
-  .whatsapp{width:52px;height:52px}
-}
-@media(max-width:400px){
-  .stats{grid-template-columns:1fr}
-}
-
-
-@media(max-width:640px){
-  .pbody{min-width:0}
-  .pbody>div{min-width:0;max-width:100%;overflow:hidden}
-  .ptable{display:block;width:100%;max-width:100%;overflow-x:auto;white-space:nowrap}
-  .ptable thead,.ptable tbody,.ptable tr{width:max-content;min-width:100%}
-  .pbody>div>p{max-width:100%}
-}
-
-
-html{scroll-behavior:smooth}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-::selection{background:var(--red);color:var(--white)}
-a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
-img{max-width:100%;height:auto}
-.crumb,.sub-nav,.fam-nav{position:static!important;display:flex!important;top:auto!important;
-  background:none!important;border:0!important;padding:0!important;flex-direction:row!important}
-.crumb a,.sub-nav a,.fam-nav a{border-bottom:0!important;padding-block:0!important;min-height:0!important;display:inline-flex!important}
-.crumb{gap:.55rem;flex-wrap:wrap;align-items:center}
-.crumb a{padding:0!important}
-.sub-nav{gap:.45rem;flex-wrap:wrap;margin-top:1.6rem}
-.sub-nav a{font-size:.8rem;border:1px solid var(--line)!important;padding:.5rem 1rem!important;border-radius:100px;
-  color:var(--slate);transition:.25s;background:var(--white)!important;align-items:center;white-space:nowrap}
-.sub-nav a:hover{border-color:var(--red)!important;color:var(--red)}
-.sub-nav a.on{background:var(--red)!important;border-color:var(--red)!important;color:var(--white)}
-.fam-nav{gap:.5rem;flex-wrap:wrap;margin-bottom:3.5rem}
-.fam-nav a{font-size:.86rem;border:1px solid var(--line)!important;padding:.6rem 1.3rem!important;border-radius:100px;
-  color:var(--slate);transition:.22s;background:var(--white)!important;align-items:center}
-.fam-nav a:hover{background:var(--red)!important;border-color:var(--red)!important;color:var(--white)}
-.banner h1{letter-spacing:-.01em}
-.banner .crumb{margin-top:.6rem;font-size:.78rem}
-.banner .crumb a{color:rgba(255,255,255,.75)}
-.banner .crumb a:hover{color:var(--white)}
-.phero{border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--mist),var(--white))}
-.phero-img{box-shadow:0 20px 50px rgba(0,0,0,.06)}
-.phero .lead{max-width:52ch}
-.pspec{border-inline-start:3px solid var(--red)}
-.prod,.sub-card,.rel,.cat,.use,.proj{border-radius:2px}
-.btn:active{transform:translateY(0) scale(.98)}
-@media(max-width:640px){
-  .sub-nav,.fam-nav{flex-wrap:nowrap!important;overflow-x:auto;padding-bottom:.4rem!important;
-    scrollbar-width:none;-webkit-overflow-scrolling:touch;max-width:100%}
-  .sub-nav::-webkit-scrollbar,.fam-nav::-webkit-scrollbar{display:none}
-  .sub-nav a,.fam-nav a{flex:none}
-  .phero-grid{gap:1.4rem;min-width:0}
-  .phero-txt{min-width:0}
-  body{overflow-x:hidden}
-  .phero-img{order:-1;padding:1.2rem}
-  .phero h1{font-size:1.5rem}
-  .phero-cta{margin-top:1.3rem}
-  .pspec{position:static;padding:1.3rem}
-  .crumb{font-size:.7rem;gap:.4rem}
-  .dl{margin-top:1.8rem}
-  .rel-grid,.sub-list{gap:.9rem}
-  .rel-t,.sub-card>b,.sub-card>p,.sub-card>span{padding-inline:1rem}
-}
-
-
-.fgrid{grid-template-columns:1.6fr 1fr 1fr 1.2fr}
-.fcontact li{color:rgba(255,255,255,.75);font-size:.86rem;line-height:1.6}
-.fcontact a{color:rgba(255,255,255,.75)}
-.fcontact a:hover{color:var(--white)}
-@media(max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.fgrid{grid-template-columns:1fr;gap:1.8rem}}
-.totop{position:fixed;bottom:5.6rem;inset-inline-end:1.5rem;width:44px;height:44px;border-radius:50%;
-  background:var(--white);color:var(--ink);border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.14);
-  cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:40;
-  opacity:0;visibility:hidden;transform:translateY(10px);transition:.35s}
-.totop.show{opacity:1;visibility:visible;transform:none}
-.totop:hover{background:var(--red);color:var(--white);border-color:var(--red)}
-
-
-
-.sbtn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--white);
-  color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.25s;flex:none}
-.sbtn:hover{border-color:var(--red);color:var(--red)}
-.sov{position:fixed;inset:0;background:rgba(46,49,52,.55);backdrop-filter:blur(6px);z-index:200;
-  display:flex;align-items:flex-start;justify-content:center;padding:6vh 1rem}
-.sov[hidden]{display:none}
-.sbox{width:min(720px,100%);background:var(--white);box-shadow:0 30px 80px rgba(0,0,0,.3);
-  animation:sIn .3s cubic-bezier(.2,.7,.3,1);max-height:82vh;display:flex;flex-direction:column}
-@keyframes sIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-.sin{display:flex;align-items:center;gap:.8rem;padding:1rem 1.2rem;border-bottom:1px solid var(--line);color:var(--slate)}
-.sin input{flex:1;border:0;outline:0;font:inherit;font-size:1.05rem;color:var(--ink);background:none;min-width:0}
-.sin button{border:1px solid var(--line);background:var(--mist);color:var(--slate);font:inherit;font-size:.72rem;
-  padding:.3rem .55rem;border-radius:4px;cursor:pointer}
-.sres{overflow:auto;padding:.5rem}
-.sres a{display:flex;align-items:center;gap:.9rem;padding:.7rem .8rem;border-radius:3px;color:var(--ink)}
-.sres a:hover,.sres a.sel{background:var(--mist)}
-.sres a b{font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;display:block}
-html[lang="ar"] .sres a b{font-family:'IBM Plex Sans Arabic',sans-serif}
-.sres a span{font-size:.76rem;color:var(--slate)}
-.sres a mark{background:none;color:var(--red);font-weight:700}
-.sres .stag{margin-inline-start:auto;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--slate);border:1px solid var(--line);padding:.15rem .45rem;border-radius:3px;flex:none}
-html[lang="ar"] .sres .stag{letter-spacing:0}
-.sempty{padding:2rem;text-align:center;color:var(--slate);font-size:.9rem}
-@media(max-width:640px){.sov{padding:0}.sbox{max-height:100vh;height:100vh}.sbtn{width:36px;height:36px}}
-
-</style>
-
-<style id="kv-polish-v1">
-/* ═══════════ KAVITY · refinement layer v1 ═══════════ */
-:root{
-  --r-lg:20px; --r-md:14px; --r-sm:10px;
-  --sh-1:0 2px 10px rgba(11,18,32,.05);
-  --sh-2:0 16px 38px rgba(11,18,32,.11);
-}
-
-/* ── typography ── */
-h1,h2,h3,h4{letter-spacing:-.028em}
-.display{letter-spacing:-.032em}
-html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4,
-html[lang="ar"] .display{letter-spacing:0}
-.lead{font-size:1.02rem;line-height:1.75;color:#525A61}
-.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
-html[lang="ar"] .eyebrow{letter-spacing:0;text-transform:none;font-size:.9rem}
-
-/* ── product-family cards: separated, rounded, lifting ── */
-.lines{gap:1.1rem;background:transparent}
-.line{border-radius:var(--r-lg);box-shadow:var(--sh-1)}
-.line:hover{transform:translateY(-6px);box-shadow:var(--sh-2)}
-
-/* ── sector cards ── */
-.use{border-radius:var(--r-lg);box-shadow:var(--sh-1);
-  transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s}
-.use:hover{transform:translateY(-6px);box-shadow:var(--sh-2)}
-.use img{border-radius:inherit}
-
-/* ── media blocks ── */
-.st-media,.use-art{border-radius:var(--r-lg);overflow:hidden}
-.st-media img,.use-art img{border-radius:inherit}
-.rng-frame{border-radius:var(--r-md)}
-
-/* ── compliance row: cards, not a table ── */
-.cert-row{border:0;background:transparent;gap:.9rem}
-.cert-row>li{background:var(--white);border:1px solid var(--line);
-  border-radius:var(--r-md);transition:border-color .3s,box-shadow .3s}
-.cert-row>li:hover{border-color:rgba(200,16,46,.32);box-shadow:var(--sh-1)}
-
-/* ── stats band ── */
-.stat{padding-block:2.9rem}
-
-/* ── buttons ── */
-.btn{padding:.95rem 2.05rem;font-weight:600;
-  transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,background .25s,color .25s,border-color .25s}
-.btn-red:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(200,16,46,.3)}
-.btn-line:hover,.btn-ink:hover,.btn-white:hover{transform:translateY(-2px)}
-
-/* ── projects rail cards ── */
-.grid-proj>.proj{box-shadow:var(--sh-1)}
-.grid-proj>.proj:hover{box-shadow:var(--sh-2)}
-
-/* ── keyboard focus ── */
-a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:8px}
-
-/* ── motion ── */
-html{scroll-behavior:smooth}
-@media(prefers-reduced-motion:reduce){
-  html,.grid-proj{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-}
-
-/* ── v2 fixes ── */
-@media(min-width:1000px){.lines{grid-template-columns:repeat(4,1fr)}}
-@media(min-width:640px) and (max-width:999px){.lines{grid-template-columns:repeat(2,1fr)}}
-.use-art{position:absolute;inset:0;aspect-ratio:auto;border-radius:inherit}
-.use-art img{width:100%;height:100%;object-fit:cover}
-.use-art::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(11,18,32,0) 32%,rgba(11,18,32,.34) 60%,rgba(11,18,32,.85) 100%)}
-.use-cap{z-index:3}
-.svc-item:hover{border-top-color:var(--red)}
-
-/* ── v3 · consistent corner language on the inner pages ── */
-.prod-img,.cat-cover,.phero-img,.sub-thumb,.media,.map-wrap{
-  border-radius:var(--r-md);overflow:hidden}
-.prod-img img,.cat-cover img,.phero-img img,.sub-thumb img,.media img{border-radius:inherit}
-.fam,.ccell,.map-card,.cc,.pspec,.dl,.compare{border-radius:var(--r-md)}
-.compare{overflow:hidden}
-.map-card{box-shadow:var(--sh-1)}
-.prod-img,.cat-cover,.sub-thumb{transition:box-shadow .3s}
-.prod-img:hover,.cat-cover:hover,.sub-thumb:hover{box-shadow:var(--sh-1)}
-
-/* ── v4 · hero still image + stable text sizing ── */
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%;
-  transform:scale(1.04);animation:heroDrift 26s ease-in-out infinite alternate}
-@keyframes heroDrift{from{transform:scale(1.04)}to{transform:scale(1.11)}}
-@media(prefers-reduced-motion:reduce){.hero-media img{animation:none;transform:none}}
-.rot span:not(.on){transition-duration:.35s}
-
-/* ── v5 · brand-red hero panel ── */
-.hero-red .hero-media img{object-position:center 62%}
-.hero-red::after{
-  background:linear-gradient(100deg,
-    rgba(58,4,14,.93) 0%, rgba(96,7,22,.72) 38%,
-    rgba(160,12,36,.34) 68%, rgba(200,16,46,.06) 100%)}
-html[dir="rtl"] .hero-red::after{
-  background:linear-gradient(260deg,
-    rgba(58,4,14,.93) 0%, rgba(96,7,22,.72) 38%,
-    rgba(160,12,36,.34) 68%, rgba(200,16,46,.06) 100%)}
-.hero-red .hero-tag{background:rgba(255,255,255,.18);color:#fff;
-  border:1px solid rgba(255,255,255,.34);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.hero-red .hero-actions .btn-red{background:#fff;color:#1B1E22;border-color:#fff}
-.hero-red .hero-actions .btn-red:hover{background:#F2F3F4;color:#1B1E22;
-  box-shadow:0 12px 30px rgba(0,0,0,.28)}
-.hero-red .hero-actions .btn-line{border-color:rgba(255,255,255,.6);color:#fff}
-.hero-red .hero-actions .btn-line:hover{background:rgba(255,255,255,.14);border-color:#fff}
-.hero-red h1{text-shadow:0 2px 18px rgba(40,2,10,.4)}
-
-/* ── v6 · hero image sits at natural scale, no zoom ── */
-.hero-red .hero-media img{object-position:center center;transform:none;animation:none;
-  image-rendering:auto}
-
-/* ── v7 · hero gradient painted in CSS (resolution-independent, no banding) ── */
-.hero-red .hero-media{
-  background:linear-gradient(180deg,
-    #FFF7F6 0%, #FDBDB6 12%, #F76F69 24%, #EF3A36 36%,
-    #DE1414 50%, #C90304 68%, #B30000 86%, #A8090A 100%)}
-.hero-red .hero-media::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,
-    #FFFFFF 0%, rgba(255,255,255,.985) 10%, rgba(255,255,255,.88) 22%,
-    rgba(255,255,255,.52) 38%, rgba(255,255,255,.16) 52%, rgba(255,255,255,0) 64%);
-  /* v7b */
-  -webkit-mask-image:linear-gradient(90deg,
-    rgba(0,0,0,.90) 0%,   rgba(0,0,0,.90) 4.4%,
-    rgba(0,0,0,.74) 6.0%, rgba(0,0,0,.74) 13.2%,
-    rgba(0,0,0,.63) 14.8%,rgba(0,0,0,.63) 22.1%,
-    rgba(0,0,0,.45) 23.7%,rgba(0,0,0,.45) 30.9%,
-    rgba(0,0,0,.20) 32.5%,rgba(0,0,0,.20) 39.9%,
-    rgba(0,0,0,.155) 41.5%,rgba(0,0,0,.155) 48.9%,
-    rgba(0,0,0,.14) 50.5%,rgba(0,0,0,.14) 66.5%,
-    rgba(0,0,0,.175) 68.1%,rgba(0,0,0,.175) 75.5%,
-    rgba(0,0,0,.28) 77.1%,rgba(0,0,0,.28) 84.5%,
-    rgba(0,0,0,.54) 86.1%,rgba(0,0,0,.54) 93.3%,
-    rgba(0,0,0,.70) 94.9%,rgba(0,0,0,.70) 100%);
-          mask-image:linear-gradient(90deg,
-    rgba(0,0,0,.90) 0%,   rgba(0,0,0,.90) 4.4%,
-    rgba(0,0,0,.74) 6.0%, rgba(0,0,0,.74) 13.2%,
-    rgba(0,0,0,.63) 14.8%,rgba(0,0,0,.63) 22.1%,
-    rgba(0,0,0,.45) 23.7%,rgba(0,0,0,.45) 30.9%,
-    rgba(0,0,0,.20) 32.5%,rgba(0,0,0,.20) 39.9%,
-    rgba(0,0,0,.155) 41.5%,rgba(0,0,0,.155) 48.9%,
-    rgba(0,0,0,.14) 50.5%,rgba(0,0,0,.14) 66.5%,
-    rgba(0,0,0,.175) 68.1%,rgba(0,0,0,.175) 75.5%,
-    rgba(0,0,0,.28) 77.1%,rgba(0,0,0,.28) 84.5%,
-    rgba(0,0,0,.54) 86.1%,rgba(0,0,0,.54) 93.3%,
-    rgba(0,0,0,.70) 94.9%,rgba(0,0,0,.70) 100%)}
-.hero-red .hero-media::after{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  opacity:.05;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");background-size:240px 240px}
-html[dir="rtl"] .hero-red .hero-media::before{transform:scaleX(-1)}
-
-/* ── v8 · inner-page banners use the same CSS gradient as the hero ── */
-.banner-img img{display:none}
-.banner-img{
-  background:linear-gradient(180deg,
-    #FFF7F6 0%, #FDBDB6 12%, #F76F69 24%, #EF3A36 36%,
-    #DE1414 50%, #C90304 68%, #B30000 86%, #A8090A 100%)}
-.banner-img::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,
-    #FFFFFF 0%, rgba(255,255,255,.985) 10%, rgba(255,255,255,.88) 22%,
-    rgba(255,255,255,.52) 38%, rgba(255,255,255,.16) 52%, rgba(255,255,255,0) 64%);
-  -webkit-mask-image:linear-gradient(90deg,
-    rgba(0,0,0,.90) 0%,   rgba(0,0,0,.90) 4.4%,
-    rgba(0,0,0,.74) 6.0%, rgba(0,0,0,.74) 13.2%,
-    rgba(0,0,0,.63) 14.8%,rgba(0,0,0,.63) 22.1%,
-    rgba(0,0,0,.45) 23.7%,rgba(0,0,0,.45) 30.9%,
-    rgba(0,0,0,.20) 32.5%,rgba(0,0,0,.20) 39.9%,
-    rgba(0,0,0,.155) 41.5%,rgba(0,0,0,.155) 48.9%,
-    rgba(0,0,0,.14) 50.5%,rgba(0,0,0,.14) 66.5%,
-    rgba(0,0,0,.175) 68.1%,rgba(0,0,0,.175) 75.5%,
-    rgba(0,0,0,.28) 77.1%,rgba(0,0,0,.28) 84.5%,
-    rgba(0,0,0,.54) 86.1%,rgba(0,0,0,.54) 93.3%,
-    rgba(0,0,0,.70) 94.9%,rgba(0,0,0,.70) 100%);
-          mask-image:linear-gradient(90deg,
-    rgba(0,0,0,.90) 0%,   rgba(0,0,0,.90) 4.4%,
-    rgba(0,0,0,.74) 6.0%, rgba(0,0,0,.74) 13.2%,
-    rgba(0,0,0,.63) 14.8%,rgba(0,0,0,.63) 22.1%,
-    rgba(0,0,0,.45) 23.7%,rgba(0,0,0,.45) 30.9%,
-    rgba(0,0,0,.20) 32.5%,rgba(0,0,0,.20) 39.9%,
-    rgba(0,0,0,.155) 41.5%,rgba(0,0,0,.155) 48.9%,
-    rgba(0,0,0,.14) 50.5%,rgba(0,0,0,.14) 66.5%,
-    rgba(0,0,0,.175) 68.1%,rgba(0,0,0,.175) 75.5%,
-    rgba(0,0,0,.28) 77.1%,rgba(0,0,0,.28) 84.5%,
-    rgba(0,0,0,.54) 86.1%,rgba(0,0,0,.54) 93.3%,
-    rgba(0,0,0,.70) 94.9%,rgba(0,0,0,.70) 100%)}
-.banner-img::after{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  opacity:.05;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");background-size:240px 240px}
-html[dir="rtl"] .banner-img::before{transform:scaleX(-1)}
-.banner::after{
-  background:linear-gradient(105deg,
-    rgba(58,4,14,.92) 0%, rgba(96,7,22,.70) 40%,
-    rgba(160,12,36,.32) 70%, rgba(200,16,46,.06) 100%)}
-html[dir="rtl"] .banner::after{
-  background:linear-gradient(255deg,
-    rgba(58,4,14,.92) 0%, rgba(96,7,22,.70) 40%,
-    rgba(160,12,36,.32) 70%, rgba(200,16,46,.06) 100%)}
-.banner h1{text-shadow:0 2px 18px rgba(40,2,10,.38)}
-.banner .crumb span{color:rgba(255,255,255,.6)}
-</style>
 <script id="kv-theme-pre">try{if(localStorage.getItem('kavity-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#0B0C0E'}}catch(e){}if(self!==top){document.documentElement.style.visibility='hidden';try{top.location.replace(location.href)}catch(e){}}</script>
 <link rel="stylesheet" href="../assets/kv/ui.css?v=c2f72db3" id="kv-ui-css">
 <link rel="stylesheet" href="../assets/kv/items.css?v=c3b93ef8" id="kv-items-css">
+<link rel="stylesheet" href="../assets/kv/css/sub-hero.css?v=b045dcdc">
 <script type="application/ld+json" data-kv="page">{"@context": "https://schema.org", "@type": "WebPage", "name": "كافيتي | تثبيت الواجهات الحجرية وحوامل الكوابل وفواصل التمدد في الأردن", "description": "كافيتي (KAVITY) في عمّان، الوكيل الحصري في الأردن لمجموعة UNITECH – IKK: أنظمة تثبيت الواجهات الحجرية، حوامل وسلالم ومجاري الكوابل، فواصل التمدد، هياكل الأسقف، مجاري النفايات والبياضات والأرضيات المرتفعة، مع الحسابات الإنشائية والمخططات التنفيذية.", "inLanguage": "ar", "url": "https://www.kavityengineering.com/ar/", "isPartOf": {"@id": "https://www.kavityengineering.com/#website"}, "about": {"@id": "https://www.kavityengineering.com/#org"}}</script>
-<style>
-.ar-page{font-family:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif}
-.ar-page .display,.ar-page h1,.ar-page h3{font-family:'IBM Plex Sans Arabic','Outfit',system-ui,sans-serif;letter-spacing:0}
-.ar-page .display{font-weight:400}.ar-page .display b{font-weight:700}
-.ar-page .eyebrow{letter-spacing:0}
-.ar-page .lead{max-width:70ch;line-height:1.9}
-.ar-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
-.ar-cta .btn-line{color:var(--ink);border-color:rgba(0,0,0,.22)}
-.ar-cta .btn-line:hover{border-color:var(--red);color:var(--red)}
-html[data-theme="dark"] .ar-cta .btn-line{color:#fff;border-color:rgba(255,255,255,.4)}
-.ar-note{color:var(--slate);margin:.4rem 0 2rem}
-.ar-fam{margin:0 0 2.6rem}
-.ar-fam>h3{font-size:1.35rem;font-weight:700;margin:0 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--red)}
-.ar-fam>h3 span{font:500 .8rem/1 Inter,sans-serif;color:var(--slate);margin-inline-start:.6rem}
-.ar-range{border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.2rem;margin-bottom:1rem;background:var(--kv-card,#fff)}
-.ar-item{display:block;text-decoration:none;color:inherit}
-.ar-item b{display:block;font-size:1.1rem;font-weight:700;color:var(--ink)}
-.ar-item .ar-en{display:block;font:500 .78rem/1.4 Inter,sans-serif;color:var(--red);margin:.15rem 0 .35rem;text-align:right}
-.ar-item p{margin:0;color:var(--slate);line-height:1.8;font-size:.95rem}
-.ar-item:hover b{color:var(--red)}
-.ar-subs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.6rem;margin-top:.9rem;padding-top:.9rem;border-top:1px dashed var(--line)}
-.ar-item.sm{padding:.55rem .7rem;border-radius:10px;background:var(--kv-bg2,#f6f7f8)}
-.ar-item.sm b{font-size:.95rem}.ar-item.sm p{font-size:.85rem;line-height:1.7}
-.ar-cl{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.5rem;font-size:1.05rem}
-.ar-cl a{color:inherit}
-html[data-theme="dark"] .ar-item.sm{background:var(--kv-surface-2,#1B1E22)}
-</style>
+<link rel="stylesheet" href="../assets/kv/css/ar.css?v=86a98202">
 </head>
-<style>
-.phero{background:var(--mist);padding-block:clamp(2rem,5vw,3.5rem);border-bottom:1px solid var(--line)}
-.crumb{font-size:.78rem;color:var(--slate);margin-bottom:1.4rem;display:flex;gap:.5rem;flex-wrap:wrap}
-.crumb a{color:var(--slate)}.crumb a:hover{color:var(--red)}
-.crumb span{color:var(--line)}
-.phero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
-.phero-txt .eyebrow{color:var(--red)}
-.phero h1{font-size:clamp(1.5rem,3vw,2.35rem);margin:.4rem 0 1rem}
-.phero .lead{font-size:1rem;max-width:52ch}
-.phero-cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.8rem}
-.phero-img{background:var(--white);border:1px solid var(--line);aspect-ratio:4/3;
-  display:flex;align-items:center;justify-content:center;padding:2rem}
-.phero-img img{width:100%;height:100%;object-fit:contain}
-.pbody{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
-.pbody p{color:var(--slate);font-size:.98rem;line-height:1.85;margin-bottom:1.2rem;max-width:62ch}
-.pspec{background:var(--mist);padding:1.8rem;position:sticky;top:100px}
-.pspec h3{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:1.2rem}
-html[lang="ar"] .pspec h3{letter-spacing:0}
-.pspec dl{display:grid}
-.pspec .r{padding-block:.85rem;border-bottom:1px solid var(--line)}
-.pspec .r:last-child{border-bottom:0}
-.pspec dt{font-size:.72rem;color:var(--slate);margin-bottom:.25rem}
-.pspec dd{font-size:.9rem;color:var(--ink);font-weight:500}
-.ptable{width:100%;border-collapse:collapse;margin-top:.6rem;font-size:.86rem}
-.ptable th{background:var(--ink);color:var(--white);text-align:start;padding:.8rem 1rem;
-  font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
-html[lang="ar"] .ptable th{letter-spacing:0}
-.ptable td{padding:.75rem 1rem;border-bottom:1px solid var(--line);color:var(--ink)}
-.ptable tr:nth-child(even) td{background:var(--mist)}
-.tnote{font-size:.82rem;color:var(--slate);margin-top:.9rem}
-.dl{display:flex;align-items:center;gap:1.2rem;background:var(--ink);color:var(--white);
-  padding:1.5rem 1.8rem;margin-top:2.5rem;flex-wrap:wrap;justify-content:space-between}
-.dl b{display:block;font-family:'Outfit',sans-serif;font-size:1.02rem}
-html[lang="ar"] .dl b{font-family:'IBM Plex Sans Arabic',sans-serif}
-.dl span{color:rgba(255,255,255,.6);font-size:.84rem}
-.rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem}
-.rel{border:1px solid var(--line);background:var(--white);display:block;transition:.35s}
-.rel:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.07)}
-.rel-img{aspect-ratio:4/3;padding:1rem;display:flex;align-items:center;justify-content:center;
-  border-bottom:1px solid var(--line)}
-.rel-img img{width:100%;height:100%;object-fit:contain}
-.rel-t{padding:1rem 1.2rem}
-.rel-t b{display:block;font-size:.92rem}
-.rel-t span{font-size:.76rem;color:var(--red)}
-@media(max-width:900px){.phero-grid,.pbody{grid-template-columns:1fr}.pspec{position:static}}
-.phero .btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
-.phero .btn-line:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
-.ptable{width:100%;max-width:none}
-.pbody>div>p{max-width:62ch}
-
-.sub-nav{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.6rem}
-.sub-nav a{font-size:.8rem;border:1px solid var(--line);padding:.5rem 1rem;border-radius:100px;
-  color:var(--slate);transition:.25s;background:var(--white)}
-.sub-nav a:hover{border-color:var(--red);color:var(--red)}
-.sub-nav a.on{background:var(--red);border-color:var(--red);color:var(--white)}
-</style>
 <body>
-<a class="kv-skip" href="#main">Skip to content</a>
+<a class="kv-skip" href="#main">انتقل إلى المحتوى</a>
 <header>
   <div class="wrap bar">
-    <a href="../index.html" class="logo"><img width="760" height="253" src="../img/3ebcf65113a0a8.png" alt="KAVITY for Construction Solutions &amp; Materials"></a>
+    <a href="../index.html" class="logo"><img width="760" height="253" src="../img/3ebcf65113a0a8.png" alt="كافيتي للحلول والمواد الإنشائية"></a>
     <nav id="nav">
-      <a href="../index.html" class="">Home</a>
-      <a href="../about.html" class="">About</a>
-      <span class="nav-mm" id="navMM"><a href="../products.html" class="has-mm">Products<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></a><div class="mm" id="mm"><div class="wrap mm-in"><div class="mm-tiles"><button type="button" class="mm-tile on" data-fam="facade" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(../img/t/w-cdcb6aeb5af9dc.webp)"><span>Façade fixation</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button><button type="button" class="mm-tile" data-fam="mep" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(../img/t/w-1cd92fa16b6372.webp)"><span>MEP &amp; cable management</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button><button type="button" class="mm-tile" data-fam="arch" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(../img/t/w-b0fe69ab3aab7a.webp)"><span>Architectural &amp; finishing</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button><button type="button" class="mm-tile" data-fam="civil" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(../img/t/w-55de652ef5fc18.webp)"><span>Civil solutions</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button></div><div class="mm-panels"><div class="mm-panel on" data-fam="facade"><div class="mm-links"><div class="mm-item"><a href="../product/mechanical-cladding-fixation.html"><b>Mechanical cladding fixation</b><i>Stainless steel brackets, dowels and anchors for stone cladding.</i></a><div class="mm-fly"><a href="../s/l-brackets.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/bcb7351a5ba5e6.webp" alt=""></span>L-brackets</a><a href="../s/z-brackets.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/fd81f3cf8b7862.webp" alt=""></span>Z-brackets</a><a href="../s/omega-bracket.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/628a0ff62669e1.webp" alt=""></span>Omega brackets</a><a href="../s/fishtail-bracket.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/4d6f5e7f53f1d9.webp" alt=""></span>Fishtail brackets</a><a href="../s/corrugated-dowel.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/fd021a24c7e05e.webp" alt=""></span>Corrugated dowels &amp; studs</a><a href="../s/anchors.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-anchors.webp" alt=""></span>Anchors &amp; fixings</a><a href="../s/steel-back-support.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/b3c54e14fd8f5c.webp" alt=""></span>Steel back support systems</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="../products.html#facade">View all in Façade fixation →</a></div><div class="mm-panel" data-fam="mep"><div class="mm-links"><div class="mm-item"><a href="../product/cable-trays.html"><b>Cable trays &amp; accessories</b><i>Perforated and solid trays with bends, tees and covers.</i></a><div class="mm-fly"><a href="../s/cable-tray-runs.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-cable-tray-runs.webp" alt=""></span>Cable tray runs</a><a href="../s/cable-tray-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-cable-tray-fittings.webp" alt=""></span>Cable tray fittings</a><a href="../s/cable-tray-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/924eea727246d5.webp" alt=""></span>Cable tray accessories</a><a href="../s/cable-tray-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/86c7774c2a8d6a.webp" alt=""></span>Cable tray support systems</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/cable-ladders.html"><b>Cable ladders</b><i>Welded and swaged ladders for heavy runs and long spans.</i></a><div class="mm-fly"><a href="../s/welded-ladders.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-welded-ladders.webp" alt=""></span>Welded cable ladders</a><a href="../s/swaged-ladders.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/38d9e0f2975330.webp" alt=""></span>Swaged cable ladders</a><a href="../s/ladder-fittings-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/1c87cf89fe796f.webp" alt=""></span>Fittings &amp; supports</a><a href="../s/ladder-firestop.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/p/hero-ladder-firestop.webp" alt=""></span>Firestop systems</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/basket-trays.html"><b>Basket trays</b><i>Wire basket trays for data, control and light power cabling.</i></a><div class="mm-fly"><a href="../s/basket-runs-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-basket-runs-fittings.webp" alt=""></span>Runs &amp; fittings</a><a href="../s/basket-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/8368bb19c111db.webp" alt=""></span>Accessories, supports &amp; framing</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/cable-trunkings.html"><b>Cable trunking</b><i>Single, double and triple compartment trunking.</i></a><div class="mm-fly"><a href="../s/trunking-runs-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/e78bab87ccfea4.webp" alt=""></span>Trunking runs &amp; fittings</a><a href="../s/trunking-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/hero-trunking-accessories.webp" alt=""></span>Trunking accessories</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/frp-cable-management.html"><b>FRP cable management</b><i>Corrosion-resistant FRP trays, ladders, grating and handrail.</i></a><div class="mm-fly"><a href="../s/frp-trays-ladders.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-frp-trays-ladders.webp" alt=""></span>FRP trays &amp; ladders</a><a href="../s/frp-support-systems.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/p/hero-frp-support-systems.webp" alt=""></span>FRP &amp; steel support systems</a><a href="../s/frp-grating-handrail.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/1f5b1250989c90.webp" alt=""></span>FRP grating &amp; handrail</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/c-channel-strut.html"><b>C-channel strut systems</b><i>Slotted and plain strut channel with nuts and fittings.</i></a><div class="mm-fly"><a href="../s/channels.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/f755fb28d2aa6a.webp" alt=""></span>Channels</a><a href="../s/toothed-channels.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-toothed-channels.webp" alt=""></span>Toothed channels</a><a href="../s/channel-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/91a3a7a5b50ca6.webp" alt=""></span>Fittings</a><a href="../s/channel-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-channel-accessories.webp" alt=""></span>Accessories &amp; anchors</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/pipe-clamps.html"><b>Pipe clamps &amp; hangers</b><i>Rubber-lined and plain clamps, hangers, rods and anchors.</i></a><div class="mm-fly"><a href="../s/clamps-hangers.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/d5e329b951c6cb.webp" alt=""></span>Clamps &amp; hangers</a><a href="../s/pipe-support-system.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-pipe-support-system.webp" alt=""></span>Support systems</a><a href="../s/threaded-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-threaded-accessories.webp" alt=""></span>Threaded accessories</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="../products.html#mep">View all in MEP &amp; cable management →</a></div><div class="mm-panel" data-fam="arch"><div class="mm-links"><div class="mm-item"><a href="../product/architectural-expansion-joints.html"><b>Architectural expansion joints</b><i>Floor, wall, ceiling and roof covers for building movement.</i></a><div class="mm-fly"><a href="../s/floor-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/73a4d4a9195c79.webp" alt=""></span>Floor expansion joints</a><a href="../s/wall-ceiling-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/41e9dfed686d9d.webp" alt=""></span>Wall &amp; ceiling joints</a><a href="../s/roof-parking-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/eff46a56d9ec83.webp" alt=""></span>Roof &amp; parking joints</a><a href="../s/fire-rated-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/df76382c159fea.webp" alt=""></span>Fire-rated &amp; seismic joints</a><a href="../s/tile-movement-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-tile-movement-joints.webp" alt=""></span>Tile movement joints</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/entrance-matting-wall-protection.html"><b>Entrance matting, profiles &amp; wall protection</b><i>Entrance mats, stair nosings, edge profiles, handrails and impact guards.</i></a><div class="mm-fly"><a href="../s/entrance-matting.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-entrance-matting.webp" alt=""></span>Entrance matting systems</a><a href="../s/stair-nosing.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-stair-nosing.webp" alt=""></span>Stair nosing</a><a href="../s/wall-profiles.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-wall-profiles.webp" alt=""></span>Wall &amp; tile profiles</a><a href="../s/handrails-wall-protection.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-handrails-wall-protection.webp" alt=""></span>Handrails &amp; wall protection</a><a href="../s/heavy-impact-protection.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-heavy-impact-protection.webp" alt=""></span>Heavy impact protection</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/metal-ceiling-grid.html"><b>Metal ceiling grid systems</b><i>Main runners, cross tees, hangers and perimeter trims.</i></a><div class="mm-fly"><a href="../s/exposed-grid.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-exposed-grid.webp" alt=""></span>Exposed grid</a><a href="../s/concealed-grid.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-concealed-grid.webp" alt=""></span>Semi-concealed &amp; clip-in grid</a><a href="../s/grid-sections.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-grid-sections.webp" alt=""></span>Section details &amp; connectors</a><a href="../s/c-channel-ceiling-grid.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/p/hero-c-channel-ceiling-grid.webp" alt=""></span>C-channel ceiling grid systems</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/garbage-linen-chutes.html"><b>Garbage &amp; linen chutes</b><i>Waste and linen chutes for hotels, hospitals and towers.</i></a><div class="mm-fly"><a href="../s/chute-components.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/786ae01a392e75.webp" alt=""></span>Chute components</a><a href="../s/chute-sorters.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-chute-sorters.webp" alt=""></span>Chute sorters &amp; diverters</a><a href="../s/chute-sanitising.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-chute-sanitising.webp" alt=""></span>Sanitising &amp; compaction</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/raised-access-flooring.html"><b>Raised access flooring</b><i>Adjustable pedestals for terraces, plant rooms and data floors.</i></a><div class="mm-fly"><a href="../s/outdoor-pedestals.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-outdoor-pedestals.webp" alt=""></span>Outdoor pedestals</a><a href="../s/indoor-access-floor.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/537cda0ba78e7e.webp" alt=""></span>Indoor access floors</a><a href="../s/decking-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-decking-supports.webp" alt=""></span>Timber decking supports</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="../products.html#arch">View all in Architectural &amp; finishing →</a></div><div class="mm-panel" data-fam="civil"><div class="mm-links"><div class="mm-item"><a href="../product/plaster-beads-expanded-metal.html"><b>Plaster beads &amp; expanded metal</b><i>Angle, stop, control and architrave beads with mesh wings.</i></a><div class="mm-fly"><a href="../s/plaster-beads.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/eefcf4795af547.webp" alt=""></span>Plaster beads</a><a href="../s/expanded-metal-lath.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/ea3d6a51962854.webp" alt=""></span>Expanded metal &amp; lath</a><a href="../s/steel-lintels.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/cd964a42b60421.webp" alt=""></span>Steel lintels</a><a href="../s/block-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/1c90673f5f7f57.webp" alt=""></span>Blockwork accessories</a><a href="../s/block-reinforcement.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/635037f51b7db0.webp" alt=""></span>Blockwork reinforcement</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="../products.html#civil">View all in Civil solutions →</a></div></div></div></div></span>
-      <a href="../projects.html" class="">Projects</a>
-      <a href="../catalog.html" class="">Catalogues</a>
-      <a href="../contact.html" class="">Contact</a>
+      <a href="../index.html" class="">الرئيسية</a>
+      <a href="../about.html" class="">من نحن</a>
+      <span class="nav-mm" id="navMM"><a href="../products.html" class="has-mm">المنتجات<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></a><div class="mm" id="mm"><div class="wrap mm-in"><div class="mm-tiles"><button type="button" class="mm-tile on" data-fam="facade" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(../img/t/w-cdcb6aeb5af9dc.webp)"><span>تثبيت الواجهات</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button><button type="button" class="mm-tile" data-fam="mep" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(../img/t/w-1cd92fa16b6372.webp)"><span>الأنظمة الكهروميكانيكية وإدارة الكوابل</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button><button type="button" class="mm-tile" data-fam="arch" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(../img/t/w-b0fe69ab3aab7a.webp)"><span>الأنظمة المعمارية والتشطيبات</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button><button type="button" class="mm-tile" data-fam="civil" data-bg="linear-gradient(90deg,rgba(46,49,52,.86),rgba(200,16,46,.62)),url(../img/t/w-55de652ef5fc18.webp)"><span>الحلول الإنشائية</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button></div><div class="mm-panels"><div class="mm-panel on" data-fam="facade"><div class="mm-links"><div class="mm-item"><a href="../product/mechanical-cladding-fixation.html"><b>التثبيت الميكانيكي لكسوة الواجهات</b><i>كتائف وأوتاد وأنكرات من الفولاذ المقاوم للصدأ لكسوة الحجر.</i></a><div class="mm-fly"><a href="../s/l-brackets.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/bcb7351a5ba5e6.webp" alt=""></span>كتائف L (براكيت L)</a><a href="../s/z-brackets.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/fd81f3cf8b7862.webp" alt=""></span>كتائف Z (براكيت Z)</a><a href="../s/omega-bracket.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/628a0ff62669e1.webp" alt=""></span>كتائف أوميغا (براكيت أوميغا)</a><a href="../s/fishtail-bracket.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/4d6f5e7f53f1d9.webp" alt=""></span>كتائف ذيل السمكة (فيش تيل)</a><a href="../s/corrugated-dowel.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/fd021a24c7e05e.webp" alt=""></span>الأوتاد والمسامير المموّجة</a><a href="../s/anchors.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-anchors.webp" alt=""></span>الأنكرات ووسائل التثبيت</a><a href="../s/steel-back-support.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/b3c54e14fd8f5c.webp" alt=""></span>أنظمة الدعامات الفولاذية الخلفية</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="../products.html#facade">عرض جميع منتجات تثبيت الواجهات ←</a></div><div class="mm-panel" data-fam="mep"><div class="mm-links"><div class="mm-item"><a href="../product/cable-trays.html"><b>حوامل الكوابل (كيبل تري) وملحقاتها</b><i>حوامل كوابل مثقّبة ومصمتة مع الأكواع والتيهات والأغطية.</i></a><div class="mm-fly"><a href="../s/cable-tray-runs.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-cable-tray-runs.webp" alt=""></span>الأطوال المستقيمة لحوامل الكوابل</a><a href="../s/cable-tray-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-cable-tray-fittings.webp" alt=""></span>القطع الخاصة لحوامل الكوابل</a><a href="../s/cable-tray-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/924eea727246d5.webp" alt=""></span>ملحقات حوامل الكوابل</a><a href="../s/cable-tray-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/86c7774c2a8d6a.webp" alt=""></span>أنظمة دعامات حوامل الكوابل</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/cable-ladders.html"><b>سلالم الكوابل (كيبل لادر)</b><i>سلالم كوابل ملحومة ومكبوسة لمسارات الكوابل الثقيلة والبحور الطويلة.</i></a><div class="mm-fly"><a href="../s/welded-ladders.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-welded-ladders.webp" alt=""></span>سلالم الكوابل الملحومة</a><a href="../s/swaged-ladders.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/38d9e0f2975330.webp" alt=""></span>سلالم الكوابل المكبوسة</a><a href="../s/ladder-fittings-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/1c87cf89fe796f.webp" alt=""></span>القطع الخاصة والدعامات</a><a href="../s/ladder-firestop.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/p/hero-ladder-firestop.webp" alt=""></span>أنظمة منع انتشار الحريق (فاير ستوب)</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/basket-trays.html"><b>حوامل الكوابل الشبكية</b><i>حوامل كوابل من شبك الأسلاك لكوابل البيانات والتحكم وكوابل الطاقة الأخف.</i></a><div class="mm-fly"><a href="../s/basket-runs-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-basket-runs-fittings.webp" alt=""></span>الأطوال المستقيمة والقطع الخاصة</a><a href="../s/basket-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/8368bb19c111db.webp" alt=""></span>الملحقات والدعامات والإطارات</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/cable-trunkings.html"><b>مجاري الكوابل (كيبل ترنك)</b><i>مجاري كوابل بحجرة واحدة أو حجرتين أو ثلاث حجرات.</i></a><div class="mm-fly"><a href="../s/trunking-runs-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/e78bab87ccfea4.webp" alt=""></span>الأطوال المستقيمة والقطع الخاصة</a><a href="../s/trunking-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/hero-trunking-accessories.webp" alt=""></span>ملحقات مجاري الكوابل</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/frp-cable-management.html"><b>أنظمة إدارة الكوابل من FRP</b><i>حوامل وسلالم كوابل وجريتنج ودرابزين من الألياف الزجاجية (FRP) مقاومة للتآكل.</i></a><div class="mm-fly"><a href="../s/frp-trays-ladders.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-frp-trays-ladders.webp" alt=""></span>حوامل وسلالم الكوابل من FRP</a><a href="../s/frp-support-systems.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/p/hero-frp-support-systems.webp" alt=""></span>أنظمة الدعامات من FRP والفولاذ</a><a href="../s/frp-grating-handrail.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/1f5b1250989c90.webp" alt=""></span>الجريتنج والدرابزين من FRP</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/c-channel-strut.html"><b>أنظمة قنوات C للتثبيت (سي تشانل)</b><i>قنوات تثبيت مثقّبة وغير مثقّبة مع الصواميل والقطع الخاصة.</i></a><div class="mm-fly"><a href="../s/channels.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/f755fb28d2aa6a.webp" alt=""></span>قنوات C للتثبيت (سي تشانل)</a><a href="../s/toothed-channels.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-toothed-channels.webp" alt=""></span>القنوات المسنّنة</a><a href="../s/channel-fittings.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/91a3a7a5b50ca6.webp" alt=""></span>القطع الخاصة لقنوات التثبيت</a><a href="../s/channel-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-channel-accessories.webp" alt=""></span>ملحقات وأنكرات قنوات التثبيت</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/pipe-clamps.html"><b>مرابط وعلّاقات الأنابيب</b><i>مرابط مبطّنة بالمطاط وغير مبطّنة، وعلّاقات وقضبان ملولبة وأنكرات.</i></a><div class="mm-fly"><a href="../s/clamps-hangers.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/d5e329b951c6cb.webp" alt=""></span>المرابط والعلّاقات (كلامبات)</a><a href="../s/pipe-support-system.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-pipe-support-system.webp" alt=""></span>أنظمة دعامات الأنابيب</a><a href="../s/threaded-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-threaded-accessories.webp" alt=""></span>الملحقات الملولبة</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="../products.html#mep">عرض جميع منتجات الأنظمة الكهروميكانيكية وإدارة الكوابل ←</a></div><div class="mm-panel" data-fam="arch"><div class="mm-links"><div class="mm-item"><a href="../product/architectural-expansion-joints.html"><b>فواصل التمدد المعمارية</b><i>أغطية فواصل للأرضيات والجدران والأسقف والأسطح، تستوعب حركة المبنى.</i></a><div class="mm-fly"><a href="../s/floor-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/73a4d4a9195c79.webp" alt=""></span>فواصل تمدد الأرضيات</a><a href="../s/wall-ceiling-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/41e9dfed686d9d.webp" alt=""></span>فواصل الجدران والأسقف</a><a href="../s/roof-parking-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/eff46a56d9ec83.webp" alt=""></span>فواصل الأسطح ومواقف السيارات</a><a href="../s/fire-rated-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/df76382c159fea.webp" alt=""></span>الفواصل المقاومة للحريق والزلزالية</a><a href="../s/tile-movement-joints.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-tile-movement-joints.webp" alt=""></span>فواصل حركة البلاط</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/entrance-matting-wall-protection.html"><b>دعاسات المداخل والبروفايلات وحماية الجدران</b><i>دعاسات مداخل وحواف درج وبروفايلات حواف ودرابزين جداري وواقيات من الصدمات.</i></a><div class="mm-fly"><a href="../s/entrance-matting.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-entrance-matting.webp" alt=""></span>أنظمة دعاسات المداخل</a><a href="../s/stair-nosing.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-stair-nosing.webp" alt=""></span>حواف الدرج (نوزينج)</a><a href="../s/wall-profiles.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-wall-profiles.webp" alt=""></span>بروفايلات الجدران والبلاط</a><a href="../s/handrails-wall-protection.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-handrails-wall-protection.webp" alt=""></span>الدرابزين الجداري وحماية الجدران</a><a href="../s/heavy-impact-protection.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-heavy-impact-protection.webp" alt=""></span>الحماية من الصدمات الشديدة</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/metal-ceiling-grid.html"><b>أنظمة الهياكل المعدنية للأسقف</b><i>قضبان رئيسية وعرضية وعلّاقات وزوايا جدارية.</i></a><div class="mm-fly"><a href="../s/exposed-grid.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-exposed-grid.webp" alt=""></span>الهيكل الظاهر (تي بار)</a><a href="../s/concealed-grid.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-concealed-grid.webp" alt=""></span>الهياكل نصف المخفية وهياكل الكبس (كليب إن)</a><a href="../s/grid-sections.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-grid-sections.webp" alt=""></span>تفاصيل المقاطع والموصلات</a><a href="../s/c-channel-ceiling-grid.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/p/hero-c-channel-ceiling-grid.webp" alt=""></span>أنظمة هياكل الأسقف من قنوات C</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/garbage-linen-chutes.html"><b>مجاري النفايات والبياضات (الشوت)</b><i>مجاري النفايات والبياضات للفنادق والمستشفيات والأبراج.</i></a><div class="mm-fly"><a href="../s/chute-components.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/786ae01a392e75.webp" alt=""></span>مكونات مجاري النفايات والبياضات</a><a href="../s/chute-sorters.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-chute-sorters.webp" alt=""></span>فارزات ومحوّلات مجرى النفايات</a><a href="../s/chute-sanitising.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-chute-sanitising.webp" alt=""></span>التعقيم وكبس النفايات</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div><div class="mm-item"><a href="../product/raised-access-flooring.html"><b>الأرضيات المرتفعة (ريزد فلور)</b><i>قواعد قابلة للتعديل (بيدستال) للتراسات وغرف المعدات وأرضيات غرف البيانات.</i></a><div class="mm-fly"><a href="../s/outdoor-pedestals.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-outdoor-pedestals.webp" alt=""></span>القواعد الخارجية القابلة للتعديل</a><a href="../s/indoor-access-floor.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/537cda0ba78e7e.webp" alt=""></span>الأرضيات المرتفعة الداخلية</a><a href="../s/decking-supports.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/kv-decking-supports.webp" alt=""></span>دعامات الأرضيات الخشبية الخارجية</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="../products.html#arch">عرض جميع منتجات الأنظمة المعمارية والتشطيبات ←</a></div><div class="mm-panel" data-fam="civil"><div class="mm-links"><div class="mm-item"><a href="../product/plaster-beads-expanded-metal.html"><b>زوايا القصارة والشبك المعدني الممدد</b><i>زوايا قصارة للأركان وزوايا نهاية وزوايا لفواصل التحكم وللإطارات، بأجنحة من الشبك.</i></a><div class="mm-fly"><a href="../s/plaster-beads.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/eefcf4795af547.webp" alt=""></span>زوايا القصارة</a><a href="../s/expanded-metal-lath.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/ea3d6a51962854.webp" alt=""></span>الشبك المعدني الممدد وشبك القصارة</a><a href="../s/steel-lintels.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/cd964a42b60421.webp" alt=""></span>الأعتاب الفولاذية</a><a href="../s/block-accessories.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/1c90673f5f7f57.webp" alt=""></span>ملحقات جدران الطوب (البلوك)</a><a href="../s/block-reinforcement.html" class="mm-fly-a"><span class="mm-fly-img"><img width="1200" height="900" loading="lazy" data-src="../img/t/635037f51b7db0.webp" alt=""></span>تسليح جدران الطوب (البلوك)</a></div><svg class="mm-car" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></div></div><a class="mm-all" href="../products.html#civil">عرض جميع منتجات الحلول الإنشائية ←</a></div></div></div></div></span>
+      <a href="../projects.html" class="">المشاريع</a>
+      <a href="../catalog.html" class="">الكتالوجات</a>
+      <a href="../contact.html" class="">اتصل بنا</a>
     </nav>
     <div class="tools">
-      <button type="button" class="sbtn" id="sbtn" aria-label="Search">
+      <button type="button" class="sbtn" id="sbtn" aria-label="بحث">
   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
 </button>
       <a href="../contact.html" class="phone">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
-        <span>Get in touch</span>
+        <span>تواصل معنا</span>
       </a>
-      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" type="button" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
-<main class="ar-page" lang="ar" dir="rtl">
+<div id="main" tabindex="-1"></div>
+<main class="ar-page">
 <section class="banner"><div class="banner-img"></div><div class="wrap"><h1>كافيتي — حلول ومواد البناء المتخصّصة في الأردن</h1><p class="crumb"><a href="../index.html" lang="en" dir="ltr">English</a><span>/</span><a href="#">العربية</a></p></div></section>
 <section class="sec"><div class="wrap ar-intro">
 <span class="eyebrow">من نحن</span>
 <h2 class="display">شريك <b>فني</b> قبل أن نكون مورّداً</h2>
-<p class="lead">كافيتي (KAVITY) شركة هندسة وتوريد لأنظمة البناء المتخصّصة، مقرّها عمّان، والوكيل الحصري في الأردن لمجموعة <span class="nw" dir="ltr">UNITECH – IKK Group</span>. نورّد أنظمة تثبيت الواجهات الحجرية، وحوامل الكوابل وسلالمها ومجاريها، وأنظمة التعليق والتثبيت للخدمات الكهروميكانيكية، وفواصل التمدد المعمارية، وهياكل الأسقف المعدنية، ومجاري النفايات والبياضات، والأرضيات المرتفعة، وزوايا القصارة وملحقات جدران الطوب — مع الحسابات الإنشائية والمخططات التنفيذية من فريقنا الهندسي.</p>
-<div class="ar-cta"><a class="btn btn-red" href="../contact.html#proposal">اطلب عرضاً فنياً</a><a class="btn btn-line" href="../catalog.html">تحميل الكتالوجات (PDF)</a><a class="btn btn-line" href="https://wa.me/962797774295" target="_blank" rel="noopener">واتساب</a></div>
+<p class="lead">كافيتي (KAVITY) شركة هندسة وتوريد لأنظمة البناء المتخصّصة، مقرّها عمّان، والوكيل الحصري في الأردن لمجموعة <span class="nw" dir="ltr">UNITECH – IKK Group</span>. نورّد أنظمة تثبيت الواجهات الحجرية، وحوامل الكوابل وسلالمها ومجاريها، وأنظمة التعليق والتثبيت للخدمات الكهروميكانيكية، وفواصل التمدد المعمارية، والهياكل المعدنية للأسقف، ومجاري النفايات والبياضات، والأرضيات المرتفعة، وزوايا القصارة وملحقات جدران الطوب — مع الحسابات الإنشائية والمخططات التنفيذية من فريقنا الهندسي.</p>
+<div class="ar-cta"><a class="btn btn-red" href="../contact.html#proposal">اطلب عرضاً فنياً</a><a class="btn btn-line" href="../catalog.html">تحميل الكتالوجات (PDF)</a><a class="btn btn-line" href="https://api.whatsapp.com/send?phone=962797774295" target="_blank" rel="noopener">واتساب</a></div>
 </div></section>
 <section class="sec ar-fams"><div class="wrap">
 <span class="eyebrow">منتجاتنا</span><h2 class="display">الأنظمة التي <b>نورّدها</b></h2>
 <p class="ar-note">صفحات المنتجات التفصيلية باللغة الإنجليزية؛ اضغط على أي نظام لفتح صفحته.</p>
 <div class="ar-fam" id="facade"><h3>تثبيت الواجهات <span lang="en" dir="ltr">Façade fixation</span></h3>
-<div class="ar-range"><a class="ar-item" href="../product/mechanical-cladding-fixation.html"><b lang="ar">التثبيت الميكانيكي لكسوة الواجهات (تركيب الحجر الميكانيكي)</b><span class="ar-en" lang="en" dir="ltr">Mechanical cladding fixation</span><p lang="ar">أنظمة كتائف من الفولاذ المقاوم للصدأ تثبّت كسوة الحجر والسيراميك ميكانيكياً، لوحاً لوحاً، على الهيكل الإنشائي للمبنى.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/l-brackets.html"><b lang="ar">كتائف L (براكيت L)</b><span class="ar-en" lang="en" dir="ltr">L-brackets</span><p lang="ar">الكتيفة الحاملة الرئيسية، تُثبَّت بالأنكرات على الجدار الخلفي الخرساني أو المبني بالطوب، وتحمل الحمل الميت للوح الكسوة.</p></a><a class="ar-item sm" href="../s/z-brackets.html"><b lang="ar">كتائف Z (براكيت Z)</b><span class="ar-en" lang="en" dir="ltr">Z-brackets</span><p lang="ar">كتائف تُستخدم حين يكون الفراغ أعمق مما تناسبه كتيفة L، إذ تُبعد الساق المزاحة خط الألواح عن الأنكر، وهي شائعة في الواجهات المعزولة.</p></a><a class="ar-item sm" href="../s/omega-bracket.html"><b lang="ar">كتائف أوميغا (براكيت أوميغا)</b><span class="ar-en" lang="en" dir="ltr">Omega brackets</span><p lang="ar">كتائف مصمّمة للألواح المثبّتة أسفل البلاطة الخرسانية، في باطن البلاطات والأجزاء الراجعة، وقابلة للضبط في اتجاهين بمقدار ±5 مم و±10 مم.</p></a><a class="ar-item sm" href="../s/fishtail-bracket.html"><b lang="ar">كتائف ذيل السمكة (فيش تيل)</b><span class="ar-en" lang="en" dir="ltr">Fishtail brackets</span><p lang="ar">أنكرات ذيل السمكة تُغرس في جدران الخرسانة المسلحة أو الطوب المصمت، بمسمار أو ألسنة علوية وسفلية تحمل ألواح الحجر وتقيّد حركتها.</p></a><a class="ar-item sm" href="../s/corrugated-dowel.html"><b lang="ar">الأوتاد والمسامير المموّجة</b><span class="ar-en" lang="en" dir="ltr">Corrugated dowels &amp; studs</span><p lang="ar">أنكرات مونة بمسمار مموّج تُثبَّت بمونة إسمنتية في الجدار الخلفي، وتُستخدم لصف الألواح الأخير في الفواصل الأفقية أو الرأسية، ولأحمال رياح حتى 1 كيلونيوتن (kN).</p></a><a class="ar-item sm" href="../s/anchors.html"><b lang="ar">الأنكرات ووسائل التثبيت</b><span class="ar-en" lang="en" dir="ltr">Anchors &amp; fixings</span><p lang="ar">أنكرات كيميائية وميكانيكية يُحدَّد مقاسها حسب مادة الأساس (خرسانة أو طوب مفرّغ أو آجر) وحسب حمل الاقتلاع على الكتيفة.</p></a><a class="ar-item sm" href="../s/steel-back-support.html"><b lang="ar">أنظمة الدعامات الفولاذية الخلفية</b><span class="ar-en" lang="en" dir="ltr">Steel back support systems</span><p lang="ar">حين لا يستطيع الهيكل الإنشائي تحمّل التثبيت مباشرة، ينقل هيكل فولاذي ثانوي حمل الكسوة إلى البلاطة.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/mechanical-cladding-fixation.html"><b lang="ar">التثبيت الميكانيكي لكسوة الواجهات (تركيب الحجر الميكانيكي)</b><span class="ar-en" lang="en" dir="ltr">Mechanical cladding fixation</span><p lang="ar">أنظمة كتائف من الفولاذ المقاوم للصدأ تثبّت كسوة الحجر والسيراميك ميكانيكياً، لوحاً لوحاً، على الهيكل الإنشائي للمبنى.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/l-brackets.html"><b lang="ar">كتائف L (براكيت L)</b><span class="ar-en" lang="en" dir="ltr">L-brackets</span><p lang="ar">الكتيفة الحاملة الرئيسية، تُثبَّت بالأنكرات على الجدار الخلفي الخرساني أو المبني بالطوب، وتحمل الحمل الميت للوح الكسوة.</p></a><a class="ar-item sm" href="../s/z-brackets.html"><b lang="ar">كتائف Z (براكيت Z)</b><span class="ar-en" lang="en" dir="ltr">Z-brackets</span><p lang="ar">كتائف تُستخدم حين يكون الفراغ أعمق مما تناسبه كتيفة L، إذ تُبعد الساق المزاحة خط الألواح عن الأنكر، وهي شائعة في الواجهات المعزولة.</p></a><a class="ar-item sm" href="../s/omega-bracket.html"><b lang="ar">كتائف أوميغا (براكيت أوميغا)</b><span class="ar-en" lang="en" dir="ltr">Omega brackets</span><p lang="ar">كتائف مصمّمة للألواح المثبّتة أسفل البلاطة الخرسانية، في باطن البلاطات والأجزاء الراجعة، وقابلة للضبط في اتجاهين بمقدار ±5 مم و±10 مم.</p></a><a class="ar-item sm" href="../s/fishtail-bracket.html"><b lang="ar">كتائف ذيل السمكة (فيش تيل)</b><span class="ar-en" lang="en" dir="ltr">Fishtail brackets</span><p lang="ar">أنكرات ذيل السمكة تُغرس في جدران الخرسانة المسلحة أو الطوب المصمت، بمسمار أو ألسنة علوية وسفلية تحمل ألواح الحجر وتقيّد حركتها.</p></a><a class="ar-item sm" href="../s/corrugated-dowel.html"><b lang="ar">الأوتاد والمسامير المموّجة</b><span class="ar-en" lang="en" dir="ltr">Corrugated dowels &amp; studs</span><p lang="ar">أنكرات مونة بمسمار مموّج تُثبَّت بمونة إسمنتية في الجدار الخلفي، وتُستخدم لصف الألواح الأخير في الفواصل الأفقية أو الرأسية، ولأحمال رياح حتى 1 كيلونيوتن (kN).</p></a><a class="ar-item sm" href="../s/anchors.html"><b lang="ar">الأنكرات ووسائل التثبيت</b><span class="ar-en" lang="en" dir="ltr">Anchors &amp; fixings</span><p lang="ar">أنكرات كيميائية وميكانيكية يُحدَّد مقاسها حسب مادة الأساس (خرسانة أو طوب مفرّغ أو آجر) وحسب حمل الاقتلاع على الكتيفة.</p></a><a class="ar-item sm" href="../s/steel-back-support.html"><b lang="ar">أنظمة الدعامات الفولاذية الخلفية</b><span class="ar-en" lang="en" dir="ltr">Steel back support systems</span><p lang="ar">حين لا يستطيع الهيكل الإنشائي تحمّل التثبيت مباشرة، ينقل هيكل فولاذي ثانوي حمل الكسوة إلى البلاطة.</p></a></div></div>
 </div>
 <div class="ar-fam" id="mep"><h3>الأنظمة الكهروميكانيكية وإدارة الكوابل <span lang="en" dir="ltr">MEP &amp; cable management</span></h3>
-<div class="ar-range"><a class="ar-item" href="../product/cable-trays.html"><b lang="ar">حوامل الكوابل (كيبل تري) وملحقاتها</b><span class="ar-en" lang="en" dir="ltr">Cable trays &amp; accessories</span><p lang="ar">حوامل كوابل مثقّبة ومصمتة مع مجموعة كاملة من الأكواع والتيهات والمسلوبات والأغطية، مصنّعة وفق المواصفة IEC 61537.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/cable-tray-runs.html"><b lang="ar">الأطوال المستقيمة لحوامل الكوابل</b><span class="ar-en" lang="en" dir="ltr">Cable tray runs</span><p lang="ar">أطوال مستقيمة بدرجات تحمّل خفيفة ومتوسطة وثقيلة وثقيلة جداً، بقاعدة مثقّبة أو مصمتة وبأربع سماكات.</p></a><a class="ar-item sm" href="../s/cable-tray-fittings.html"><b lang="ar">القطع الخاصة لحوامل الكوابل</b><span class="ar-en" lang="en" dir="ltr">Cable tray fittings</span><p lang="ar">أكواع أفقية ورأسية وتيهات ووصلات صليبية ومسلوبات مشكّلة في المصنع، بحيث يحمي نصف قطر الانحناء الكوابل.</p></a><a class="ar-item sm" href="../s/cable-tray-accessories.html"><b lang="ar">ملحقات حوامل الكوابل (كيبل تري)</b><span class="ar-en" lang="en" dir="ltr">Cable tray accessories</span><p lang="ar">أغطية ووصلات ربط وأشرطة استمرارية التأريض وأغطية نهايات تُكمل التركيب.</p></a><a class="ar-item sm" href="../s/cable-tray-supports.html"><b lang="ar">أنظمة دعامات حوامل الكوابل</b><span class="ar-en" lang="en" dir="ltr">Cable tray support systems</span><p lang="ar">أذرع كابولية وعلّاقات ترابيز وكتائف جدارية وقنوات، وتتبع المسافات بين الدعامات جدول الأحمال المنشور.</p></a></div></div>
-<div class="ar-range"><a class="ar-item" href="../product/cable-ladders.html"><b lang="ar">سلالم الكوابل (كيبل لادر)</b><span class="ar-en" lang="en" dir="ltr">Cable ladders</span><p lang="ar">أنظمة سلالم كوابل ملحومة ومكبوسة لمسارات الكوابل الثقيلة والبحور الطويلة غير المدعومة.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/welded-ladders.html"><b lang="ar">سلالم الكوابل الملحومة</b><span class="ar-en" lang="en" dir="ltr">Welded cable ladders</span><p lang="ar">درجات ملحومة بالقوائم الجانبية لأقصى قوة ميكانيكية، وهي الخيار للأحمال الأثقل والبحور الأطول.</p></a><a class="ar-item sm" href="../s/swaged-ladders.html"><b lang="ar">سلالم الكوابل المكبوسة</b><span class="ar-en" lang="en" dir="ltr">Swaged cable ladders</span><p lang="ar">درجات أنبوبية مكبوسة على البارد في القوائم الجانبية دون حرارة اللحام، من الألمنيوم أو الفولاذ.</p></a><a class="ar-item sm" href="../s/ladder-fittings-supports.html"><b lang="ar">القطع الخاصة والدعامات لسلالم الكوابل</b><span class="ar-en" lang="en" dir="ltr">Fittings &amp; supports</span><p lang="ar">أكواع وتيهات وصواعد ووصلات ربط وأذرع كابولية وإطارات ترابيز بمقاسات تناسب مقطع السلّم.</p></a><a class="ar-item sm" href="../s/ladder-firestop.html"><b lang="ar">أنظمة منع انتشار الحريق (فاير ستوب)</b><span class="ar-en" lang="en" dir="ltr">Firestop systems</span><p lang="ar">مواد سدّ (سيلانت) وممرات كوابل ومعجون ووسائد ومونة وطلاءات للكوابل مانعة لانتشار الحريق من STI Firestop، لاختراقات الكوابل عبر الجدران والأرضيات المقاومة للحريق.</p></a></div></div>
-<div class="ar-range"><a class="ar-item" href="../product/basket-trays.html"><b lang="ar">حوامل الكوابل الشبكية (كيبل تري شبكي)</b><span class="ar-en" lang="en" dir="ltr">Basket trays</span><p lang="ar">حوامل كوابل من شبك الأسلاك لكوابل البيانات والتحكم وكوابل الطاقة الأخف، تُقصّ وتُشكَّل في الموقع دون أدوات خاصة.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/basket-runs-fittings.html"><b lang="ar">الأطوال المستقيمة والقطع الخاصة لحوامل الكوابل الشبكية</b><span class="ar-en" lang="en" dir="ltr">Runs &amp; fittings</span><p lang="ar">أطوال من شبك أسلاك فولاذية ملحومة بقطر 4 مم وبأربعة ارتفاعات للجوانب، وتُقصّ الأكواع والتيهات وتُشكَّل في الموقع دون الحاجة إلى قطع خاصة من المصنع.</p></a><a class="ar-item sm" href="../s/basket-supports.html"><b lang="ar">الملحقات والدعامات والإطارات لحوامل الكوابل الشبكية</b><span class="ar-en" lang="en" dir="ltr">Accessories, supports &amp; framing</span><p lang="ar">وصلات ربط وكتائف جدارية وإطارات ترابيز ومخارج لتنزيل الكوابل وقطع التثبيت التي تحوّل الشبك المقصوص إلى مسار مكتمل.</p></a></div></div>
-<div class="ar-range"><a class="ar-item" href="../product/cable-trunkings.html"><b lang="ar">مجاري الكوابل (كيبل ترنك)</b><span class="ar-en" lang="en" dir="ltr">Cable trunking</span><p lang="ar">مجاري كوابل بحجرة واحدة أو حجرتين أو ثلاث حجرات لفصل الدوائر، بأغطية سريعة الإقفال وقطع خاصة متوافقة.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/trunking-runs-fittings.html"><b lang="ar">الأطوال المستقيمة والقطع الخاصة لمجاري الكوابل</b><span class="ar-en" lang="en" dir="ltr">Trunking runs &amp; fittings</span><p lang="ar">أطوال مستقيمة بحجرة واحدة أو حجرتين أو ثلاث حجرات، مع أكواع وتيهات ومسلوبات متوافقة.</p></a><a class="ar-item sm" href="../s/trunking-accessories.html"><b lang="ar">ملحقات مجاري الكوابل (كيبل ترنك)</b><span class="ar-en" lang="en" dir="ltr">Trunking accessories</span><p lang="ar">موصلات ووصلات تأريض وجسور ربط كهربائي (جمبر) وكتائف تعليق وعلّاقات ركابية تُكمل مسار مجاري الكوابل.</p></a></div></div>
-<div class="ar-range"><a class="ar-item" href="../product/frp-cable-management.html"><b lang="ar">أنظمة إدارة الكوابل من الألياف الزجاجية (FRP)</b><span class="ar-en" lang="en" dir="ltr">FRP cable management</span><p lang="ar">حوامل وسلالم كوابل وجريتنج ودرابزين من البلاستيك المقوّى بالألياف الزجاجية (FRP) للبيئات المسبّبة للتآكل والقاسية والبحرية.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/frp-trays-ladders.html"><b lang="ar">حوامل وسلالم الكوابل من FRP</b><span class="ar-en" lang="en" dir="ltr">FRP trays &amp; ladders</span><p lang="ar">حوامل وسلالم كوابل من الألياف الزجاجية المسحوبة للبيئات المسبّبة للتآكل، خفيفة الوزن وغير موصلة للكهرباء وغير مغناطيسية.</p></a><a class="ar-item sm" href="../s/frp-support-systems.html"><b lang="ar">أنظمة الدعامات من FRP والفولاذ</b><span class="ar-en" lang="en" dir="ltr">FRP &amp; steel support systems</span><p lang="ar">قنوات تثبيت من FRP والفولاذ وأذرع كابولية ودعامات بمقطع U وI وصفائح ومرابط، لحمل حوامل وسلالم الكوابل من FRP.</p></a><a class="ar-item sm" href="../s/frp-grating-handrail.html"><b lang="ar">الجريتنج والدرابزين من FRP</b><span class="ar-en" lang="en" dir="ltr">FRP grating &amp; handrail</span><p lang="ar">جريتنج مقولب ومسحوب ودرجات سلالم ودرابزين للممرات فوق وحدات المعالجة الصناعية ومحطات معالجة المياه.</p></a></div></div>
-<div class="ar-range"><a class="ar-item" href="../product/c-channel-strut.html"><b lang="ar">أنظمة قنوات C للتثبيت (سي تشانل)</b><span class="ar-en" lang="en" dir="ltr">C-channel strut systems</span><p lang="ar">قنوات تثبيت مثقّبة وغير مثقّبة مع صواميل القنوات والكتائف والقطع الخاصة، لبناء هياكل دعم الأعمال الكهروميكانيكية (MEP) دون لحام.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/channels.html"><b lang="ar">قنوات C للتثبيت (سي تشانل)</b><span class="ar-en" lang="en" dir="ltr">Channels</span><p lang="ar">قنوات تثبيت غير مثقّبة ومثقّبة من فئتي 41 و50 مم، بسماكات قياسية 1.5 و2.0 و2.5 مم، وبمقاطع مفردة ومزدوجة ظهراً لظهر.</p></a><a class="ar-item sm" href="../s/toothed-channels.html"><b lang="ar">القنوات المسنّنة</b><span class="ar-en" lang="en" dir="ltr">Toothed channels</span><p lang="ar">حواف مسنّنة تمنح صامولة القناة قفلاً محكماً، لنقاط الربط التي يجب أن تتحمل حملاً أعلى على امتداد القناة.</p></a><a class="ar-item sm" href="../s/channel-fittings.html"><b lang="ar">القطع الخاصة لقنوات التثبيت</b><span class="ar-en" lang="en" dir="ltr">Fittings</span><p lang="ar">صفائح مسطحة وكتائف زاوية وصفائح تقوية وصفائح قاعدة ومرابط جسور تحوّل القنوات إلى هيكل.</p></a><a class="ar-item sm" href="../s/channel-accessories.html"><b lang="ar">ملحقات وأنكرات قنوات التثبيت</b><span class="ar-en" lang="en" dir="ltr">Accessories &amp; anchors</span><p lang="ar">صواميل القنوات وبراغي برأس مطرقي وقضبان ملولبة ووصلات ربط وحلقات ومرابط جسور وأنكرات ميكانيكية للخرسانة والجدران المبنية بالطوب.</p></a></div></div>
-<div class="ar-range"><a class="ar-item" href="../product/pipe-clamps.html"><b lang="ar">مرابط وعلّاقات الأنابيب (كلامبات المواسير)</b><span class="ar-en" lang="en" dir="ltr">Pipe clamps &amp; hangers</span><p lang="ar">مرابط مبطّنة بالمطاط وغير مبطّنة وعلّاقات وقضبان ملولبة وأنكرات لتمديدات الأنابيب من ½ إنش إلى 6 إنش (ومرابط الإزاحة حتى 8 إنش).</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/clamps-hangers.html"><b lang="ar">المرابط والعلّاقات (كلامبات)</b><span class="ar-en" lang="en" dir="ltr">Clamps &amp; hangers</span><p lang="ar">مرابط مبطّنة بالمطاط وغير مبطّنة لأنابيب من ½ إنش (DN15) حتى 6 إنش، ولكلٍّ منها قدرة تحمّل مقنّنة.</p></a><a class="ar-item sm" href="../s/pipe-support-system.html"><b lang="ar">أنظمة دعامات الأنابيب</b><span class="ar-en" lang="en" dir="ltr">Support systems</span><p lang="ar">قنوات C غير مثقّبة ومثقّبة ومزدوجة ظهراً لظهر ومسنّنة مع كتائف الأذرع الكابولية: الهيكل الذي تُثبَّت عليه مرابط وعلّاقات الأنابيب.</p></a><a class="ar-item sm" href="../s/threaded-accessories.html"><b lang="ar">الملحقات الملولبة</b><span class="ar-en" lang="en" dir="ltr">Threaded accessories</span><p lang="ar">قضبان ملولبة وبراغي أنكر ووصلات ربط وصواميل سداسية وحلقات بمقاسات وتشطيبات متوافقة.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/cable-trays.html"><b lang="ar">حوامل الكوابل (كيبل تري) وملحقاتها</b><span class="ar-en" lang="en" dir="ltr">Cable trays &amp; accessories</span><p lang="ar">حوامل كوابل مثقّبة ومصمتة مع مجموعة كاملة من الأكواع والتيهات والمسلوبات والأغطية، مصنّعة وفق المواصفة IEC 61537.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/cable-tray-runs.html"><b lang="ar">الأطوال المستقيمة لحوامل الكوابل</b><span class="ar-en" lang="en" dir="ltr">Cable tray runs</span><p lang="ar">أطوال مستقيمة بدرجات تحمّل خفيفة ومتوسطة وثقيلة وثقيلة جداً، بقاعدة مثقّبة أو مصمتة وبأربع سماكات.</p></a><a class="ar-item sm" href="../s/cable-tray-fittings.html"><b lang="ar">القطع الخاصة لحوامل الكوابل</b><span class="ar-en" lang="en" dir="ltr">Cable tray fittings</span><p lang="ar">أكواع أفقية ورأسية وتيهات ووصلات صليبية ومسلوبات مشكّلة في المصنع، بحيث يحمي نصف قطر الانحناء الكوابل.</p></a><a class="ar-item sm" href="../s/cable-tray-accessories.html"><b lang="ar">ملحقات حوامل الكوابل (كيبل تري)</b><span class="ar-en" lang="en" dir="ltr">Cable tray accessories</span><p lang="ar">أغطية ووصلات ربط وأشرطة استمرارية التأريض وأغطية نهايات تُكمل التركيب.</p></a><a class="ar-item sm" href="../s/cable-tray-supports.html"><b lang="ar">أنظمة دعامات حوامل الكوابل</b><span class="ar-en" lang="en" dir="ltr">Cable tray support systems</span><p lang="ar">أذرع كابولية وعلّاقات ترابيز وكتائف جدارية وقنوات، وتتبع المسافات بين الدعامات جدول الأحمال المنشور.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/cable-ladders.html"><b lang="ar">سلالم الكوابل (كيبل لادر)</b><span class="ar-en" lang="en" dir="ltr">Cable ladders</span><p lang="ar">أنظمة سلالم كوابل ملحومة ومكبوسة لمسارات الكوابل الثقيلة والبحور الطويلة غير المدعومة.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/welded-ladders.html"><b lang="ar">سلالم الكوابل الملحومة</b><span class="ar-en" lang="en" dir="ltr">Welded cable ladders</span><p lang="ar">درجات ملحومة بالقوائم الجانبية لأقصى قوة ميكانيكية، وهي الخيار للأحمال الأثقل والبحور الأطول.</p></a><a class="ar-item sm" href="../s/swaged-ladders.html"><b lang="ar">سلالم الكوابل المكبوسة</b><span class="ar-en" lang="en" dir="ltr">Swaged cable ladders</span><p lang="ar">درجات أنبوبية مكبوسة على البارد في القوائم الجانبية دون حرارة اللحام، من الألمنيوم أو الفولاذ.</p></a><a class="ar-item sm" href="../s/ladder-fittings-supports.html"><b lang="ar">القطع الخاصة والدعامات لسلالم الكوابل</b><span class="ar-en" lang="en" dir="ltr">Fittings &amp; supports</span><p lang="ar">أكواع وتيهات وصواعد ووصلات ربط وأذرع كابولية وإطارات ترابيز بمقاسات تناسب مقطع السلّم.</p></a><a class="ar-item sm" href="../s/ladder-firestop.html"><b lang="ar">أنظمة منع انتشار الحريق (فاير ستوب)</b><span class="ar-en" lang="en" dir="ltr">Firestop systems</span><p lang="ar">مواد سدّ (سيلانت) وممرات كوابل ومعجون ووسائد ومونة وطلاءات للكوابل مانعة لانتشار الحريق من STI Firestop، لاختراقات الكوابل عبر الجدران والأرضيات المقاومة للحريق.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/basket-trays.html"><b lang="ar">حوامل الكوابل الشبكية (كيبل تري شبكي)</b><span class="ar-en" lang="en" dir="ltr">Basket trays</span><p lang="ar">حوامل كوابل من شبك الأسلاك لكوابل البيانات والتحكم وكوابل الطاقة الأخف، تُقصّ وتُشكَّل في الموقع دون أدوات خاصة.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/basket-runs-fittings.html"><b lang="ar">الأطوال المستقيمة والقطع الخاصة لحوامل الكوابل الشبكية</b><span class="ar-en" lang="en" dir="ltr">Runs &amp; fittings</span><p lang="ar">أطوال من شبك أسلاك فولاذية ملحومة بقطر 4 مم وبأربعة ارتفاعات للجوانب، وتُقصّ الأكواع والتيهات وتُشكَّل في الموقع دون الحاجة إلى قطع خاصة من المصنع.</p></a><a class="ar-item sm" href="../s/basket-supports.html"><b lang="ar">الملحقات والدعامات والإطارات لحوامل الكوابل الشبكية</b><span class="ar-en" lang="en" dir="ltr">Accessories, supports &amp; framing</span><p lang="ar">وصلات ربط وكتائف جدارية وإطارات ترابيز ومخارج لتنزيل الكوابل وقطع التثبيت التي تحوّل الشبك المقصوص إلى مسار مكتمل.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/cable-trunkings.html"><b lang="ar">مجاري الكوابل (كيبل ترنك)</b><span class="ar-en" lang="en" dir="ltr">Cable trunking</span><p lang="ar">مجاري كوابل بحجرة واحدة أو حجرتين أو ثلاث حجرات لفصل الدوائر، بأغطية سريعة الإقفال وقطع خاصة متوافقة.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/trunking-runs-fittings.html"><b lang="ar">الأطوال المستقيمة والقطع الخاصة لمجاري الكوابل</b><span class="ar-en" lang="en" dir="ltr">Trunking runs &amp; fittings</span><p lang="ar">أطوال مستقيمة بحجرة واحدة أو حجرتين أو ثلاث حجرات، مع أكواع وتيهات ومسلوبات متوافقة.</p></a><a class="ar-item sm" href="../s/trunking-accessories.html"><b lang="ar">ملحقات مجاري الكوابل (كيبل ترنك)</b><span class="ar-en" lang="en" dir="ltr">Trunking accessories</span><p lang="ar">موصلات ووصلات تأريض وجسور ربط كهربائي (جمبر) وكتائف تعليق وعلّاقات ركابية تُكمل مسار مجاري الكوابل.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/frp-cable-management.html"><b lang="ar">أنظمة إدارة الكوابل من الألياف الزجاجية (FRP)</b><span class="ar-en" lang="en" dir="ltr">FRP cable management</span><p lang="ar">حوامل وسلالم كوابل وجريتنج ودرابزين من البلاستيك المقوّى بالألياف الزجاجية (FRP) للبيئات المسبّبة للتآكل والقاسية والبحرية.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/frp-trays-ladders.html"><b lang="ar">حوامل وسلالم الكوابل من FRP</b><span class="ar-en" lang="en" dir="ltr">FRP trays &amp; ladders</span><p lang="ar">حوامل وسلالم كوابل من الألياف الزجاجية المسحوبة للبيئات المسبّبة للتآكل، خفيفة الوزن وغير موصلة للكهرباء وغير مغناطيسية.</p></a><a class="ar-item sm" href="../s/frp-support-systems.html"><b lang="ar">أنظمة الدعامات من FRP والفولاذ</b><span class="ar-en" lang="en" dir="ltr">FRP &amp; steel support systems</span><p lang="ar">قنوات تثبيت من FRP والفولاذ وأذرع كابولية ودعامات بمقطع U وI وصفائح ومرابط، لحمل حوامل وسلالم الكوابل من FRP.</p></a><a class="ar-item sm" href="../s/frp-grating-handrail.html"><b lang="ar">الجريتنج والدرابزين من FRP</b><span class="ar-en" lang="en" dir="ltr">FRP grating &amp; handrail</span><p lang="ar">جريتنج مقولب ومسحوب ومشابك تثبيته ودرابزين للممرات فوق وحدات المعالجة الصناعية ومحطات معالجة المياه.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/c-channel-strut.html"><b lang="ar">أنظمة قنوات C للتثبيت (سي تشانل)</b><span class="ar-en" lang="en" dir="ltr">C-channel strut systems</span><p lang="ar">قنوات تثبيت مثقّبة وغير مثقّبة مع صواميل القنوات والكتائف والقطع الخاصة، لبناء هياكل دعم الأعمال الكهروميكانيكية (MEP) دون لحام.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/channels.html"><b lang="ar">قنوات C للتثبيت (سي تشانل)</b><span class="ar-en" lang="en" dir="ltr">Channels</span><p lang="ar">قنوات تثبيت غير مثقّبة ومثقّبة من فئتي 41 و50 مم، بسماكات قياسية 1.5 و2.0 و2.5 مم، وبمقاطع مفردة ومزدوجة ظهراً لظهر.</p></a><a class="ar-item sm" href="../s/toothed-channels.html"><b lang="ar">القنوات المسنّنة</b><span class="ar-en" lang="en" dir="ltr">Toothed channels</span><p lang="ar">حواف مسنّنة تمنح صامولة القناة قفلاً محكماً، لنقاط الربط التي يجب أن تتحمل حملاً أعلى على امتداد القناة.</p></a><a class="ar-item sm" href="../s/channel-fittings.html"><b lang="ar">القطع الخاصة لقنوات التثبيت</b><span class="ar-en" lang="en" dir="ltr">Fittings</span><p lang="ar">صفائح مسطحة وكتائف زاوية وصفائح تقوية وصفائح قاعدة ومرابط جسور تحوّل القنوات إلى هيكل.</p></a><a class="ar-item sm" href="../s/channel-accessories.html"><b lang="ar">ملحقات وأنكرات قنوات التثبيت</b><span class="ar-en" lang="en" dir="ltr">Accessories &amp; anchors</span><p lang="ar">صواميل القنوات وبراغي برأس مطرقي وقضبان ملولبة ووصلات ربط وحلقات ومرابط جسور وأنكرات ميكانيكية للخرسانة والجدران المبنية بالطوب.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/pipe-clamps.html"><b lang="ar">مرابط وعلّاقات الأنابيب (كلامبات المواسير)</b><span class="ar-en" lang="en" dir="ltr">Pipe clamps &amp; hangers</span><p lang="ar">مرابط مبطّنة بالمطاط وغير مبطّنة وعلّاقات وقضبان ملولبة وأنكرات لتمديدات الأنابيب من ½ إنش إلى 6 إنش (ومرابط الإزاحة حتى 8 إنش).</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/clamps-hangers.html"><b lang="ar">المرابط والعلّاقات (كلامبات)</b><span class="ar-en" lang="en" dir="ltr">Clamps &amp; hangers</span><p lang="ar">مرابط مبطّنة بالمطاط وغير مبطّنة لأنابيب من ½ إنش (DN15) حتى 6 إنش، ولكلٍّ منها قدرة تحمّل مقنّنة.</p></a><a class="ar-item sm" href="../s/pipe-support-system.html"><b lang="ar">أنظمة دعامات الأنابيب</b><span class="ar-en" lang="en" dir="ltr">Support systems</span><p lang="ar">قنوات C غير مثقّبة ومثقّبة ومزدوجة ظهراً لظهر ومسنّنة مع كتائف الأذرع الكابولية: الهيكل الذي تُثبَّت عليه مرابط وعلّاقات الأنابيب.</p></a><a class="ar-item sm" href="../s/threaded-accessories.html"><b lang="ar">الملحقات الملولبة</b><span class="ar-en" lang="en" dir="ltr">Threaded accessories</span><p lang="ar">قضبان ملولبة وبراغي أنكر ووصلات ربط وصواميل سداسية وحلقات بمقاسات وتشطيبات متوافقة.</p></a></div></div>
 </div>
 <div class="ar-fam" id="arch"><h3>الأنظمة المعمارية والتشطيبات <span lang="en" dir="ltr">Architectural &amp; finishing</span></h3>
-<div class="ar-range"><a class="ar-item" href="../product/architectural-expansion-joints.html"><b lang="ar">فواصل التمدد المعمارية (إكسبانشن جوينت)</b><span class="ar-en" lang="en" dir="ltr">Architectural expansion joints</span><p lang="ar">أغطية لفواصل التمدد في الأرضيات والجدران والأسقف والأسطح، تستوعب الحركة مع الحفاظ على استمرارية التشطيب.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/floor-joints.html"><b lang="ar">فواصل تمدد الأرضيات</b><span class="ar-en" lang="en" dir="ltr">Floor expansion joints</span><p lang="ar">أغطية لفواصل الأرضيات تتحمّل حركة المرور، يُحدَّد مقاسها حسب مدى الحركة ونوع الحمل: مشاة أو سيارات خاصة أو مركبات.</p></a><a class="ar-item sm" href="../s/wall-ceiling-joints.html"><b lang="ar">فواصل الجدران والأسقف</b><span class="ar-en" lang="en" dir="ltr">Wall &amp; ceiling joints</span><p lang="ar">بروفايلات سطحية وغاطسة تحافظ على خط نظيف عبر فاصل الحركة في الجدران وباطن البلاطات.</p></a><a class="ar-item sm" href="../s/roof-parking-joints.html"><b lang="ar">فواصل الأسطح ومواقف السيارات</b><span class="ar-en" lang="en" dir="ltr">Roof &amp; parking joints</span><p lang="ar">فواصل محكمة ضد تسرّب المياه للأسطح المكشوفة ومباني مواقف السيارات، بموانع تسرّب مطاطية أو بنظام أغشية عازلة للمياه.</p></a><a class="ar-item sm" href="../s/fire-rated-joints.html"><b lang="ar">الفواصل المقاومة للحريق والفواصل الزلزالية</b><span class="ar-en" lang="en" dir="ltr">Fire-rated &amp; seismic joints</span><p lang="ar">بروفايلات زلزالية تستوعب الحركة في عدة اتجاهات، مع حاجز الحريق NFB المصنّف لساعتين (UL 2079) أسفل الغطاء.</p></a><a class="ar-item sm" href="../s/tile-movement-joints.html"><b lang="ar">فواصل حركة البلاط</b><span class="ar-en" lang="en" dir="ltr">Tile movement joints</span><p lang="ar">بروفايلات تُركَّب في طبقة تثبيت البلاط تتيح للمساحات الكبيرة المبلّطة التمدد دون انتفاخ أو تشقّق عند خطوط الروبة.</p></a></div></div>
-<div class="ar-range"><a class="ar-item" href="../product/entrance-matting-wall-protection.html"><b lang="ar">دعاسات المداخل والبروفايلات وحماية الجدران</b><span class="ar-en" lang="en" dir="ltr">Entrance matting, profiles &amp; wall protection</span><p lang="ar">دعاسات مداخل وحواف درج وبروفايلات لحواف البلاط ودرابزين وحماية من الصدمات، لأجزاء المبنى التي تتحمّل الحركة اليومية.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/entrance-matting.html"><b lang="ar">أنظمة دعاسات المداخل</b><span class="ar-en" lang="en" dir="ltr">Entrance matting systems</span><p lang="ar">دعاسات مداخل من الألمنيوم بحشوات سجاد أو فرشاة أو مطاط، تزيل الأوساخ والرطوبة عن الأحذية والعجلات عند الباب.</p></a><a class="ar-item sm" href="../s/stair-nosing.html"><b lang="ar">حواف الدرج (نوزينج)</b><span class="ar-en" lang="en" dir="ltr">Stair nosing</span><p lang="ar">بروفايلات مقاومة للانزلاق تُثبَّت على حافة كل درجة لتمييزها وحمايتها من الاهتراء.</p></a><a class="ar-item sm" href="../s/wall-profiles.html"><b lang="ar">بروفايلات الجدران والبلاط (زوايا البلاط)</b><span class="ar-en" lang="en" dir="ltr">Wall &amp; tile profiles</span><p lang="ar">بروفايلات قائمة الزاوية ودائرية تحمي زوايا الجدران وتُنهي حواف البلاط والحجر.</p></a><a class="ar-item sm" href="../s/handrails-wall-protection.html"><b lang="ar">الدرابزين الجداري وحماية الجدران</b><span class="ar-en" lang="en" dir="ltr">Handrails &amp; wall protection</span><p lang="ar">درابزين جداري وواقيات للجدران والزوايا وحماية للأبواب في الممرات التي تمرّ بها العربات والأسرّة وعربات النقل.</p></a><a class="ar-item sm" href="../s/heavy-impact-protection.html"><b lang="ar">الحماية من الصدمات الشديدة</b><span class="ar-en" lang="en" dir="ltr">Heavy impact protection</span><p lang="ar">واقيات من المطاط والبوليمر تحمي الأعمدة والجدران وأرصفة التحميل في مواقف السيارات والمستودعات ومناطق التحميل.</p></a></div></div>
-<div class="ar-range"><a class="ar-item" href="../product/metal-ceiling-grid.html"><b lang="ar">أنظمة هياكل الأسقف المعدنية (هياكل السقف المستعار)</b><span class="ar-en" lang="en" dir="ltr">Metal ceiling grid systems</span><p lang="ar">هياكل أسقف من قنوات C معلّقة من باطن البلاطة بقضبان ملولبة وكتائف أوميغا، بفئات Standard وAdvanced وExtreme والفئة المزدوجة ظهراً لظهر، وتُحدَّد مقاساتها بحسب السقف والتمديدات التي تحملها.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/c-channel-ceiling-grid.html"><b lang="ar">أنظمة هياكل الأسقف من قنوات C (سي تشانل)</b><span class="ar-en" lang="en" dir="ltr">C-channel ceiling grid systems</span><p lang="ar">هياكل من قنوات C مجلفنة معلّقة بقضبان ملولبة وكتائف أوميغا لحمل التمديدات والأسقف، بفئات Standard وAdvanced وExtreme والفئة المزدوجة ظهراً لظهر.</p></a><a class="ar-item sm" href="../s/exposed-grid.html"><b lang="ar">الهيكل الظاهر (تي بار)</b><span class="ar-en" lang="en" dir="ltr">Exposed grid</span><p lang="ar">نظام التي بار المعتاد: قضبان رئيسية وعرضية ظاهرة أسفل بلاطات السقف، تتيح الوصول الكامل إلى الفراغ فوق السقف.</p></a><a class="ar-item sm" href="../s/concealed-grid.html"><b lang="ar">الهياكل نصف المخفية وهياكل الكبس (كليب إن)</b><span class="ar-en" lang="en" dir="ltr">Semi-concealed &amp; clip-in grid</span><p lang="ar">أنظمة يختفي فيها الهيكل جزئياً أو كلياً خلف حافة بلاطة السقف، وتُركَّب بلاطات السقف بالكبس أو بالتعليق.</p></a><a class="ar-item sm" href="../s/grid-sections.html"><b lang="ar">تفاصيل المقاطع والموصلات لهياكل الأسقف</b><span class="ar-en" lang="en" dir="ltr">Section details &amp; connectors</span><p lang="ar">مقاطع قنوات C ووصلات ربط وكتائف أوميغا وقضبان ملولبة وموصلات بكتائف L أو T لتجميع الهيكل وتعليقه.</p></a></div></div>
-<div class="ar-range"><a class="ar-item" href="../product/garbage-linen-chutes.html"><b lang="ar">مجاري النفايات والبياضات (شوت النفايات والغسيل)</b><span class="ar-en" lang="en" dir="ltr">Garbage &amp; linen chutes</span><p lang="ar">أنظمة متكاملة لمجاري النفايات والبياضات للفنادق والمستشفيات والأبراج السكنية.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/chute-components.html"><b lang="ar">مكونات مجاري النفايات والبياضات (الشوت)</b><span class="ar-en" lang="en" dir="ltr">Chute components</span><p lang="ar">مقاطع المجرى وأبواب الإلقاء ووحدات التفريغ وقطع الإزاحة وكتائف الشافت التي تثبّت المجرى على الهيكل الإنشائي.</p></a><a class="ar-item sm" href="../s/chute-sorters.html"><b lang="ar">فارزات ومحوّلات مجرى النفايات</b><span class="ar-en" lang="en" dir="ltr">Chute sorters &amp; diverters</span><p lang="ar">محوّل في أسفل المجرى يوجّه النفايات إلى الحاوية الصحيحة حسب نوعها، وهو الآلية التي تجعل إعادة التدوير داخل المبنى ممكنة.</p></a><a class="ar-item sm" href="../s/chute-sanitising.html"><b lang="ar">التعقيم وكبس النفايات</b><span class="ar-en" lang="en" dir="ltr">Sanitising &amp; compaction</span><p lang="ar">وحدات غسيل وتعقيم في أعلى الشافت، ومكبس النفايات أو الحاويات في أسفله.</p></a></div></div>
-<div class="ar-range"><a class="ar-item" href="../product/raised-access-flooring.html"><b lang="ar">الأرضيات المرتفعة (ريزد فلور)</b><span class="ar-en" lang="en" dir="ltr">Raised access flooring</span><p lang="ar">قواعد قابلة للتعديل (بيدستال) وأنظمة أرضيات مرتفعة للتراسات وغرف المعدات وأرضيات غرف البيانات.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/outdoor-pedestals.html"><b lang="ar">القواعد الخارجية القابلة للتعديل (بيدستال)</b><span class="ar-en" lang="en" dir="ltr">Outdoor pedestals</span><p lang="ar">قواعد قابلة للتعديل للتراسات والأسطح، تسمح بميل البلاطة تحتها لتصريف المياه بينما يبقى التشطيب فوقها مستوياً.</p></a><a class="ar-item sm" href="../s/indoor-access-floor.html"><b lang="ar">الأرضيات المرتفعة الداخلية</b><span class="ar-en" lang="en" dir="ltr">Indoor access floors</span><p lang="ar">ألواح بورسلان على قواعد (بيدستال) قابلة للتعديل وذاتية التسوية لغرف المعدات والغرف الفنية والمساحات الداخلية، مع فراغ لتمديد الكوابل والأنابيب.</p></a><a class="ar-item sm" href="../s/decking-supports.html"><b lang="ar">دعامات الأرضيات الخشبية الخارجية (ديكنج)</b><span class="ar-en" lang="en" dir="ltr">Timber decking supports</span><p lang="ar">رؤوس حاملة للروافد تحمل أرضيات الديكنج الخشبية والمصنوعة من المواد المركّبة (كومبوزيت) على قواعد البيدستال القابلة للتعديل نفسها.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/architectural-expansion-joints.html"><b lang="ar">فواصل التمدد المعمارية (إكسبانشن جوينت)</b><span class="ar-en" lang="en" dir="ltr">Architectural expansion joints</span><p lang="ar">أغطية لفواصل التمدد في الأرضيات والجدران والأسقف والأسطح، تستوعب الحركة مع الحفاظ على استمرارية التشطيب.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/floor-joints.html"><b lang="ar">فواصل تمدد الأرضيات</b><span class="ar-en" lang="en" dir="ltr">Floor expansion joints</span><p lang="ar">أغطية لفواصل الأرضيات تتحمّل حركة المرور، يُحدَّد مقاسها حسب مدى الحركة ونوع الحمل: مشاة أو سيارات خاصة أو مركبات.</p></a><a class="ar-item sm" href="../s/wall-ceiling-joints.html"><b lang="ar">فواصل الجدران والأسقف</b><span class="ar-en" lang="en" dir="ltr">Wall &amp; ceiling joints</span><p lang="ar">بروفايلات سطحية وغاطسة تحافظ على خط نظيف عبر فاصل الحركة في الجدران وباطن البلاطات.</p></a><a class="ar-item sm" href="../s/roof-parking-joints.html"><b lang="ar">فواصل الأسطح ومواقف السيارات</b><span class="ar-en" lang="en" dir="ltr">Roof &amp; parking joints</span><p lang="ar">فواصل محكمة ضد تسرّب المياه للأسطح المكشوفة ومباني مواقف السيارات، بموانع تسرّب مطاطية أو بنظام أغشية عازلة للمياه.</p></a><a class="ar-item sm" href="../s/fire-rated-joints.html"><b lang="ar">الفواصل المقاومة للحريق والفواصل الزلزالية</b><span class="ar-en" lang="en" dir="ltr">Fire-rated &amp; seismic joints</span><p lang="ar">بروفايلات زلزالية تستوعب الحركة في عدة اتجاهات، مع حاجز الحريق NFB أسفل الغطاء (لساعتين وفق UL 2079، والتصنيف قيد الإنجاز).</p></a><a class="ar-item sm" href="../s/tile-movement-joints.html"><b lang="ar">فواصل حركة البلاط</b><span class="ar-en" lang="en" dir="ltr">Tile movement joints</span><p lang="ar">بروفايلات تُركَّب في طبقة تثبيت البلاط تتيح للمساحات الكبيرة المبلّطة التمدد دون انتفاخ أو تشقّق عند خطوط الروبة.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/entrance-matting-wall-protection.html"><b lang="ar">دعاسات المداخل والبروفايلات وحماية الجدران</b><span class="ar-en" lang="en" dir="ltr">Entrance matting, profiles &amp; wall protection</span><p lang="ar">دعاسات مداخل وحواف درج وبروفايلات لحواف البلاط ودرابزين وحماية من الصدمات، لأجزاء المبنى التي تتحمّل الحركة اليومية.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/entrance-matting.html"><b lang="ar">أنظمة دعاسات المداخل</b><span class="ar-en" lang="en" dir="ltr">Entrance matting systems</span><p lang="ar">دعاسات مداخل من الألمنيوم بحشوات سجاد أو فرشاة أو مطاط، تزيل الأوساخ والرطوبة عن الأحذية والعجلات عند الباب.</p></a><a class="ar-item sm" href="../s/stair-nosing.html"><b lang="ar">حواف الدرج (نوزينج)</b><span class="ar-en" lang="en" dir="ltr">Stair nosing</span><p lang="ar">بروفايلات مقاومة للانزلاق تُثبَّت على حافة كل درجة لتمييزها وحمايتها من الاهتراء.</p></a><a class="ar-item sm" href="../s/wall-profiles.html"><b lang="ar">بروفايلات الجدران والبلاط (زوايا البلاط)</b><span class="ar-en" lang="en" dir="ltr">Wall &amp; tile profiles</span><p lang="ar">بروفايلات قائمة الزاوية ودائرية تحمي زوايا الجدران وتُنهي حواف البلاط والحجر.</p></a><a class="ar-item sm" href="../s/handrails-wall-protection.html"><b lang="ar">الدرابزين الجداري وحماية الجدران</b><span class="ar-en" lang="en" dir="ltr">Handrails &amp; wall protection</span><p lang="ar">درابزين جداري وواقيات للجدران والزوايا وحماية للأبواب في الممرات التي تمرّ بها العربات والأسرّة وعربات النقل.</p></a><a class="ar-item sm" href="../s/heavy-impact-protection.html"><b lang="ar">الحماية من الصدمات الشديدة</b><span class="ar-en" lang="en" dir="ltr">Heavy impact protection</span><p lang="ar">واقيات من المطاط والبوليمر تحمي الأعمدة والجدران وأرصفة التحميل في مواقف السيارات والمستودعات ومناطق التحميل.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/metal-ceiling-grid.html"><b lang="ar">أنظمة الهياكل المعدنية للأسقف (هياكل السقف المستعار)</b><span class="ar-en" lang="en" dir="ltr">Metal ceiling grid systems</span><p lang="ar">هياكل أسقف من قنوات C معلّقة من باطن البلاطة بقضبان ملولبة وكتائف أوميغا، بفئات Standard وAdvanced وExtreme والفئة المزدوجة ظهراً لظهر، وتُحدَّد مقاساتها بحسب السقف والتمديدات التي تحملها.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/c-channel-ceiling-grid.html"><b lang="ar">أنظمة هياكل الأسقف من قنوات C (سي تشانل)</b><span class="ar-en" lang="en" dir="ltr">C-channel ceiling grid systems</span><p lang="ar">هياكل من قنوات C مجلفنة معلّقة بقضبان ملولبة وكتائف أوميغا لحمل التمديدات والأسقف، بفئات Standard وAdvanced وExtreme والفئة المزدوجة ظهراً لظهر.</p></a><a class="ar-item sm" href="../s/exposed-grid.html"><b lang="ar">الهيكل الظاهر (تي بار)</b><span class="ar-en" lang="en" dir="ltr">Exposed grid</span><p lang="ar">نظام التي بار المعتاد: قضبان رئيسية وعرضية ظاهرة أسفل بلاطات السقف، تتيح الوصول الكامل إلى الفراغ فوق السقف.</p></a><a class="ar-item sm" href="../s/concealed-grid.html"><b lang="ar">الهياكل نصف المخفية وهياكل الكبس (كليب إن)</b><span class="ar-en" lang="en" dir="ltr">Semi-concealed &amp; clip-in grid</span><p lang="ar">أنظمة يختفي فيها الهيكل جزئياً أو كلياً خلف حافة بلاطة السقف، وتُركَّب بلاطات السقف بالكبس أو بالتعليق.</p></a><a class="ar-item sm" href="../s/grid-sections.html"><b lang="ar">تفاصيل المقاطع والموصلات لهياكل الأسقف</b><span class="ar-en" lang="en" dir="ltr">Section details &amp; connectors</span><p lang="ar">مقاطع قنوات C ووصلات ربط وكتائف أوميغا وقضبان ملولبة وموصلات بكتائف L أو T لتجميع الهيكل وتعليقه.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/garbage-linen-chutes.html"><b lang="ar">مجاري النفايات والبياضات (شوت النفايات والغسيل)</b><span class="ar-en" lang="en" dir="ltr">Garbage &amp; linen chutes</span><p lang="ar">أنظمة متكاملة لمجاري النفايات والبياضات للفنادق والمستشفيات والأبراج السكنية.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/chute-components.html"><b lang="ar">مكونات مجاري النفايات والبياضات (الشوت)</b><span class="ar-en" lang="en" dir="ltr">Chute components</span><p lang="ar">مقاطع المجرى وأبواب الإلقاء ووحدات التفريغ وقطع الإزاحة وكتائف الشافت التي تثبّت المجرى على الهيكل الإنشائي.</p></a><a class="ar-item sm" href="../s/chute-sorters.html"><b lang="ar">فارزات ومحوّلات مجرى النفايات</b><span class="ar-en" lang="en" dir="ltr">Chute sorters &amp; diverters</span><p lang="ar">محوّل في أسفل المجرى يوجّه النفايات إلى الحاوية الصحيحة حسب نوعها، وهو الآلية التي تجعل إعادة التدوير داخل المبنى ممكنة.</p></a><a class="ar-item sm" href="../s/chute-sanitising.html"><b lang="ar">التعقيم وكبس النفايات</b><span class="ar-en" lang="en" dir="ltr">Sanitising &amp; compaction</span><p lang="ar">وحدات غسيل وتعقيم في أعلى الشافت، ومكبس النفايات أو الحاويات في أسفله.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/raised-access-flooring.html"><b lang="ar">الأرضيات المرتفعة (ريزد فلور)</b><span class="ar-en" lang="en" dir="ltr">Raised access flooring</span><p lang="ar">قواعد قابلة للتعديل (بيدستال) وأنظمة أرضيات مرتفعة للتراسات وغرف المعدات وأرضيات غرف البيانات.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/outdoor-pedestals.html"><b lang="ar">القواعد الخارجية القابلة للتعديل (بيدستال)</b><span class="ar-en" lang="en" dir="ltr">Outdoor pedestals</span><p lang="ar">قواعد قابلة للتعديل للتراسات والأسطح، تسمح بميل البلاطة تحتها لتصريف المياه بينما يبقى التشطيب فوقها مستوياً.</p></a><a class="ar-item sm" href="../s/indoor-access-floor.html"><b lang="ar">الأرضيات المرتفعة الداخلية</b><span class="ar-en" lang="en" dir="ltr">Indoor access floors</span><p lang="ar">ألواح بورسلان على قواعد (بيدستال) قابلة للتعديل وذاتية التسوية لغرف المعدات والغرف الفنية والمساحات الداخلية، مع فراغ لتمديد الكوابل والأنابيب.</p></a><a class="ar-item sm" href="../s/decking-supports.html"><b lang="ar">دعامات الأرضيات الخشبية الخارجية (ديكنج)</b><span class="ar-en" lang="en" dir="ltr">Timber decking supports</span><p lang="ar">رؤوس حاملة للروافد تحمل أرضيات الديكنج الخشبية والمصنوعة من المواد المركّبة (كومبوزيت) على قواعد البيدستال القابلة للتعديل نفسها.</p></a></div></div>
 </div>
 <div class="ar-fam" id="civil"><h3>الحلول الإنشائية <span lang="en" dir="ltr">Civil solutions</span></h3>
-<div class="ar-range"><a class="ar-item" href="../product/plaster-beads-expanded-metal.html"><b lang="ar">زوايا القصارة والشبك المعدني الممدد (شبك القصارة)</b><span class="ar-en" lang="en" dir="ltr">Plaster beads &amp; expanded metal</span><p lang="ar">زوايا قصارة للأركان وزوايا نهاية وزوايا لفواصل التحكم وللإطارات، بأجنحة من الشبك الممدد تنغرس في القصارة.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/plaster-beads.html"><b lang="ar">زوايا القصارة</b><span class="ar-en" lang="en" dir="ltr">Plaster beads</span><p lang="ar">زوايا قصارة للأركان وزوايا نهاية وزوايا لفواصل التحكم وللإطارات ولفواصل الحركة، تمنح القصارة الداخلية والخارجية حوافّ مستقيمة ومقوّاة وتحدّ من التشقق.</p></a><a class="ar-item sm" href="../s/expanded-metal-lath.html"><b lang="ar">الشبك المعدني الممدد وشبك القصارة</b><span class="ar-en" lang="en" dir="ltr">Expanded metal &amp; lath</span><p lang="ar">شبك مضلّع وشبك لفائف وشبك زوايا يثبّت القصارة عبر مواد الأساس المختلفة وفوق شقوق التمديدات.</p></a><a class="ar-item sm" href="../s/steel-lintels.html"><b lang="ar">الأعتاب الفولاذية</b><span class="ar-en" lang="en" dir="ltr">Steel lintels</span><p lang="ar">أعتاب من الفولاذ المكبوس تحمل جدران الطوب فوق الفتحات دون الحاجة إلى جسر خرساني مصبوب.</p></a><a class="ar-item sm" href="../s/block-accessories.html"><b lang="ar">ملحقات جدران الطوب (البلوك)</b><span class="ar-en" lang="en" dir="ltr">Blockwork accessories</span><p lang="ar">روابط جدران وكلّابات للإطارات ومثبّتات لرأس الجدار وروابط فصل، تربط جدران الطوب عبر الفراغ بين طبقتي الجدار وتشدّها إلى الهيكل الإنشائي.</p></a><a class="ar-item sm" href="../s/block-reinforcement.html"><b lang="ar">تسليح جدران الطوب (البلوك)</b><span class="ar-en" lang="en" dir="ltr">Blockwork reinforcement</span><p lang="ar">تسليح سلّمي وجملوني يوضع في طبقة المونة الأفقية لتوزيع إجهادات الانكماش على طول الجدار.</p></a></div></div>
+<div class="ar-range"><a class="ar-item" href="../product/plaster-beads-expanded-metal.html"><b lang="ar">زوايا القصارة والشبك المعدني الممدد (شبك القصارة)</b><span class="ar-en" lang="en" dir="ltr">Plaster beads &amp; expanded metal</span><p lang="ar">زوايا قصارة للأركان وزوايا نهاية وزوايا لفواصل التحكم وللإطارات، بأجنحة من الشبك الممدد تنغرس في القصارة.</p></a><div class="ar-subs"><a class="ar-item sm" href="../s/plaster-beads.html"><b lang="ar">زوايا القصارة</b><span class="ar-en" lang="en" dir="ltr">Plaster beads</span><p lang="ar">زوايا قصارة للأركان وزوايا نهاية وزوايا لفواصل التحكم وللإطارات ولفواصل الحركة، تمنح القصارة الداخلية والخارجية حوافّ مستقيمة ومقوّاة وتحدّ من التشقق.</p></a><a class="ar-item sm" href="../s/expanded-metal-lath.html"><b lang="ar">الشبك المعدني الممدد وشبك القصارة</b><span class="ar-en" lang="en" dir="ltr">Expanded metal &amp; lath</span><p lang="ar">شبك مضلّع وشبك لفائف وشبك زوايا يثبّت القصارة عبر مواد الأساس المختلفة وفوق شقوق التمديدات.</p></a><a class="ar-item sm" href="../s/steel-lintels.html"><b lang="ar">الأعتاب الفولاذية</b><span class="ar-en" lang="en" dir="ltr">Steel lintels</span><p lang="ar">أعتاب من الفولاذ المكبوس تحمل جدران الطوب فوق الفتحات دون الحاجة إلى جسر خرساني مصبوب.</p></a><a class="ar-item sm" href="../s/block-accessories.html"><b lang="ar">ملحقات جدران الطوب (البلوك)</b><span class="ar-en" lang="en" dir="ltr">Blockwork accessories</span><p lang="ar">روابط جدران وكلّابات للإطارات ومثبّتات لرأس الجدار وروابط فصل، تربط جدران الطوب عبر الفراغ بين طبقتي الجدار وتشدّها إلى الهيكل الإنشائي.</p></a><a class="ar-item sm" href="../s/block-reinforcement.html"><b lang="ar">تسليح جدران الطوب (البلوك)</b><span class="ar-en" lang="en" dir="ltr">Blockwork reinforcement</span><p lang="ar">تسليح سلّمي وجملوني يوضع في طبقة المونة الأفقية لتوزيع إجهادات الانكماش على طول الجدار.</p></a></div></div>
 </div>
 </div></section>
 <section class="sec ar-contact"><div class="wrap"><span class="eyebrow">تواصل معنا</span>
@@ -1013,15 +105,15 @@ html[lang="ar"] .dl b{font-family:'IBM Plex Sans Arabic',sans-serif}
 <section class="kv-cta">
   <div class="wrap kv-cta-in">
     <div class="kv-cta-txt">
-      <span class="kv-cta-kick">Start a project</span>
-      <h2>Have a project in design or at tender?</h2>
-      <p>Send the project drawings, specification and load requirements. Our engineers size the system and prepare a technical proposal, with the calculation and shop drawings needed for approval.</p>
+      <span class="kv-cta-kick">ابدأ مشروعك</span>
+      <h2>هل لديك مشروع قيد التصميم أو في مرحلة العطاء؟</h2>
+      <p>أرسل لنا مخططات المشروع ومواصفاته ومتطلبات الأحمال. يحدّد مهندسونا مقاسات النظام ويُعدّون عرضاً فنياً مع الحسابات والمخططات التنفيذية اللازمة للاعتماد.</p>
     </div>
     <div class="kv-cta-act">
-      <a href="../contact.html#proposal" class="btn btn-white">Request a technical proposal</a>
-      <a href="https://wa.me/962797774295" class="kv-cta-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.2 1.4Z"/></svg><span>WhatsApp +962 79 777 4295</span></a>
+      <a href="../contact.html#proposal" class="btn btn-white">اطلب عرضاً فنياً</a>
+      <a href="https://api.whatsapp.com/send?phone=962797774295" class="kv-cta-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.2 1.4Z"/></svg><span>واتساب <span dir="ltr">+962 79 777 4295</span></span></a>
     </div>
-    <div class="kv-cta-refs"><span>KAVITY projects include</span><ul><li><a href="../projects.html#abdali-boulevard">Abdali Boulevard</a></li><li><a href="../projects.html#via-amman">Via Amman</a></li><li><a href="../projects.html#taj-mall">Taj Mall</a></li><li><a href="../projects.html#king-hussein-cancer-center">King Hussein Cancer Center</a></li><li><a href="../projects.html#hashemite-university">The Hashemite University</a></li></ul></div>
+    <div class="kv-cta-refs"><span>من مشاريع كافيتي</span><ul><li><a href="../projects.html#abdali-boulevard">بوليفارد العبدلي</a></li><li><a href="../projects.html#via-amman">فيا عمّان</a></li><li><a href="../projects.html#taj-mall">تاج مول</a></li><li><a href="../projects.html#king-hussein-cancer-center">مركز الحسين للسرطان</a></li><li><a href="../projects.html#hashemite-university">الجامعة الهاشمية</a></li></ul></div>
   </div>
 </section>
 
@@ -1029,54 +121,54 @@ html[lang="ar"] .dl b{font-family:'IBM Plex Sans Arabic',sans-serif}
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <div class="flogo"><img width="760" height="253" loading="lazy" decoding="async" src="../img/a0fbdcf78ccd96.webp" alt="KAVITY"></div>
+        <div class="flogo"><img width="760" height="253" loading="lazy" decoding="async" src="../img/a0fbdcf78ccd96.webp" alt="كافيتي"></div>
         <p
-          >Exclusive agent in Jordan for <span class="nw">UNITECH – IKK Group</span>. Part of KABRI International Contracting Co. LLC. Engineered building systems, specified and supplied from Amman.</p>
+          >الوكيل الحصري في الأردن لمجموعة <span class="nw">UNITECH – IKK Group</span>. جزء من KABRI International Contracting Co. LLC. أنظمة بناء مصمّمة هندسياً، نحدّد مواصفاتها ونورّدها من عمّان.</p>
       </div>
       <div>
-        <h5>Products</h5>
+        <h5>المنتجات</h5>
         <ul>
-          <li><a href="../product/mechanical-cladding-fixation.html">Façade fixation</a></li>
-          <li><a href="../products.html#mep">MEP &amp; cable management</a></li>
-          <li><a href="../product/architectural-expansion-joints.html">Expansion joints</a></li>
-          <li><a href="../product/raised-access-flooring.html">Raised access flooring</a></li>
-          <li><a href="../product/plaster-beads-expanded-metal.html">Plaster beads</a></li>
-          <li><a href="../products.html">All systems →</a></li>
+          <li><a href="../product/mechanical-cladding-fixation.html">تثبيت الواجهات</a></li>
+          <li><a href="../products.html#mep">الأنظمة الكهروميكانيكية وإدارة الكوابل</a></li>
+          <li><a href="../product/architectural-expansion-joints.html">فواصل التمدد</a></li>
+          <li><a href="../product/raised-access-flooring.html">الأرضيات المرتفعة (ريزد فلور)</a></li>
+          <li><a href="../product/plaster-beads-expanded-metal.html">زوايا القصارة</a></li>
+          <li><a href="../products.html">جميع الأنظمة ←</a></li>
         </ul>
       </div>
       <div>
-        <h5>Company</h5>
+        <h5>الشركة</h5>
         <ul>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../projects.html">Projects</a></li>
-          <li><a href="../catalog.html">Catalogues</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-          <li><a href="../contact.html#proposal">Technical proposal</a></li>
-          <li><a href="../ar/" lang="ar">العربية</a></li>
+          <li><a href="../about.html">من نحن</a></li>
+          <li><a href="../projects.html">المشاريع</a></li>
+          <li><a href="../catalog.html">الكتالوجات</a></li>
+          <li><a href="../contact.html">اتصل بنا</a></li>
+          <li><a href="../contact.html#proposal">طلب عرض فني</a></li>
+          <li><a href="../index.html" lang="en" hreflang="en">English</a></li>
         </ul>
       </div>
       <div>
-        <h5>Contact</h5>
+        <h5>اتصل بنا</h5>
         <ul class="fcontact">
-          <li><a href="tel:+96265515905">+962 6 551 5905</a></li>
-          <li><a href="tel:+962797774295">+962 79 777 4295</a></li>
+          <li><a href="tel:+96265515905"><span dir="ltr">+962 6 551 5905</span></a></li>
+          <li><a href="tel:+962797774295"><span dir="ltr">+962 79 777 4295</span></a></li>
           <li><a href="mailto:info.jordan@kabrillc.com">info.jordan@kabrillc.com</a></li>
-          <li>Wasfi Al-Tal St. (Gardens St.) — Noura Complex, Amman</li>
+          <li>شارع وصفي التل (الجاردنز) — مجمّع نورا، عمّان</li>
         </ul>
       </div>
     </div>
     <div class="fbot">
-      <span>© 2026 KAVITY · KABRI International Contracting Co. LLC</span>
-      <span>Amman, Jordan</span>
+      <span>© 2026 كافيتي · KABRI International Contracting Co. LLC</span>
+      <span>عمّان، الأردن</span>
     </div>
   </div>
 </footer>
-<button id="toTop" class="totop" type="button" aria-label="Back to top">
+<button id="toTop" class="totop" type="button" aria-label="العودة إلى الأعلى">
   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
 
-<a class="wa" href="https://wa.me/962797774295" aria-label="WhatsApp" target="_blank" rel="noopener">
+<a class="wa" href="https://api.whatsapp.com/send?phone=962797774295" aria-label="واتساب" target="_blank" rel="noopener">
   <svg width="27" height="27" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5c0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
 </a>
 
@@ -1084,15 +176,15 @@ html[lang="ar"] .dl b{font-family:'IBM Plex Sans Arabic',sans-serif}
   <div class="sbox">
     <div class="sin">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="sq" type="search" autocomplete="off" spellcheck="false" placeholder="Search products, e.g. omega, cable tray, HDG…">
-      <button type="button" id="sclose" aria-label="Close">Esc</button>
+      <input id="sq" type="search" aria-label="بحث" autocomplete="off" spellcheck="false" placeholder="ابحث: أوميغا، كيبل تري، HDG…">
+      <button type="button" id="sclose" aria-label="إغلاق">Esc</button>
     </div>
     <div class="sres" id="sres"></div>
   </div>
 </div>
 
-<script src="../assets/kv/site.js?v=bd617a3c" defer id="kv-site-js"></script>
-<script src="../assets/kv/ui.js?v=f321804e" defer id="kv-ui-js"></script>
+<script src="../assets/kv/site.js?v=4453e059" defer id="kv-site-js"></script>
+<script src="../assets/kv/ui.js?v=50ca57d0" defer id="kv-ui-js"></script>
 <script src="../assets/kv/items-data.js?v=67d66cf8" defer id="kv-items-data"></script>
 <script src="../assets/kv/items.js?v=bf7c7c05" defer id="kv-items-js"></script>
 </body>
