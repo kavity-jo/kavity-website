@@ -8,7 +8,7 @@ KAVITY (KAVITY for Construction Solutions & Materials; in Arabic كافيتي) i
 - Arabic overview: https://www.kavityengineering.com/ar/
 - E-mail: info.jordan@kabrillc.com
 - Phone: +962 6 551 5905 · WhatsApp: +962 79 777 4295
-- Product data: each product card on the range pages names its source catalogue and page; the catalogues are a direct PDF download on the Catalogues page. Company details (agency, contacts) are as stated on this website.
+- Product data: each product card on the system pages (/s/) links to the catalogue page it is taken from; the catalogues are a direct PDF download on the Catalogues page. Company details (agency, contacts) are as stated on this website.
 
 ## Façade fixation
 
