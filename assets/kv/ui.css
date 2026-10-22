@@ -455,6 +455,8 @@ html .proj-cap span{color:rgba(255,255,255,.86)}
 .kv-copy-note{position:relative;z-index:200;background:#C8102E;color:#fff;font:500 .86rem/1.4 Inter,sans-serif;text-align:center;padding:.6rem 1rem}
 .kv-copy-note a{color:#fff;text-decoration:underline;font-weight:600}
 
+
+
 /* ═══════════════════════════════════════════════════════════════════
    PROJECTS v2 · page — projects.html grid, filters and gallery
    (.kvpj / .kvlb). Own class names: nothing here touches the old
@@ -618,6 +620,38 @@ html[dir="rtl"] .kvlb-pv svg,html[dir="rtl"] .kvlb-nx svg{transform:scaleX(-1)}
   .kvpj.is-armed .kvpj-grid>*{opacity:1;transform:none;transition:none}
   .kvpj-media img{transition:none}
 }
+
+/* ── reference list (projects.html#references): every project from the
+   owner's reference list, grouped by sector, with the system supplied;
+   filter by system (.kvrf, written by scripts/projects_v3/build_refs.py) ── */
+.kvrf{border-top:1px solid var(--line)}
+.kvrf .kvpj-head{margin-bottom:1.8rem}
+.kvrf-group{margin-top:clamp(2rem,3.4vw,2.8rem)}
+.kvrf-group[hidden],.kvrf-item[hidden]{display:none!important}
+.kvrf-group:first-child{margin-top:0}
+.kvrf-group h3{display:flex;align-items:baseline;gap:.6rem;margin:0;padding-bottom:.85rem;border-bottom:1px solid var(--ink);
+  font-family:'Outfit',sans-serif;font-size:clamp(1.08rem,1.4vw,1.2rem);font-weight:600;line-height:1.25;letter-spacing:-.01em;color:var(--ink)}
+.kvrf-gn{font:600 .8125rem/1 Inter,sans-serif;color:var(--slate);font-variant-numeric:tabular-nums}
+.kvrf-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(1.2rem,2.4vw,2rem)}
+@media (max-width:999px){.kvrf-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:599px){.kvrf-list{grid-template-columns:minmax(0,1fr)}}
+.kvrf-item{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;align-content:center;gap:.25rem .9rem;
+  padding:.95rem 0;border-bottom:1px solid var(--line);scroll-margin-top:110px}
+.kvrf-name{margin:0;font-family:'Outfit',sans-serif;font-size:1rem;font-weight:500;line-height:1.35;color:var(--ink)}
+.kvrf-name a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;transition:text-decoration-color .25s}
+.kvrf-name a:hover{text-decoration-color:var(--red)}
+.kvrf-loc{grid-column:1;margin:0;font-size:.86rem;line-height:1.45;color:var(--slate)}
+.kvrf-sys{grid-column:2;grid-row:1/span 2;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.3rem;max-width:12rem}
+.kvrf-tag,.kvpj-tag{display:inline-block;padding:.3rem .5rem;border-radius:6px;border:1px solid var(--line);
+  font:600 .8125rem/1 Inter,sans-serif;color:var(--ink);white-space:nowrap}
+.kvrf-tag.is-z,.kvpj-tag.is-z{border-color:rgba(200,16,46,.32);background:rgba(200,16,46,.06);color:var(--red)}
+html[data-theme="dark"] .kvrf-tag.is-z,html[data-theme="dark"] .kvpj-tag.is-z{border-color:rgba(255,122,138,.38);background:rgba(255,122,138,.08);color:#FF7A8A}
+.kvpj-sys{display:flex;flex-wrap:wrap;gap:.3rem;margin:.55rem 0 0}
+.kvrf-item.is-hit{animation:kvrfHit 1.6s cubic-bezier(.2,.7,.3,1) 2}
+@keyframes kvrfHit{0%,100%{background:transparent}30%{background:rgba(200,16,46,.07)}}
+.kvrf-foot{margin:clamp(1.8rem,3vw,2.4rem) 0 0;font-size:.9rem;color:var(--slate)}
+.kvrf-foot a{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
+@media (prefers-reduced-motion:reduce){.kvrf-item.is-hit{animation:none}}
 
 /* ═══════════════════════════════════════════════════════════════════
    PROJECTS v2 · rail — homepage "Completed projects" rail (.kvpr).

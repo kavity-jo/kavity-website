@@ -248,6 +248,8 @@
   document.body.insertBefore(b,document.body.firstChild);
 })();
 
+
+
 /* ── PROJECTS v2 · page — projects.html: filters with counts and FLIP
    transitions, accessible gallery (<dialog>, keyboard, swipe, thumbnails),
    deep links (#via-amman). Does nothing when .kvpj is absent. ── */
@@ -543,6 +545,46 @@
         c.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
         c.classList.remove('is-hit'); void c.offsetWidth; c.classList.add('is-hit');
         setTimeout(function () { c.classList.remove('is-hit'); }, 3800);
+      }, 60);
+    }
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
+  })();
+
+  /* ── reference list (projects.html#references): filter by system, deep links #ref-… ── */
+  (function () {
+    var root = d.querySelector('.kvrf');
+    if (!root) return;
+    var items = [].slice.call(root.querySelectorAll('.kvrf-item'));
+    var groups = [].slice.call(root.querySelectorAll('.kvrf-group'));
+    var chips = [].slice.call(root.querySelectorAll('.kvpj-filters button[data-sys]'));
+    var count = root.querySelector('.kvpj-count');
+    if (!items.length) return;
+    function has (el, s) { return s === 'all' || (' ' + el.getAttribute('data-sys') + ' ').indexOf(' ' + s + ' ') >= 0; }
+    function label (n, s) { return s === 'all' ? n + (n === 1 ? ' project' : ' projects') : n + ' of ' + items.length + ' projects'; }
+    function set (s) {
+      chips.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-sys') === s ? 'true' : 'false'); });
+      items.forEach(function (el) { el.hidden = !has(el, s); });
+      groups.forEach(function (g) {
+        var n = g.querySelectorAll('.kvrf-item:not([hidden])').length, c = g.querySelector('.kvrf-gn');
+        g.hidden = !n; if (c) c.textContent = n;
+      });
+      if (count) count.textContent = label(items.filter(function (el) { return has(el, s); }).length, s);
+    }
+    chips.forEach(function (b) {
+      var s = b.getAttribute('data-sys'), n = items.filter(function (el) { return has(el, s); }).length;
+      var k = d.createElement('span'); k.className = 'kvpj-n'; k.textContent = n; b.appendChild(k);
+      b.addEventListener('click', function () { set(s); });
+    });
+    function fromHash () {
+      var id = ''; try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) {}
+      var el = id && d.getElementById(id);
+      if (!el || items.indexOf(el) < 0) return;
+      if (el.hidden) set('all');
+      setTimeout(function () {
+        el.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
+        el.classList.remove('is-hit'); void el.offsetWidth; el.classList.add('is-hit');
+        setTimeout(function () { el.classList.remove('is-hit'); }, 3400);
       }, 60);
     }
     fromHash();
