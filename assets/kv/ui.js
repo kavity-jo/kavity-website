@@ -248,6 +248,25 @@
   document.body.insertBefore(b,document.body.firstChild);
 })();
 
+/* A link written into a sentence often takes the punctuation after it into the address ("…/projects.html،" in an
+   Arabic message, "…/projects.html." in English): on the 404 page go once to the address without it; on a page whose
+   #fragment carries it ("#references،"), clean the fragment and scroll to its target (before the projects scripts
+   further down read the fragment). */
+(function(){
+  var END=/[\s.,;:!?'"’”»)\]}،؛؟…]+$/;
+  if(document.querySelector('.kv-404')){
+    var p; try{ p=decodeURIComponent(location.pathname); }catch(e){ return; }
+    var q=p.replace(END,'');
+    if(q&&q!==p) location.replace(encodeURI(q)+location.search+location.hash);
+    return;
+  }
+  var h; try{ h=decodeURIComponent(location.hash.slice(1)); }catch(e){ return; }
+  var k=h.replace(END,''), el=k&&k!==h&&document.getElementById(k);
+  if(!el) return;
+  try{ history.replaceState(history.state,'',location.pathname+location.search+'#'+encodeURIComponent(k)); }catch(e){}
+  el.scrollIntoView();
+})();
+
 
 
 /* ── PROJECTS v2 · page — projects.html: filters with counts and FLIP
