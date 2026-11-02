@@ -940,3 +940,13 @@ html[data-theme="dark"] :is(.eyebrow,.sub-card>span,.rel-t>span,.kv-cta-kick,.pr
 /* homepage product families: descriptions take the same height, so the four titles line up */
 @media(min-width:1000px){.lines .line.kv-photo p{min-height:5lh}}
 /* KV POLISH v42 END */
+/* KV SOCIAL (v42): profile links in the footer and on Contact */
+.kv-social{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.2rem}
+.kv-social a{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:#fff;transition:background .25s,border-color .25s,color .25s,transform .25s}
+.kv-social a:hover{background:var(--red);border-color:var(--red);color:#fff;transform:translateY(-2px)}
+.kv-social a:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.kv-social-contact{margin-top:.2rem}
+.ccell dd .kv-social-contact a{display:grid;padding:0;min-height:0}
+.kv-social-contact a{border-color:var(--line);color:var(--ink)}
+html[data-theme="dark"] .kv-social-contact a{border-color:rgba(255,255,255,.2);color:#fff}
+/* KV SOCIAL END */
