@@ -909,3 +909,34 @@ html[data-theme="dark"] .kvp-img{background:#fff}
 /* v39: Arabic names and the Arabic overview page */
 :lang(ar){font-family:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif;letter-spacing:0}
 .ar-name{direction:rtl;text-align:left;font:500 1rem/1.6 'IBM Plex Sans Arabic',system-ui,sans-serif;color:var(--slate);margin:.35rem 0 .6rem}
+/* ── KV POLISH v42 (page-by-page audit) ── */
+.rel-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))!important}
+@media(min-width:601px){                                                         /* phones keep their one-column list */
+  .rel-grid:has(>.rel:only-child){grid-template-columns:minmax(0,380px)!important}  /* a lone card stays card-sized */
+  .rel-grid:has(>.rel:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,380px))!important}
+}
+@media(min-width:1000px){
+  .sub-list:has(>.sub-card:nth-child(2):last-child) .sub-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);grid-template-rows:1fr auto auto auto 1fr;align-items:start}
+  .sub-list:has(>.sub-card:nth-child(2):last-child) .sub-thumb{grid-column:1;grid-row:1/-1;align-self:center;border-bottom:0;border-inline-end:1px solid var(--line)}
+  .sub-list:has(>.sub-card:nth-child(2):last-child) .sub-card>b{grid-column:2;grid-row:2;margin-top:0}
+  .sub-list:has(>.sub-card:nth-child(2):last-child) .sub-card>p{grid-column:2;grid-row:3}
+  .sub-list:has(>.sub-card:nth-child(2):last-child) .sub-card>span{grid-column:2;grid-row:4}
+}
+@media(max-width:600px){
+  .sub-card{grid-template-columns:minmax(118px,38%) 1fr}
+  .sub-card p{display:block;-webkit-line-clamp:unset;overflow:visible}
+  footer li a{display:inline-block;padding-block:.55rem}
+  footer li{margin-block:0}
+}
+html[data-theme="dark"] :is(.eyebrow,.sub-card>span,.rel-t>span,.kv-cta-kick,.prod-link,.cat-foot b,.kvp-grp){color:#FF6B7F}
+@media(min-width:900px){.ptable-nw :is(th,td){white-space:nowrap;padding-inline:.55rem}}
+@media(max-width:600px){.kvp-spec :is(dt,dd),.kvp-grp,.kvp-cat{font-size:.8125rem}}   /* 13 px floor on phones */
+/* product grids: the filter chips always sit under the intro, left-aligned (they floated right when the chips were short) */
+.kvp-head{flex-direction:column;align-items:flex-start;justify-content:flex-start}
+.kvp-spec :is(dt,dd){hyphens:manual;-webkit-hyphens:manual}   /* no 'allow-/able' */
+@media(max-width:600px){header a.logo{min-height:44px;display:inline-flex;align-items:center}}
+/* catalogue cards: size line, then the download link, on every card (they zigzagged where the size line was long) */
+.cat-foot{flex-direction:column!important;flex-wrap:nowrap!important;align-items:flex-start!important;row-gap:.3rem!important}
+/* homepage product families: descriptions take the same height, so the four titles line up */
+@media(min-width:1000px){.lines .line.kv-photo p{min-height:5lh}}
+/* KV POLISH v42 END */
